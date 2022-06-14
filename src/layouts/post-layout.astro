@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/base-layout.astro';
+
+const { content: { title } } = Astro.props;
 ---
 
 <style is:inline>
@@ -34,6 +36,6 @@ import BaseLayout from '../layouts/base-layout.astro';
   }
 </style>
 
-<BaseLayout>
+<BaseLayout title={ `${title} | ferdinandalexa` }>
   <slot/>
 </BaseLayout>
