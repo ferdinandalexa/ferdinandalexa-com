@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+---
+
+<style is:inline>
+  main h1{
+    font: var(--h2);
+  }
+  
+  main h2{
+    font: var(--h3);
+    border-top: 1px var(--blue-50) solid;
+    padding-top: 1.5rem;
+  }
+
+  main h3{
+    font: var(--h4);
+  }
+
+  main p{
+    font: var(--body-01)
+  }
+
+  main a{
+    color: var(--blue-300);
+  }
+
+  main ul, 
+  main ol, 
+  main li{
+    font: var(--body-01);
+    list-style: unset;
+    margin-left: 1.75rem;
+  }
+</style>
+
+<BaseLayout>
+  <slot/>
+</BaseLayout>
