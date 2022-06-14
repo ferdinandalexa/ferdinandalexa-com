@@ -1,0 +1,33 @@
+:root{
+    --font-text: 'Source Sans Pro', sans-serif;;
+    --regular: 400;
+    --medium:500;
+    --semibold: 600;
+    --bold: 700;
+
+    --h1: var(--bold) 2.625rem/3.28125rem 'Source Sans Pro', serif; 
+    --h2: var(--bold) 2.25rem/2.8125rem 'Source Sans Pro', serif; 
+    --h3: var(--semibold) 1.5rem/1.71875rem 'Source Sans Pro', serif; 
+    --h4: var(--semibold) 1.125rem/1.5625rem 'Source Sans Pro', serif; 
+    --h5: var(--semibold) 1rem/1.5rem 'Source Sans Pro', serif; 
+    --body-01: var(--regular) 1.25rem/1.75rem 'Source Sans Pro', serif; 
+    --body-02: var(--regular) 1rem/1.5rem 'Source Sans Pro', serif; 
+    --anchor: var(--medium) 0.875rem/1.5rem JetBrains Mono; 
+    --anchor-lg: var(--medium) 1rem/1.5rem JetBrains Mono; 
+    --action-inline: var(--medium) 0.75rem/1.125rem JetBrains Mono; 
+    --caption: var(--regular) 0.75rem/1.125rem 'Source Sans Pro', serif; 
+    --button: var(--medium) 0.875rem/1.125rem JetBrains Mono; 
+    --pill: var(--medium) 0.75rem/1.125rem JetBrains Mono, monospace; 
+
+    --button-color: var(--blue-300);
+    --button-hover-color: var(--blue-200);
+    --button-active-color: var(--blue-100);
+
+    --font-theme: var(--white);
+    --font-white: var(--white);
+
+    --titles-color: var(--blue-300);
+    --font-color: var(--blue-300);
+
+    font-family: var(--font-text);
+}

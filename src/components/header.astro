@@ -1,0 +1,69 @@
+---
+import Logo from './icons/logo.astro'
+---
+
+<style>
+  header{
+    align-items: center;
+    display: flex;
+    gap: .75rem;
+    height: 64px;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px){
+    header{
+      margin-top: 1rem;
+    }
+  }
+
+  header > a{
+    display: inline-flex;
+    overflow: visible;
+    transition: var(--opacity-transition), var(--transform-transition);
+  }
+
+  header > a:hover{
+    opacity: 0.5;
+    transform: scale(.95);
+  }
+
+  nav > ul{
+    display: flex;
+    flex-direction: row;
+    font: var(--anchor);
+    margin-top: .15rem;
+    height: 100%;
+    text-transform: uppercase;
+  }
+
+  nav a {
+    display: inline-block;
+    padding: 1rem .75rem;
+  }
+
+  nav li:first-child{
+    padding-left: 0;
+  }
+
+  nav li:nth-child(n+2)::before{
+    content: "|";
+    color: var(--blue-300);
+    display: inline-block;
+  }
+</style>
+
+<header>
+  <a href="/">
+    <Logo size="28"/>
+  </a>
+
+  <nav>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+</header>

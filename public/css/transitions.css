@@ -1,0 +1,4 @@
+:root{
+  --opacity-transition: opacity .125s ease-in-out;
+  --transform-transition: transform .15s ease-in-out;
+}
