@@ -1,0 +1,16 @@
+---
+const { title, permalink } = Astro.props;
+---
+
+<meta property="og:title" content={ title } />
+<meta property="og:site_name" content="ferdinandalexa.com">
+<!-- <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}" /> -->
+<meta property="og:url" content={ permalink } />
+<!-- <meta property="og:image" content="{{.Site.Params.photos}}{{.Params.cover}}" /> -->
+<meta property="og:locale" content="es_MX">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@_ferdinandalexa">
+<meta name="twitter:site" content="@_ferdinandalexa">
+<meta name="twitter:domain" content="ferdinandalexa.com">
+<!-- <meta name="twitter:image" content="{{.Site.Params.photos}}{{.Params.cover}}"> -->
