@@ -1,0 +1,57 @@
+---
+import Sun from './icons/sun.astro';
+import Moon from './icons/moon.astro';
+---
+
+<style>
+  div{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: .65rem;
+  }
+</style>
+
+<style is:global>
+  label[for="toggle-theme"]{
+    display: block;
+    background-color: var(--gray-200);
+    border-radius: 100px;
+    height: 1.15rem;
+    width: 2.2rem;
+    position: relative;
+    transform: scale(1.2);
+    transition: background .2s ease-in-out;
+  }
+  
+  label[for="toggle-theme"]::after{
+    content: "";
+    background-color: white;
+    border-radius: 100px;
+    border: 2px var(--gray-200)solid;
+    display: inline-block;
+    height: 1.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .2s ease-in-out, border .2s ease-in-out;
+    width: 1.1rem;
+  }
+  
+  input[id="toggle-theme"]:checked ~ label[for="toggle-theme"]{
+    background-color: var(--blue-500);
+  }
+  
+  input[id="toggle-theme"]:checked ~ label[for="toggle-theme"]::after{
+    border: 2px var(--blue-500) solid;
+    transform: translateX(100%);
+  }
+</style>
+
+<div>
+  <input style="display: none" type="checkbox" name="toggle-theme" id="toggle-theme">
+  <Sun id="theme-sun"/>
+  <label for="toggle-theme">
+  </label>
+  <Moon id="theme-moon"/>
+</div>

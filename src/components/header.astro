@@ -1,16 +1,24 @@
 ---
-import Logo from './icons/logo.astro'
+import Logo from './icons/logo.astro';
+import Switch from './switch.astro';
 ---
 
 <style>
-  header{
+  header,
+  div,
+  nav, 
+  nav > ul{
     align-items: center;
     display: flex;
-    gap: .75rem;
+    flex-direction: row;
+  }
+
+  header{
     height: 64px;
     margin: 0 auto;
     padding: 1rem;
     width: 100%;
+    justify-content: space-between;
   }
 
   @media (min-width: 768px){
@@ -30,9 +38,11 @@ import Logo from './icons/logo.astro'
     transform: scale(.95);
   }
 
+  div{
+    gap: 1rem;
+  }
+
   nav > ul{
-    display: flex;
-    flex-direction: row;
     font: var(--anchor);
     margin-top: .15rem;
     height: 100%;
@@ -56,14 +66,18 @@ import Logo from './icons/logo.astro'
 </style>
 
 <header>
-  <a href="/">
-    <Logo size="28"/>
-  </a>
-
-  <nav>
-    <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
-  </nav>
+  <div>
+    <a href="/">
+      <Logo size="28"/>
+    </a>
+    
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <Switch />
 </header>
