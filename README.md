@@ -2,6 +2,6 @@
 
 ## To-do list
 
-- [ ] Dark theme/ Toggle UI theme
+- [X] Dark theme/ Toggle UI theme
 - [ ] Search system
 - [ ] PWA
