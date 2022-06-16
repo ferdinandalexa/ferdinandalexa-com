@@ -4,74 +4,12 @@ import HeadOg from '../components/head-og.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 
+import '../styles/colors.css'
+import '../styles/global.css'
+
 const { title } =  Astro.props;
 const { href } = Astro.canonicalURL;
 ---
-
-<style is:global>
-  *,
-  *::after,
-  *::before{
-    box-sizing: border-box;
-  }
-
-  html,
-  body{
-    height: 100%;
-    margin: 0 auto;
-    max-width: 768px;
-  }
-
-  body{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-
-  main{
-    margin-top: 2rem;
-    padding: 0 1rem;
-  }
-
-  h1, h2, h3, h4, h5, h6{
-    margin: 0;
-    color: var(--blue-300);
-  }
-
-  a{
-    text-decoration: none;
-    transition: var(--opacity-transition), var(--transform-transition);
-  }
-
-  a:hover{
-    opacity: .5;
-    transform: scale(.95);
-  }
-
-  a:visited{
-    color: var(--blue-300);
-  }
-
-  ul, ol{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  pre{
-    border-radius: .5rem;
-    padding: 1rem 0;
-  }
-
-  picture, 
-  img{
-    display: block;
-    margin: 0 auto;
-    max-height: 420px;
-    max-width: 640px;
-    object-fit: contain;
-    width: 100%;
-  }
-</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +22,6 @@ const { href } = Astro.canonicalURL;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="/css/colors.css">
   <link rel="stylesheet" href="/css/transitions.css">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/fonts.css">
