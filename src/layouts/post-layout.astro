@@ -35,6 +35,26 @@ const { content: { title, description }} = Astro.props;
     list-style: unset;
     margin-left: 1.75rem;
   }
+
+  main pre{
+    padding: 2rem;
+  }
+
+  main pre code{
+    font-family: monospace;
+    font-size: .85rem;
+    letter-spacing: .05ch;
+  }
+
+  main p code{
+    color: var(--c-inline-code);
+    background-color: var(--c-inline-code-bg);
+    font-family: monospace;
+    border-radius: .25rem;
+    font-size: 1.15rem;
+    padding: .75ch;
+    margin: 0 .25ch;
+  }
 </style>
 
 <BaseLayout title={ `${title} | ferdinandalexa` } description={ description }>

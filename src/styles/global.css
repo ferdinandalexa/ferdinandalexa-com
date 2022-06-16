@@ -65,6 +65,8 @@ body{
   --c-link: var(--blue-300);
   --c-anchor: var(--blue-300);
   --c-logo: var(--blue-300);
+  --c-inline-code: #f53d3d;
+  --c-inline-code-bg: var(--gray-100);
 
   --card-bg: var(--gray-50);
   --card-hover: var(--blue-50);
@@ -85,6 +87,8 @@ body.dark{
   --c-anchor: var(--blue-100);
   --c-link: var(--blue-100);
   --c-logo: var(--blue-200);
+  --c-inline-code: #ff675c;
+  --c-inline-code-bg: #0d1117;
 
   --card-bg: var(--blue-600);
   --card-hover: var(--blue-500);
