@@ -14,9 +14,10 @@ import Switch from './switch.astro';
   }
 
   header{
-    height: 64px;
+    --header-height: 64px;
+    height: var(--header-height);
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 1rem;
     width: 100%;
     justify-content: space-between;
   }
@@ -27,19 +28,18 @@ import Switch from './switch.astro';
     }
   }
 
-  header > a{
+  header .logo{
     display: inline-flex;
-    overflow: visible;
     transition: var(--opacity-transition), var(--transform-transition);
   }
 
-  header > a:hover{
+  header .logo:hover{
     opacity: 0.5;
     transform: scale(.95);
   }
 
-  div{
-    gap: 1rem;
+  header > div{
+    gap: .75rem;
   }
 
   nav > ul{
@@ -51,7 +51,8 @@ import Switch from './switch.astro';
 
   nav a {
     display: inline-block;
-    padding: 1rem .75rem;
+    vertical-align: baseline;
+    padding: .75rem;
   }
 
   nav li:first-child{
@@ -67,7 +68,7 @@ import Switch from './switch.astro';
 
 <header>
   <div>
-    <a href="/">
+    <a href="/" class="logo">
       <Logo size="28"/>
     </a>
     
