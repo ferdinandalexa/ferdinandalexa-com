@@ -21,7 +21,6 @@ import Moon from './icons/moon.astro';
     width: 2.2rem;
     position: relative;
     transform: scale(1.2);
-    transition: background .2s ease-in-out;
   }
   
   label[for="toggle-theme"]::after{
@@ -34,7 +33,7 @@ import Moon from './icons/moon.astro';
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform .2s ease-in-out, border .2s ease-in-out;
+    right: unset;
     width: 1.1rem;
   }
   
@@ -44,7 +43,8 @@ import Moon from './icons/moon.astro';
   
   :global(body.dark) label[for="toggle-theme"]::after{
     border: 2px var(--switch) solid;
-    transform: translateX(100%);
+    left: unset;
+    right: 0;
   }
 </style>
 
