@@ -14,6 +14,7 @@ body{
 body{
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background-color: var(--c-background);
 }
 
 main{
@@ -23,10 +24,11 @@ main{
 
 h1, h2, h3, h4, h5, h6{
   margin: 0;
-  color: var(--blue-300);
+  color: var(--c-titles);
 }
 
 a{
+  color: var(--c-anchor);
   text-decoration: none;
   transition: var(--opacity-transition), var(--transform-transition);
 }
@@ -34,10 +36,6 @@ a{
 a:hover{
   opacity: .5;
   transform: scale(.95);
-}
-
-a:visited{
-  color: var(--blue-300);
 }
 
 ul, ol{
@@ -59,4 +57,44 @@ img{
   max-width: 640px;
   object-fit: contain;
   width: 100%;
+}
+
+body{
+  --c-titles: var(--blue-300);
+  --c-text: var(--gray-700);
+  --c-link: var(--blue-300);
+  --c-anchor: var(--blue-300);
+  --c-logo: var(--blue-300);
+
+  --card-bg: var(--gray-50);
+  --card-hover: var(--blue-50);
+  --card-text: var(--gray-600);
+  --card-hover-text: var(--blue-300);
+  --card-time: var(--gray-600);
+  --card-hover-time: var(--blue-300);
+  
+  --switch: var(--gray-200);
+  --moon: var(--gray-300);
+
+  --c-background: var(--white);
+}
+
+body.dark{
+  --c-titles: var(--blue-100);
+  --c-text: var(--gray-200);
+  --c-anchor: var(--blue-100);
+  --c-link: var(--blue-100);
+  --c-logo: var(--blue-200);
+
+  --card-bg: var(--blue-600);
+  --card-hover: var(--blue-500);
+  --card-text: var(--blue-50);
+  --card-hover-text: var(--white);
+  --card-time: var(--gray-300);
+  --card-hover-time: var(--gray-300);
+
+  --switch: var(--blue-500);
+  --moon: var(--blue-200);
+
+  --c-background: var(--blue-700);
 }

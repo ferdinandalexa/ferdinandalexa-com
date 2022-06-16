@@ -9,7 +9,7 @@ let height = Astro.props.size || "24px";
       transition: stroke .15s ease-in-out;
     }
 
-    :global(input[id="toggle-theme"]:checked) ~ svg{
+    :global(body.dark) svg{
       stroke: var(--gray-300);
     }
 </style>

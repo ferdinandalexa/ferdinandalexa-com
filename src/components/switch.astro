@@ -12,10 +12,10 @@ import Moon from './icons/moon.astro';
   }
 </style>
 
-<style is:global>
+<style>
   label[for="toggle-theme"]{
     display: block;
-    background-color: var(--gray-200);
+    background-color: var(--switch);
     border-radius: 100px;
     height: 1.15rem;
     width: 2.2rem;
@@ -26,9 +26,9 @@ import Moon from './icons/moon.astro';
   
   label[for="toggle-theme"]::after{
     content: "";
-    background-color: white;
+    background-color: var(--white);
     border-radius: 100px;
-    border: 2px var(--gray-200)solid;
+    border: 2px var(--switch) solid;
     display: inline-block;
     height: 1.1rem;
     position: absolute;
@@ -38,12 +38,12 @@ import Moon from './icons/moon.astro';
     width: 1.1rem;
   }
   
-  input[id="toggle-theme"]:checked ~ label[for="toggle-theme"]{
-    background-color: var(--blue-500);
+  :global(body.dark) label[for="toggle-theme"]{
+    background-color: var(--switch);
   }
   
-  input[id="toggle-theme"]:checked ~ label[for="toggle-theme"]::after{
-    border: 2px var(--blue-500) solid;
+  :global(body.dark) label[for="toggle-theme"]::after{
+    border: 2px var(--switch) solid;
     transform: translateX(100%);
   }
 </style>

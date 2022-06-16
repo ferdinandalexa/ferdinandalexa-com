@@ -11,7 +11,6 @@ const { content: { title, description }} = Astro.props;
   
   main h2{
     font: var(--h3);
-    border-top: 1px var(--blue-50) solid;
     padding-top: 1.5rem;
   }
 
@@ -20,16 +19,18 @@ const { content: { title, description }} = Astro.props;
   }
 
   main p{
+    color: var(--c-text);
     font: var(--body-01)
   }
 
   main a{
-    color: var(--blue-300);
+    color: var(--c-anchor);
   }
 
   main ul, 
   main ol, 
   main li{
+    color: var(--c-text);
     font: var(--body-01);
     list-style: unset;
     margin-left: 1.75rem;

@@ -6,12 +6,12 @@ let color = Astro.props.color;
 
 <style>
     svg{
-      stroke: var(--gray-300);
+      stroke: var(--moon);
       transition: stroke .15s ease-in-out;
     }
 
-    :global(input[id="toggle-theme"]:checked) ~ svg{
-      stroke: var(--blue-400);
+    :global(body.dark) svg{
+      stroke: var(--moon);
     }  
 </style>
 

@@ -11,11 +11,6 @@ const datePublish = new Date(date)
 
 <style>
   a{
-    --card-bg: var(--gray-50);
-    --card-hover: var(--blue-50);
-    --card-text: var(--gray-600);
-    --card-hover-text: var(--blue-300);
-
     background-color: var(--card-bg);
     border-radius: 0.5rem;
     border: 1px solid rgba(0,47,108,.03);
@@ -36,7 +31,7 @@ const datePublish = new Date(date)
   }
   
   a time{
-    color: var(--card-text);
+    color: var(--card-time);
     font: var(--pill);
     word-spacing: -.35ch;
   }
@@ -47,9 +42,12 @@ const datePublish = new Date(date)
     background-color: var(--card-hover);
   }
 
-  a:hover h3,
-  a:hover time{
+  a:hover h3{
     color: var(--card-hover-text);
+  }
+  
+  a:hover time{
+    color: var(--card-hover-time);
   }
 </style>
 
