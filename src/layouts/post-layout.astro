@@ -6,21 +6,21 @@ const { content: { title, description }} = Astro.props;
 
 <style is:inline>
   main h1{
-    font: var(--h2);
+    font: var(--heading-large);
   }
   
   main h2{
-    font: var(--h3);
+    font: var(--heading-medium);
     padding-top: 1.5rem;
   }
 
   main h3{
-    font: var(--h4);
+    font: var(--heading-base);
   }
 
   main p{
     color: var(--c-text);
-    font: var(--body-01)
+    font: var(--body-medium)
   }
 
   main a{
@@ -31,9 +31,9 @@ const { content: { title, description }} = Astro.props;
   main ol, 
   main li{
     color: var(--c-text);
-    font: var(--body-01);
+    font: var(--body-medium);
     list-style: unset;
-    margin-left: 1.75rem;
+    margin-left: 1rem;
   }
 
   main pre{
@@ -41,17 +41,15 @@ const { content: { title, description }} = Astro.props;
   }
 
   main pre code{
-    font-family: monospace;
-    font-size: .85rem;
+    font: var(--action-base);
     letter-spacing: .05ch;
   }
 
   main p code{
     color: var(--c-inline-code);
     background-color: var(--c-inline-code-bg);
-    font-family: monospace;
+    font: var(--action-base);
     border-radius: .25rem;
-    font-size: 1.15rem;
     padding: .75ch;
     margin: 0 .25ch;
   }
