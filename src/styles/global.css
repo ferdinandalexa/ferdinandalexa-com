@@ -82,20 +82,20 @@ body{
 }
 
 body.dark{
-  --c-titles: var(--blue-100);
+  --c-titles: var(--gray-100);
   --c-text: var(--gray-200);
-  --c-anchor: var(--blue-100);
+  --c-anchor: var(--gray-100);
   --c-link: var(--blue-100);
-  --fl-logo: var(--blue-200);
+  --fl-logo: var(--gray-100);
   --c-inline-code: #ff675c;
   --c-inline-code-bg: #0d1117;
 
   --bg-card: var(--blue-600);
   --bg-card-hover: var(--blue-500);
-  --c-card: var(--blue-50);
+  --c-card: var(--gray-100);
   --c-card-hover: var(--white);
-  --c-card-time: var(--gray-300);
-  --c-card-hover-time: var(--gray-300);
+  --c-card-time: var(--gray-200);
+  --c-card-hover-time: var(--gray-200);
 
   --bg-switch: var(--blue-500);
   --bd-switch: var(--blue-500);
