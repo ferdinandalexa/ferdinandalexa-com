@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/base-layout.astro';
-import CardPost from '../components/card-post.astro';
+import BaseLayout from '../../layouts/base-layout.astro';
+import CardPost from '../../components/card-post.astro';
 
-let allPosts = await Astro.glob('./blog/*.md');
+let allPosts = await Astro.glob('./*.md');
 ---
 
 <style>
