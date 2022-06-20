@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/base-layout.astro";
+
+import Button from "../components/button.astro";
+
+const buttonCSS = `
+  max-width: 42ch;
+  width: 100%;
+`
+---
+
+<style>
+  h2{
+    font: var(--heading-xlarge);
+    margin: .5rem auto;
+    width: max-content;
+  }
+
+  p{
+    text-align: center;
+    font: var(--body-medium);
+    color: var(--c-text);
+    margin: 0 auto;
+    max-width: 42ch;
+  }
+
+  div{
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+  }
+</style>
+
+<BaseLayout>
+  <div>
+    <h2>404</h2>
+    <p>No encontramos lo que buscas, pero puedes revisar el resto del contenido</p>
+    <Button as="a" href="/blog" css={ buttonCSS } >Revisar contenido</Button>
+  </div>
+</BaseLayout>

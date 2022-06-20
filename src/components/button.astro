@@ -1,0 +1,34 @@
+---
+const { as, href, css = {} } = Astro.props
+---
+
+<style>
+  a,
+  button{
+    --bg-button: var(--blue-300);
+
+    background-color: var(--bg-button); 
+    border-radius: .25rem;
+    color: var(--white);
+    min-width: max-content;
+    padding: .65rem 1rem;
+    text-align: center;
+    transition: var(--transform-transition), var(--opacity-transition);
+  }
+
+  a:hover,
+  button:hover{
+    transform: scale(.97);
+  }
+
+  :global(body.dark) a, 
+  :global(body.dark) button{
+    --bg-button: var(--blue-200);
+  }
+</style>
+
+{
+  as === 'button' 
+    ? <button { href } style={ css }> <slot /> </button>
+    : <a { href } style={ css }> <slot /> </a>
+}
