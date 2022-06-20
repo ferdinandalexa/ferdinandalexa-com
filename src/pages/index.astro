@@ -20,16 +20,18 @@ let allPosts = await Astro.glob('./blog/*.md');
 </style>
 
 <BaseLayout title="Inicio | ferdinandalexa">
-  <h2>Artículos recientes</h2>
-  <div>
-    {
-      allPosts.slice(0, 3).map((post) => (
-        <CardPost 
-          title={post.frontmatter.title}
-          date={post.frontmatter.date}
-          url={post.url}
-        />
-      ))
-    }
-  </div>
+  <main>
+    <h2>Artículos recientes</h2>
+    <div>
+      {
+        allPosts.slice(0, 3).map((post) => (
+          <CardPost 
+            title={post.frontmatter.title}
+            date={post.frontmatter.date}
+            url={post.url}
+          />
+        ))
+      }
+    </div>
+  </main>
 </BaseLayout>

@@ -70,9 +70,11 @@ const minutes = Math.round(readingTime(source).minutes);
 </style>
 
 <BaseLayout title={ `${title} | ferdinandalexa` } description={ description }>
-  <div>
-    <h1>{title}</h1>
-    <span>{minutes} min de lectura.</span>
-  </div>
-  <slot/>
+  <main>
+    <header>
+      <h1>{title}</h1>
+      <span>{minutes} min de lectura.</span>
+    </header>
+    <slot/>
+  </main>
 </BaseLayout>
