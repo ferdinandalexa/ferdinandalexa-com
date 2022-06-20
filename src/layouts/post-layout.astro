@@ -1,7 +1,10 @@
 ---
+import readingTime from 'reading-time';
 import BaseLayout from '../layouts/base-layout.astro';
 
-const { content: { title, description }} = Astro.props;
+const { content: { title, description, astro: { source } }} = Astro.props;
+
+const minutes = Math.round(readingTime(source).minutes);
 ---
 
 <style is:inline>
@@ -55,6 +58,21 @@ const { content: { title, description }} = Astro.props;
   }
 </style>
 
+<style>
+  h1{
+    margin-bottom: .5rem;
+  }
+
+  span{
+    color: var(--c-text);
+    font: var(--caption);
+  }
+</style>
+
 <BaseLayout title={ `${title} | ferdinandalexa` } description={ description }>
+  <div>
+    <h1>{title}</h1>
+    <span>{minutes} min de lectura.</span>
+  </div>
   <slot/>
 </BaseLayout>

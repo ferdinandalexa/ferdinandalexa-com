@@ -5,8 +5,6 @@ cover: ferdinandalexa/blog/gestion-del-tiempo
 description: Si estas empezando en el desarrollo web o en cualquier otra área, aprender a gestionar tu tiempo hará la diferencia en todo lo que hagas. Hoy daremos el primer paso para obtener dicha habilidad.
 layout: '../../layouts/post-layout.astro'
 ---
-# Gestion del tiempo
-
 Actualmente gestionar el tiempo se ha convertido en una destreza muy bien valorada, pero que pocas veces tratamos de alcanzar. 
 
 Ignoramos que dominarla puede hacer la diferencia entre lograr o no nuestras metas personales y profesionales, inclusive entre tener una vida balanceada a una caótica. 

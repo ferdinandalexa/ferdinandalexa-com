@@ -20,7 +20,7 @@
   /*-- Paragraphs --*/
   --body-medium: var(--fw-regular) 1.125rem/1.75rem var(--ff-sans);
   --body-base: var(--fw-regular) 1rem/1.5rem var(--ff-sans);
-  --caption: var(--fw-regular) 0.75rem/1.125rem var(--ff-sans);
+  --caption: var(--fw-regular) 0.875rem/1.125rem var(--ff-sans);
 
   /*-- Buttons and achors (actions) --*/
   --action-lg: var(--fw-medium) 1rem/1.5rem var(--ff-mono);
