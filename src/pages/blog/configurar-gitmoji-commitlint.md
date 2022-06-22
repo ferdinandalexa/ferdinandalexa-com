@@ -2,8 +2,8 @@
 title: Cómo configurar gitmoji con commitlint
 date: 2022/06/28
 description: Crea un mejor historial de tu proyecto y deja que los commits hablen por ti. Aprende a configurar gitmoji para que funcione con commitlint.
-draft: true
 layout: '../../layouts/post-layout.astro'
+draft: true
 ---
 
 ## ¿Por qué usar un linter para tus commits?

@@ -24,7 +24,7 @@ let allPosts = await Astro.glob('./blog/*.md');
     <h2>Artículos recientes</h2>
     <div>
       {
-        allPosts.slice(0, 3).map((post) => (
+        allPosts.slice(0, 3).filter((post) => !post.frontmatter.draft).map((post) => (
           <CardPost 
             title={post.frontmatter.title}
             date={post.frontmatter.date}
