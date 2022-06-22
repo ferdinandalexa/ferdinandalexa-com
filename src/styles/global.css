@@ -44,11 +44,6 @@ ul, ol{
   padding: 0;
 }
 
-pre{
-  border-radius: .5rem;
-  padding: 1rem 0;
-}
-
 picture, 
 img{
   display: block;

@@ -40,12 +40,18 @@ const minutes = Math.round(readingTime(source).minutes);
   }
 
   main pre{
-    padding: 2rem;
+    padding: 1rem 1.25rem;
+    width: 100%;
+    max-width: 90vw;
+    margin-left: -.1rem;
+    border-radius: .5rem;
   }
 
   main pre code{
     font: var(--action-base);
     letter-spacing: .05ch;
+    margin: 0;
+    overflow-x: auto;
   }
 
   main p code{
