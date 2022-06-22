@@ -10,20 +10,24 @@ const minutes = Math.round(readingTime(source).minutes);
 <style is:inline>
   main h1{
     font: var(--heading-large);
+    margin-top: 1.25rem;
   }
   
   main h2{
     font: var(--heading-medium);
-    padding-top: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   main h3{
     font: var(--heading-base);
+    margin-top: 1.75rem;
   }
 
   main p{
     color: var(--c-text);
-    font: var(--body-medium)
+    font: var(--body-medium);
+    line-height: 1.5;
+    margin: .75rem 0;
   }
 
   main a{
@@ -60,7 +64,6 @@ const minutes = Math.round(readingTime(source).minutes);
     font: var(--action-base);
     border-radius: .25rem;
     padding: .75ch;
-    margin: 0 .25ch;
   }
 </style>
 
