@@ -2,9 +2,16 @@
 import readingTime from 'reading-time';
 import BaseLayout from '../layouts/base-layout.astro';
 
-const { content: { title, description, astro: { source } }} = Astro.props;
+const { content: { title, date, description, astro: { source } }} = Astro.props;
 
 const minutes = Math.round(readingTime(source).minutes);
+
+const datePublish = new Date(date)
+  .toLocaleDateString('es', { 
+    "year": "numeric", 
+    "month": "long", 
+    "day": "numeric",
+  });
 ---
 
 <style is:inline>
@@ -72,9 +79,16 @@ const minutes = Math.round(readingTime(source).minutes);
     margin-bottom: .5rem;
   }
 
+  time,
   span{
     color: var(--c-text);
     font: var(--caption);
+  }
+
+  time::after{
+    content: '\00B7';
+    margin: 0 .45rem;
+    opacity: .5;
   }
 </style>
 
@@ -82,7 +96,7 @@ const minutes = Math.round(readingTime(source).minutes);
   <main>
     <header>
       <h1>{title}</h1>
-      <span>{minutes} min de lectura.</span>
+      <time datetime="2011-11-18">{ datePublish }</time><span>{minutes} min de lectura</span>
     </header>
     <slot/>
   </main>
