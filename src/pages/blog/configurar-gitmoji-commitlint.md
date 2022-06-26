@@ -22,7 +22,7 @@ Incluso ganas más si sigues una buena convención, como ***conventional commits
 
 `gitmoji` nos permitirá añadir un emoji representativo del tipo de cambio que estamos realizando al inicio de nuestro mensaje. 
 
-Personalmente este sencillo añadido hace que nuestro historial de git sea aún más agrable de seguir y de identificar cambios.
+Personalmente este sencillo añadido hace que nuestro historial de git sea aún más agradable de seguir y de identificar cambios.
 
 `commitlint` es la dependencia que se encargará de verificar que nuestros *git commits* sigan una convención. 
 
@@ -73,7 +73,7 @@ npm run prepare
 
 Este comando inicializa `husky` y crea la carpeta `.husky/` en la raíz de tu proyecto. 
 
-Solo nos queda asignar la acción a la que queremos que actue.
+Solo nos queda asignar la acción a la que queremos que actúe.
 
 ### 4.- Añadimos la acción a reaccionar: `commit-msg`
 
@@ -81,7 +81,7 @@ Solo nos queda asignar la acción a la que queremos que actue.
 npx husky add .husky/commit-msg
 ```
 
-Este añadira el fichero `commit-msg.sh`
+Este añadirá el fichero `commit-msg.sh`
 
 En la línea de comandos puedes ejecutar el siguiente código para añadir las instrucciones al archivo:
 
@@ -134,7 +134,7 @@ npm run cm
 ? Enter the commit message:
 ```
 
-Si el commit no sigue la convención establecida saldrá la siguiente advertencia y el commit no se llevará acabo.
+Si el commit no sigue la convención establecida saldrá la siguiente advertencia y el commit no se llevará a cabo.
 
 ```bash
 npm run cm
@@ -162,4 +162,4 @@ husky - commit-msg hook exited with code 1 (error)
 
 ## Otras herramientas:
 
-Puedes complementarlo esta configuración con herramientas como `commitizen` o con alguna otra convención. Solo asegurate de preparar los scripts para que tu equipo haga los commits con el mismo formato.
+Puedes complementar esta configuración con herramientas como `commitizen` o con alguna otra convención. Solo asegúrate de preparar los scripts para que tu equipo haga los commits con el mismo formato.
