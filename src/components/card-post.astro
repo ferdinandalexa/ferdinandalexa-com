@@ -1,16 +1,17 @@
 ---
 const { title, date, url } = Astro.props;
-
-const datePublish = new Date(date)
-  .toLocaleDateString('es', { 
-    "year": "numeric", 
-    "month": "long", 
-    "day": "numeric" 
-  });
 ---
 
 <script>
+  import getTimeAgo from "../utils/getTimeAgo.js";
   
+  const cards = document.querySelectorAll("[data-time]");
+  for (const cardPost of cards){
+    const date = cardPost.dataset.time;
+    const timeago = getTimeAgo(new Date (date));
+    console.log(timeago);
+    cardPost.innerHTML = timeago;
+  }
 </script>
 
 <style>
@@ -37,6 +38,7 @@ const datePublish = new Date(date)
   a time{
     color: var(--c-card-time);
     font: var(--action-small);
+    /* text-transform: capitalize; */
     word-spacing: -.35ch;
   }
 
@@ -58,6 +60,6 @@ const datePublish = new Date(date)
 <a href={ url } class="card">
   <h3>{ title }</h3>
   <div>
-    <time datetime={date}>{ datePublish }</time>
+    <time datetime={date} data-time={date}>{}</time>
   </div>
 </a>
