@@ -2,7 +2,7 @@
 import readingTime from 'reading-time';
 import BaseLayout from '../layouts/base-layout.astro';
 
-const { content: { title, date, description, astro: { source } }} = Astro.props;
+const { content: { title, slug, date, description, astro: { source } }} = Astro.props;
 
 const minutes = Math.round(readingTime(source).minutes);
 
@@ -92,7 +92,7 @@ const datePublish = new Date(date)
   }
 </style>
 
-<BaseLayout title={ `${title} | ferdinandalexa` } description={ description }>
+<BaseLayout title={ `${title} | ferdinandalexa` } description={ description } slug={ slug }>
   <main>
     <header>
       <h1>{title}</h1>

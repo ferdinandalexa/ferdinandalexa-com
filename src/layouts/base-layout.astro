@@ -7,7 +7,7 @@ import Footer from '../components/footer.astro';
 import '../styles/colors.css'
 import '../styles/global.css'
 
-const { title } =  Astro.props;
+const { title, description, slug } =  Astro.props;
 const { href } = Astro.canonicalURL;
 ---
 
@@ -29,7 +29,7 @@ const { href } = Astro.canonicalURL;
   <link rel="stylesheet" href="/css/fonts.css">
 
   <HeadFavicon />
-  <HeadOg title={ title } permalink={ href } />
+  <HeadOg { title } { description } { slug } permalink={ href } />
 </head>
 <body class="">
   <Header />

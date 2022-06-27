@@ -1,5 +1,6 @@
 ---
-const { title, description, permalink } = Astro.props;
+const { title, description, permalink, slug } = Astro.props;
+const imageURL = `https://ferdinandalexa.com/images/og/${ slug }.png`;
 ---
 
 <!-- Primary Meta Tags -->
@@ -9,11 +10,14 @@ const { title, description, permalink } = Astro.props;
 <meta property="og:title" content={ title } />
 <meta property="og:site_name" content="ferdinandalexa.com">
 <meta property="og:description" content={ description } />
+{ slug && <meta name="og:image" content={imageURL} /> }
+{ slug && <meta name="og:image:url" content={imageURL} /> }
 <meta property="og:url" content={ permalink } />
 <meta property="og:locale" content="es_MX">
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
+{ slug && <meta name="twitter:card" content="summary_large_image" /> }
+{ slug && <meta name="twitter:image" content={imageURL} /> }
 <meta name="twitter:creator" content="@_ferdinandalexa">
 <meta name="twitter:site" content="@_ferdinandalexa">
 <meta name="twitter:domain" content="ferdinandalexa.com">
