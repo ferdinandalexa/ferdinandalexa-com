@@ -3,8 +3,9 @@
 ## To-do list
 
 - [X] Dark theme/ Toggle UI theme
-- [ ] SSR (Server-Side Rendering)
+- [ ] OG image generator
 - [ ] Improve SEO
 - [ ] Improve accesibility
-- [ ] Search system
 - [ ] PWA
+- [ ] SSR (Server-Side Rendering)
+- [ ] Search system
