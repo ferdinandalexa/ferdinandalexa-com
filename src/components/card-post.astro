@@ -9,6 +9,10 @@ const datePublish = new Date(date)
   });
 ---
 
+<script>
+  
+</script>
+
 <style>
   a{
     background-color: var(--bg-card);
@@ -54,6 +58,6 @@ const datePublish = new Date(date)
 <a href={ url } class="card">
   <h3>{ title }</h3>
   <div>
-    <time datetime="2011-11-18">{ datePublish }</time>
+    <time datetime={date}>{ datePublish }</time>
   </div>
 </a>
