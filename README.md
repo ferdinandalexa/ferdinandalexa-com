@@ -9,5 +9,4 @@
 - [ ] Add schemas
 - [ ] Improve keyboard navigation
 - [ ] PWA
-- [ ] SSR (Server-Side Rendering)
 - [ ] Search system
