@@ -10,14 +10,12 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prepare": "husky install && npx husky add .husky/commit-msg",
     "cm": "gitmoji -c"
   },
   "devDependencies": {
     "astro": "2.0.0-beta.1",
     "commitlint-config-gitmoji": "2.2.5",
-    "gitmoji-cli": "^7.0.3",
-    "husky": "8.0.1",
+    "gitmoji-cli": "7.0.3",
     "reading-time": "1.5.0"
   }
 }
