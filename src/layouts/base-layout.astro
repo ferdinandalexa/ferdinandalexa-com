@@ -26,10 +26,25 @@ const { href } = Astro.url;
 
     <script defer src="/js/changeTheme.js"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      @font-face {
+        font-family: "AtkinsonHyperlegible";
+        font-style: normal;
+        font-weight: 400 700;
+        src: local(Atkinson-Hyperlegible), local(Atkinson-Hyperlegible-Regular),
+          url(/fonts/Atkinson-Hyperlegible-Regular.woff2) format("woff2");
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "AtkinsonHyperlegible";
+        font-style: normal;
+        font-weight: 400 700;
+        src: local(Atkinson-Hyperlegible), local(Atkinson-Hyperlegible-Bold),
+          url(/fonts/Atkinson-Hyperlegible-Bold.woff2) format("woff2");
+        font-display: swap;
+      }
+    </style>
 
     <HeadFavicon />
     <HeadOg {title} {description} {slug} permalink={href} />
