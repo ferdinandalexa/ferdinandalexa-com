@@ -1,19 +1,19 @@
 ---
-import Logo from './icons/logo.astro';
-import Switch from './switch.astro';
+import Logo from "./icons/logo.astro";
+import Switch from "./switch.astro";
 ---
 
 <style>
   header,
   div,
-  nav, 
-  nav > ul{
+  nav,
+  nav > ul {
     align-items: center;
     display: flex;
     flex-direction: row;
   }
 
-  header{
+  header {
     --header-height: 64px;
     height: var(--header-height);
     margin: 0 auto;
@@ -22,57 +22,63 @@ import Switch from './switch.astro';
     justify-content: space-between;
   }
 
-  @media (min-width: 768px){
-    header{
+  @media (min-width: 768px) {
+    header {
       margin-top: 1rem;
     }
   }
 
-  header .logo{
+  header .logo {
     display: inline-flex;
+    fill: var(--blue-300);
     transition: var(--opacity-transition), var(--transform-transition);
   }
 
-  header .logo:hover{
+  header .logo:hover {
     opacity: 0.5;
-    transform: scale(.95);
+    transform: scale(0.95);
   }
 
-  header > div{
-    gap: .75rem;
+  header > div {
+    gap: 0.75rem;
   }
 
-  nav > ul{
-    font: var(--action-base);
-    margin-top: .15rem;
+  nav > ul {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    margin-top: 0.15rem;
     height: 100%;
-    text-transform: uppercase;
   }
 
   nav a {
+    color: var(--blue-500);
     display: inline-block;
     vertical-align: baseline;
-    padding: .75rem;
+    padding: 0.75rem;
   }
 
-  nav li:first-child{
+  nav a:hover {
+    color: var(--blue-300);
+  }
+
+  nav li:first-child {
     padding-left: 0;
   }
 
-  nav li:nth-child(n+2)::before{
+  nav li:nth-child(n + 2)::before {
     content: "|";
     color: var(--c-anchor);
     display: inline-block;
-    opacity: .3;
+    opacity: 0.3;
   }
 </style>
 
 <header>
   <div>
     <a href="/" class="logo">
-      <Logo size="28"/>
+      <Logo size="28" />
     </a>
-    
+
     <nav>
       <ul>
         <li><a href="/">Inicio</a></li>
@@ -80,6 +86,6 @@ import Switch from './switch.astro';
       </ul>
     </nav>
   </div>
-  
+
   <Switch />
 </header>

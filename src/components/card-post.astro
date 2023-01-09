@@ -4,21 +4,20 @@ const { title, date, url } = Astro.props;
 
 <script>
   import getTimeAgo from "../utils/getTimeAgo.js";
-  
+
   const cards = document.querySelectorAll("[data-time]");
-  for (const cardPost of cards){
+  for (const cardPost of cards) {
     const date = cardPost.dataset.time;
-    const timeago = getTimeAgo(new Date (date));
+    const timeago = getTimeAgo(new Date(date));
     console.log(timeago);
     cardPost.innerHTML = timeago;
   }
 </script>
 
 <style>
-  a{
-    background-color: var(--bg-card);
+  a {
     border-radius: 0.5rem;
-    border: 1px solid rgba(0,47,108,.03);
+    border: 1px solid rgba(0, 47, 108, 0.03);
     box-shadow: 0 10px 10px -5px rgb(0 47 108 / 4%);
     display: flex;
     flex-direction: column;
@@ -30,35 +29,32 @@ const { title, date, url } = Astro.props;
     width: 100%;
   }
 
-  a h3{
-    color: var(--c-card);
-    font: var(--heading-base);
+  a h3 {
+    color: var(--blue-500);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
   }
-  
-  a time{
-    color: var(--c-card-time);
-    font: var(--action-small);
+
+  a time {
+    color: var(--blue-500);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-regular);
     /* text-transform: capitalize; */
-    word-spacing: -.35ch;
   }
 
   a:hover {
     opacity: unset;
-    transform: scale(.99);
+    transform: scale(0.99);
     background-color: var(--bg-card-hover);
   }
 
-  a:hover h3{
-    color: var(--c-card-hover);
-  }
-  
-  a:hover time{
-    color: var(--c-card-hover-time);
+  a:hover h3 {
+    color: var(--blue-300);
   }
 </style>
 
-<a href={ url } class="card">
-  <h3>{ title }</h3>
+<a href={url} class="card">
+  <h3>{title}</h3>
   <div>
     <time datetime={date} data-time={date}>{}</time>
   </div>

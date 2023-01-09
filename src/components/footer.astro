@@ -6,7 +6,7 @@ import LogoTwitter from "./icons/logo-twitter.astro";
 ---
 
 <style>
-  footer{
+  footer {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -17,54 +17,79 @@ import LogoTwitter from "./icons/logo-twitter.astro";
     width: 100%;
   }
 
-  @media (min-width: 768px){
-    footer{
+  @media (min-width: 768px) {
+    footer {
       margin-bottom: 1rem;
     }
   }
 
-  footer div{
+  footer div {
     margin-top: 1.5rem;
     text-align: center;
   }
 
-  footer h3{
-    color: var(--c-titles);
-    font: var(--heading-base);
+  footer h3 {
+    color: var(--blue-500);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
   }
 
-  footer div ul{
+  footer div ul {
     display: flex;
     gap: 1.75rem;
     justify-content: center;
     margin: 0 auto;
-    margin-top: .75rem;
+    margin-top: 0.75rem;
     max-width: 300px;
   }
 
-  ul a{
+  ul a {
     display: inline-block;
-    font: var(--action-base);
-    color: var(--c-anchor);
+    color: var(--blue-500);
+  }
+
+  ul a:hover {
+    display: inline-block;
+    color: var(--blue-300);
   }
 </style>
 
 <footer>
   <div>
-      <h3>Sígueme en mis Redes Sociales</h3>
-      <ul>
-          <li>            
-              <a href="https://twitter.com/_ferdinandalexa" aria-label="Twitter" target="_blank" rel="noopener nofollow"><LogoTwitter /></a>
-          </li>
-          <li>            
-              <a href="https://www.instagram.com/_ferdinandalexa/" aria-label="Instagram" target="_blank" rel="noopener nofollow"><LogoInstagram /></a>
-          </li>
-          <li>            
-              <a href="https://github.com/ferdinandalexa" aria-label="Github" target="_blank" rel="noopener nofollow"><LogoGithub /></a>
-          </li>
-          <li>            
-              <a href="https://www.linkedin.com/in/ferdinandalexa/" aria-label="LinkedIn" target="_blank" rel="noopener nofollow"><LogoLinkedin /></a>
-          </li>
-      </ul>
+    <h3>Sígueme en mis Redes Sociales</h3>
+    <ul>
+      <li>
+        <a
+          href="https://twitter.com/_ferdinandalexa"
+          aria-label="Twitter"
+          target="_blank"
+          rel="noopener nofollow"><LogoTwitter /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/_ferdinandalexa/"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener nofollow"><LogoInstagram /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/ferdinandalexa"
+          aria-label="Github"
+          target="_blank"
+          rel="noopener nofollow"><LogoGithub /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/ferdinandalexa/"
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener nofollow"><LogoLinkedin /></a
+        >
+      </li>
+    </ul>
   </div>
 </footer>
