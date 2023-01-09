@@ -1,103 +1,111 @@
 ---
-import readingTime from 'reading-time';
-import BaseLayout from '../layouts/base-layout.astro';
+import getReadingTime from "reading-time";
+import BaseLayout from "../layouts/base-layout.astro";
 
-const { content: { title, slug, date, description, astro: { source } }} = Astro.props;
+const {
+  content: { title, slug, date, description },
+} = Astro.props;
 
-const minutes = Math.round(readingTime(source).minutes);
+const rawContent = Astro.props.rawContent();
 
-const datePublish = new Date(date)
-  .toLocaleDateString('es', { 
-    "year": "numeric", 
-    "month": "long", 
-    "day": "numeric",
-  });
+const minutes = Math.round(getReadingTime(rawContent).minutes);
+
+const datePublish = new Date(date).toLocaleDateString("es", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <style is:inline>
-  main h1{
+  main h1 {
     font: var(--heading-large);
     margin-top: 1.25rem;
   }
-  
-  main h2{
+
+  main h2 {
     font: var(--heading-medium);
     margin-top: 1.5rem;
   }
 
-  main h3{
+  main h3 {
     font: var(--heading-base);
     margin-top: 1.75rem;
   }
 
-  main p{
+  main p {
     color: var(--c-text);
     font: var(--body-medium);
     line-height: 1.5;
-    margin: .75rem 0;
+    margin: 0.75rem 0;
   }
 
-  main a{
+  main a {
     color: var(--c-anchor);
   }
 
-  main ul, 
-  main ol, 
-  main li{
+  main ul,
+  main ol,
+  main li {
     color: var(--c-text);
     font: var(--body-medium);
     list-style: unset;
     margin-left: 1rem;
   }
 
-  main pre{
+  main pre {
     padding: 1rem 1.25rem;
     width: 100%;
     max-width: 90vw;
-    margin-left: -.1rem;
-    border-radius: .5rem;
+    margin-left: -0.1rem;
+    border-radius: 0.5rem;
   }
 
-  main pre code{
+  main pre code {
     font: var(--action-base);
-    letter-spacing: .05ch;
+    letter-spacing: 0.05ch;
     margin: 0;
     overflow-x: auto;
   }
 
-  main p code{
+  main p code {
     color: var(--c-inline-code);
     background-color: var(--c-inline-code-bg);
     font: var(--action-small);
-    border-radius: .25rem;
-    padding: .75ch;
+    border-radius: 0.25rem;
+    padding: 0.75ch;
   }
 </style>
 
 <style>
-  h1{
-    margin-bottom: .5rem;
+  h1 {
+    margin-bottom: 0.5rem;
   }
 
   time,
-  span{
+  span {
     color: var(--c-text);
     font: var(--caption);
   }
 
-  time::after{
-    content: '\00B7';
-    margin: 0 .45rem;
-    opacity: .5;
+  time::after {
+    content: "\00B7";
+    margin: 0 0.45rem;
+    opacity: 0.5;
   }
 </style>
 
-<BaseLayout title={ `${title} | ferdinandalexa` } description={ description } slug={ slug }>
+<BaseLayout
+  title={`${title} | ferdinandalexa`}
+  description={description}
+  slug={slug}
+>
   <main>
     <header>
       <h1>{title}</h1>
-      <time datetime={ date }>{ datePublish }</time><span>{ minutes } min de lectura</span>
+      <time datetime={date}>{datePublish}</time>
+      <span>{minutes} min de lectura</span>
     </header>
-    <slot/>
+    <slot />
   </main>
 </BaseLayout>
