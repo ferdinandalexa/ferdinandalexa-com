@@ -31,15 +31,26 @@
   line-height: 150%;
 }
 
-.hero__actions{
+.hero__actions, .hero__links{
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 1rem;
+}
+
+.hero__actions{
+  flex-wrap: wrap;
   padding: 0;
   margin-top: 0.5rem;
   margin-left: -0.5rem;
-  gap: 1rem;
+}
+
+.hero__links{
   list-style: none;
+}
+
+.hero__links li{
+  display: inline-flex;
 }
 
 .hero__photo{

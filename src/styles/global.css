@@ -84,6 +84,7 @@ img {
 }
 
 .contact-icon{
+  display: inline-flex;
   color: var(--blue-300);
   transition: var(--color-transition);
 }
