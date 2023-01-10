@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro";
-import CardPost from "../components/card-post.astro";
+import CardPost from "../components/card-post/card-post.astro";
 
 let allPosts = await Astro.glob("./blog/*.md");
 ---
 
 <style>
   h2 {
-    font-size: var(--fs-xlarge);
-    color: var(--blue-300);
     margin-bottom: 0.75rem;
+    color: var(--blue-300);
+    font-size: var(--fs-xlarge);
   }
 
   :global(body.dark) h2 {
@@ -34,6 +34,7 @@ let allPosts = await Astro.glob("./blog/*.md");
           .map((post) => (
             <CardPost
               title={post.frontmatter.title}
+              description={post.frontmatter.description}
               date={post.frontmatter.date}
               url={post.url}
             />

@@ -1,0 +1,28 @@
+---
+const { title, description, date, url } = Astro.props;
+
+import "./card-post.css"
+---
+
+<script>
+  import getTimeAgo from "../../utils/getTimeAgo.js";
+
+  const cards = document.querySelectorAll("[data-time]");
+  for (const cardPost of cards) {
+    const date = cardPost.dataset.time;
+    const timeago = getTimeAgo(new Date(date));
+    console.log(timeago);
+    cardPost.innerHTML = timeago;
+  }
+</script>
+
+<article class="card-post">
+  <h3 class="card-post__title">
+    <a href={url}>
+      {title}
+    </a>
+  </h3>
+  <time datetime={date} data-time={date} class="card-post__time-ago">{}</time>
+  <p class="card-post__description">{description}</p>
+  <a href={url} class="card-post__action-inline">Leer artículo completo</a>
+</article>
