@@ -1,0 +1,73 @@
+.footer{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 6rem;
+}
+
+.footer__section {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-regular);
+}
+
+.footer .contact-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--blue-500);
+  font-size: var(--fs-large);
+  font-weight: var(--fw-bold);
+  gap: 0.375rem;
+}
+
+.footer :is(.contact-icon:hover, .contact-icon:focus){
+  color: var(--blue-300);
+}
+
+
+.footer .rrss ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer :is(.rrss, .email){
+  margin-left: -0.35rem;
+}
+
+.footer__top{
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+.footer__section{
+  margin-bottom: 0.5rem;
+}
+
+.footer .navbar ul{
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  font-weight: var(--fw-regular);
+  gap: 1rem;
+}
+
+.footer .navbar a{
+  color: var(--blue-500);
+  font-size: var(--fs-medium);
+  transition: var(--color-transition);
+}
+
+.footer .navbar :is(a:hover, a:focus){
+  color: var(--blue-300);
+}
+
+body.dark .footer :is(.footer__section, .contact-icon, .navbar a){
+  color: var(--blue-50);
+}
+
+body.dark .footer :is(.contact-icon:hover, .contact-icon:focus, .navbar :is(a:hover, a:focus)){
+  color: var(--blue-200);
+}
