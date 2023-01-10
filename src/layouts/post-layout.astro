@@ -27,29 +27,29 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   body.dark h1,
   body.dark h2,
   body.dark h3 {
-    color: var(--blue-50);
+    color: var(--blue-100);
   }
 
   main h1 {
-    font-size: var(--fs-3xlarge);
     margin-top: 1.25rem;
+    font-size: var(--fs-3xlarge);
   }
 
   main h2 {
-    font-size: var(--fs-xlarge);
     margin-top: 1.5rem;
+    font-size: var(--fs-xlarge);
   }
 
   main h3 {
-    font-size: var(--fs-large);
     margin-top: 1.75rem;
+    font-size: var(--fs-large);
   }
 
   main p {
+    margin: 0.75rem 0;
     color: var(--blue-500);
     font: var(--body-medium);
     line-height: 1.5;
-    margin: 0.75rem 0;
   }
 
   body.dark main p {
@@ -75,10 +75,10 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   main ul,
   main ol,
   main li {
+    margin-left: 1rem;
     color: var(--blue-300);
     font-size: var(--fs-base);
     list-style: unset;
-    margin-left: 1rem;
   }
 
   body.dark main ul,
@@ -88,35 +88,35 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   }
 
   main pre {
-    padding: 1rem 1.25rem;
     width: 100%;
     max-width: 90vw;
-    margin-left: -0.1rem;
+    padding: 1rem 1.25rem;
     border-radius: 0.5rem;
+    margin-left: -0.1rem;
   }
 
   main pre code {
+    margin: 0;
     font-family: var(--ff-mono);
     font-size: var(--fs-base);
     font-weight: var(--fw-bold);
     letter-spacing: 0.05ch;
-    margin: 0;
     overflow-x: auto;
   }
 
   main p code {
-    color: var(--blue-500);
+    padding: 0.75ch;
+    border-radius: 0.25rem;
     background-color: var(--blue-50);
+    color: var(--blue-500);
     font-family: var(--ff-mono);
     font-size: var(--fs-small);
     font-weight: var(--fw-bold);
-    border-radius: 0.25rem;
-    padding: 0.75ch;
   }
 
   body.dark p code {
-    color: var(--blue-50);
     background-color: var(--blue-500);
+    color: var(--blue-50);
   }
 </style>
 
@@ -137,8 +137,8 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   }
 
   time::after {
-    content: "\00B7";
     margin: 0 0.45rem;
+    content: "\00B7";
     opacity: 0.5;
   }
 </style>
