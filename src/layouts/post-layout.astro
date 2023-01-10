@@ -18,23 +18,29 @@ const datePublish = new Date(date).toLocaleDateString("es", {
 ---
 
 <style is:inline>
+  h1,
+  h2,
+  h3 {
+    color: var(--blue-300);
+  }
+
   main h1 {
-    font: var(--heading-large);
+    font-size: var(--fs-3xlarge);
     margin-top: 1.25rem;
   }
 
   main h2 {
-    font: var(--heading-medium);
+    font-size: var(--fs-xlarge);
     margin-top: 1.5rem;
   }
 
   main h3 {
-    font: var(--heading-base);
+    font-size: var(--fs-large);
     margin-top: 1.75rem;
   }
 
   main p {
-    color: var(--c-text);
+    color: var(--blue-500);
     font: var(--body-medium);
     line-height: 1.5;
     margin: 0.75rem 0;
@@ -62,16 +68,20 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   }
 
   main pre code {
-    font: var(--action-base);
+    font-family: var(--ff-mono);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
     letter-spacing: 0.05ch;
     margin: 0;
     overflow-x: auto;
   }
 
   main p code {
-    color: var(--c-inline-code);
-    background-color: var(--c-inline-code-bg);
-    font: var(--action-small);
+    color: var(--blue-500);
+    background-color: var(--blue-50);
+    font-family: var(--ff-mono);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
     border-radius: 0.25rem;
     padding: 0.75ch;
   }
@@ -84,8 +94,8 @@ const datePublish = new Date(date).toLocaleDateString("es", {
 
   time,
   span {
-    color: var(--c-text);
-    font: var(--caption);
+    color: var(--blue-500);
+    font-size: var(--fs-small);
   }
 
   time::after {
