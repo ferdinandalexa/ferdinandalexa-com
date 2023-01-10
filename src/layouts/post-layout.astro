@@ -24,6 +24,12 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     color: var(--blue-300);
   }
 
+  body.dark h1,
+  body.dark h2,
+  body.dark h3 {
+    color: var(--blue-50);
+  }
+
   main h1 {
     font-size: var(--fs-3xlarge);
     margin-top: 1.25rem;
@@ -46,17 +52,39 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     margin: 0.75rem 0;
   }
 
+  body.dark main p {
+    color: var(--blue-50);
+  }
+
   main a {
-    color: var(--c-anchor);
+    color: var(--blue-300);
+  }
+
+  main a:hover {
+    color: var(--blue-50);
+  }
+
+  body.dark main a {
+    color: var(--blue-200);
+  }
+
+  body.dark main a:hover {
+    color: var(--blue-50);
   }
 
   main ul,
   main ol,
   main li {
-    color: var(--c-text);
-    font: var(--body-medium);
+    color: var(--blue-300);
+    font-size: var(--fs-base);
     list-style: unset;
     margin-left: 1rem;
+  }
+
+  body.dark main ul,
+  body.dark main ol,
+  body.dark main li {
+    color: var(--blue-50);
   }
 
   main pre {
@@ -85,6 +113,11 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     border-radius: 0.25rem;
     padding: 0.75ch;
   }
+
+  body.dark p code {
+    color: var(--blue-50);
+    background-color: var(--blue-500);
+  }
 </style>
 
 <style>
@@ -96,6 +129,11 @@ const datePublish = new Date(date).toLocaleDateString("es", {
   span {
     color: var(--blue-500);
     font-size: var(--fs-small);
+  }
+
+  :global(body.dark) time,
+  :global(body.dark) span {
+    color: var(--blue-50);
   }
 
   time::after {

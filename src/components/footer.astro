@@ -34,6 +34,10 @@ import LogoTwitter from "./icons/logo-twitter.astro";
     font-weight: var(--fw-bold);
   }
 
+  :global(body.dark) footer h3 {
+    color: var(--blue-50);
+  }
+
   footer div ul {
     display: flex;
     gap: 1.75rem;
@@ -51,6 +55,13 @@ import LogoTwitter from "./icons/logo-twitter.astro";
   ul a:hover {
     display: inline-block;
     color: var(--blue-300);
+  }
+
+  :global(body.dark) ul a {
+    color: var(--blue-50);
+  }
+  :global(body.dark) ul a:hover {
+    color: var(--blue-200);
   }
 </style>
 

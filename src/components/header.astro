@@ -34,6 +34,16 @@ import Switch from "./switch.astro";
     transition: var(--opacity-transition), var(--transform-transition);
   }
 
+  :global(body.dark) header .logo {
+    color: var(--blue-50);
+    fill: var(--blue-50);
+  }
+
+  :global(body.dark) header .logo:hover {
+    color: var(--blue-50);
+    fill: var(--blue-200);
+  }
+
   header .logo:hover {
     opacity: 0.5;
     transform: scale(0.95);
@@ -55,6 +65,14 @@ import Switch from "./switch.astro";
     display: inline-block;
     vertical-align: baseline;
     padding: 0.75rem;
+  }
+
+  :global(body.dark) nav a {
+    color: var(--blue-50);
+  }
+
+  :global(body.dark) nav a:hover {
+    color: var(--blue-200);
   }
 
   nav a:hover {
