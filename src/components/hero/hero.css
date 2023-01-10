@@ -49,3 +49,10 @@
   /* aspect-ratio: 1/1; */
   background-color: red;
 }
+
+body.dark :is(.hero__title, .hero__description) {
+  color: var(--blue-50);
+}
+body.dark .hero__subtitle{
+  color: var(--blue-100);
+}
