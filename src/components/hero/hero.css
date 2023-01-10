@@ -42,10 +42,6 @@
   list-style: none;
 }
 
-.hero__actions li {
-  color: var(--blue-300);
-}
-
 .hero__photo{
   --hero-photo-size: 240px;
   width: var(--hero-photo-size);
@@ -55,7 +51,7 @@
   background-color: red;
 }
 
-body.dark :is(.hero__title, .hero__description, .hero__actions li) {
+body.dark :is(.hero__title, .hero__description) {
   color: var(--blue-50);
 }
 body.dark .hero__subtitle{
