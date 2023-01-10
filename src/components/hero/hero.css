@@ -34,11 +34,16 @@
 .hero__actions{
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 0;
-  padding-top: 0.5rem;
+  margin-top: 0.5rem;
   margin-left: -0.5rem;
   gap: 1rem;
   list-style: none;
+}
+
+.hero__actions li {
+  color: var(--blue-300);
 }
 
 .hero__photo{
@@ -50,7 +55,7 @@
   background-color: red;
 }
 
-body.dark :is(.hero__title, .hero__description) {
+body.dark :is(.hero__title, .hero__description, .hero__actions li) {
   color: var(--blue-50);
 }
 body.dark .hero__subtitle{
