@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro";
 import CardPost from "../components/card-post/card-post.astro";
+import Hero from "../components/hero/hero.astro";
 
 let allPosts = await Astro.glob("./blog/*.md");
 ---
@@ -25,6 +26,7 @@ let allPosts = await Astro.glob("./blog/*.md");
 
 <BaseLayout title="Inicio | ferdinandalexa">
   <main>
+    <Hero />
     <h2>Artículos recientes</h2>
     <div>
       {
