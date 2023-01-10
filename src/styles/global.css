@@ -16,11 +16,6 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-main {
-  padding: 0 1rem;
-  margin-top: 2rem;
-}
-
 h1,
 h2,
 h3,
