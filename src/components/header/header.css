@@ -19,7 +19,7 @@
   transition: var(--color-transition);
 }
 
-.logo:hover {
+.logo:hover, .logo:focus {
   color: var(--blue-50);
   fill: var(--blue-50);
 }
@@ -42,7 +42,7 @@
   vertical-align: bottom;
 }
 
-.navbar__pages a:hover {
+.navbar__pages :is(a:hover, a:focus) {
   color: var(--blue-300);
 }
 
@@ -51,7 +51,7 @@ body.dark header .logo {
   fill: var(--blue-50);
 }
 
-body.dark header .logo:hover {
+body.dark header :is(.logo:hover, .logo:focus) {
   color: var(--blue-50);
   fill: var(--blue-200);
 }
@@ -60,6 +60,6 @@ body.dark nav a {
   color: var(--blue-50);
 }
 
-body.dark nav a:hover {
+body.dark nav a:is(a:hover, a:focus) {
   color: var(--blue-200);
 }
