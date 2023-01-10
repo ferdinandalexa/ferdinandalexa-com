@@ -1,33 +1,33 @@
 ---
-import Sun from './icons/sun.astro';
-import Moon from './icons/moon.astro';
+import Sun from "./icons/sun.astro";
+import Moon from "./icons/moon.astro";
 ---
 
 <style>
-  div{
+  div {
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: .65rem;
+    gap: 0.65rem;
   }
 </style>
 
 <style>
-  label[for="toggle-theme"]{
+  label[for="toggle-theme"] {
     display: block;
-    background-color: var(--bg-switch);
+    background-color: var(--blue-500);
     border-radius: 100px;
     height: 1.15rem;
     width: 2.2rem;
     position: relative;
     transform: scale(1.2);
   }
-  
-  label[for="toggle-theme"]::after{
+
+  label[for="toggle-theme"]::after {
     content: "";
     background-color: var(--white);
     border-radius: 100px;
-    border: 2px var(--bd-switch) solid;
+    border: 2px var(--blue-500) solid;
     display: inline-block;
     height: 1.1rem;
     position: absolute;
@@ -36,17 +36,21 @@ import Moon from './icons/moon.astro';
     right: unset;
     width: 1.1rem;
   }
-    
-  :global(body.dark) label[for="toggle-theme"]::after{
+
+  :global(body.dark) label[for="toggle-theme"]::after {
     left: unset;
     right: 0;
   }
 </style>
 
 <div>
-  <input style="display: none" type="checkbox" name="toggle-theme" id="toggle-theme">
-  <Sun id="theme-sun"/>
-  <label for="toggle-theme">
-  </label>
-  <Moon id="theme-moon"/>
+  <input
+    style="display: none"
+    type="checkbox"
+    name="toggle-theme"
+    id="toggle-theme"
+  />
+  <Sun id="theme-sun" />
+  <label for="toggle-theme"> </label>
+  <Moon id="theme-moon" />
 </div>
