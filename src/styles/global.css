@@ -62,15 +62,32 @@ img {
   border: 3px solid transparent;
   background-color: var(--blue-300);
   color: var(--white);
+  transition: var(--color-transition);
 }
+
+.button.fulfilled:hover{
+  background-color: var(--blue-100);
+  color: var(--white);
+}
+
 .button.ghost{
   border: 3px solid var(--blue-300);
   background-color: transparent;
   color: var(--blue-300);
 }
 
+.button.ghost:hover{
+  border: 3px solid var(--blue-100);
+  color: var(--blue-100);
+}
+
 .contact-icon{
   color: var(--blue-300);
+  transition: var(--color-transition);
+}
+
+.contact-icon:hover{
+  color: var(--blue-100);
 }
 
 body.dark .button.fulfilled{
@@ -78,11 +95,24 @@ body.dark .button.fulfilled{
   color: var(--blue-700);
 }
 
+body.dark .button.fulfilled:hover{
+  background-color: var(--blue-200);
+}
+
 body.dark .button.ghost{
   border-color: var(--blue-100);
   color: var(--blue-100);
 }
 
+body.dark .button.ghost:hover{
+  border-color: var(--blue-200);
+  color: var(--blue-200);
+}
+
 body.dark .contact-icon{
   color: var(--blue-100);
+}
+
+body.dark .contact-icon:hover{
+  color: var(--blue-200);
 }
