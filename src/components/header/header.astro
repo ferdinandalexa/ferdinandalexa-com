@@ -1,0 +1,21 @@
+---
+import Logo from "../icons/logo.astro";
+import Switch from "../switch.astro";
+
+import "./header.css"
+---
+
+<header class="header">
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <Logo size="28" />
+    </a>
+
+    <ul class="navbar__pages">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+
+  <Switch />
+</header>
