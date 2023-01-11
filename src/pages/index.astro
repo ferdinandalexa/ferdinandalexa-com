@@ -37,7 +37,9 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
     <Hero />
     <section>
       <h2>Proyectos destacados</h2>
-      <div style="display: flex; flex-direction: column; gap: 4.5rem">
+      <div
+        style="display: flex; flex-direction: column; padding-bottom: 9rem; gap: 4.5rem"
+      >
         {
           highlightedProjects
             .filter((project) => project.frontmatter.highlighted)
