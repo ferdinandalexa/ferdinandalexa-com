@@ -33,6 +33,7 @@ ol {
 }
 
 .button {
+  display: inline-block;
   box-sizing: border-box;
   padding: 1rem 1.5rem;
   border-radius: 2rem;
