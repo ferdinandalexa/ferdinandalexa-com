@@ -1,0 +1,39 @@
+.card-project{
+  display: grid;
+  width: 100%;
+  gap: 1rem 2.25rem ;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-project__info{
+  width: 100%;
+  max-width: 42ch;
+  align-self: center;
+}
+
+.card-project__title {
+  color: var(--blue-500);
+  font-size: var(--fs-2xlarge);
+  font-weight: var(--fw-bold);
+}
+
+.card-project__type {
+  color: var(--blue-500);
+  font-size: var(--fs-large);
+  font-weight: var(--fw-bold);
+}
+
+.card-project__description {
+  color: var(--blue-500);
+  margin-block: 1rem;
+}
+
+.card-project .button {
+  margin-left: -0.5rem;
+}
+
+.card-project__cover{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
