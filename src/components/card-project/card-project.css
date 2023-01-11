@@ -42,3 +42,12 @@
   aspect-ratio: 16/9;
   object-fit: cover;
 }
+
+body.dark :is(.card-project__title a, .card-project__description, .card-project__type){
+  color: var(--blue-50);
+
+}
+
+body.dark .card-project :is(a:hover, a:focus){
+  color: var(--blue-200);
+}
