@@ -5,15 +5,17 @@ import "./card-project.css";
 ---
 
 <article class="card-project">
-  <div class="card-project__info">
-    <strong class="card-project__type">{type}</strong>
-    <h3 class="card-project__title">{title}</h3>
-    <p class="card-project__description">{description}</p>
-    <a href="#" class="button ghost">Más sobre el proyecto</a>
-  </div>
   <img
     src="/images/og/configurar-gitmoji-commitlint.png"
     alt=""
     class="card-project__cover"
   />
+  <div class="card-project__info">
+    <strong class="card-project__type">{type}</strong>
+    <h3 class="card-project__title">
+      <a href="#">{title}</a>
+    </h3>
+    <p class="card-project__description">{description}</p>
+    <a href="#" class="button ghost">Más sobre el proyecto</a>
+  </div>
 </article>
