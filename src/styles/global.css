@@ -4,16 +4,11 @@
   box-sizing: border-box;
 }
 
-html,
 body {
+  width: 100%;
   max-width: 1024px;
-  height: 100%;
   margin: 0 auto;
-}
-
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  padding-inline: 2rem;
 }
 
 h1,
@@ -35,16 +30,6 @@ ol {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-picture,
-img {
-  display: block;
-  width: 100%;
-  max-width: 640px;
-  max-height: 420px;
-  margin: 0 auto;
-  object-fit: contain;
 }
 
 .button {

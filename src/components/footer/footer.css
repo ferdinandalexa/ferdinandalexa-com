@@ -1,13 +1,11 @@
 .footer{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   padding-block: 6rem;
 }
 
 .footer .contact-icon{
-  display: flex;
-  flex-direction: row;
   align-items: center;
   color: var(--blue-500);
   font-size: var(--fs-large);
@@ -23,6 +21,7 @@
 .footer .rrss ul{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
 }
@@ -32,9 +31,9 @@
 }
 
 .footer__top{
-  display: flex;
-  flex-direction: row;
-  gap: 6rem;
+  display: grid;
+  gap: 1rem 2.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
 .footer__section{

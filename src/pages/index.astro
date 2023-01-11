@@ -19,9 +19,14 @@ let allPosts = await Astro.glob("./blog/*.md");
   }
 
   div {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    width: 100%;
     gap: 2.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  :global(div .card-post) {
+    flex: 1 1 auto;
   }
 </style>
 
