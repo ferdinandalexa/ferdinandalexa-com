@@ -5,11 +5,6 @@
   padding-block: 6rem;
 }
 
-.footer__section {
-  font-size: var(--fs-large);
-  font-weight: var(--fw-regular);
-}
-
 .footer .contact-icon{
   display: flex;
   flex-direction: row;
@@ -44,6 +39,9 @@
 
 .footer__section{
   margin-bottom: 0.5rem;
+  color: var(--blue-500);
+  font-size: var(--fs-large);
+  font-weight: var(--fw-regular);
 }
 
 .footer .navbar ul{
