@@ -31,6 +31,7 @@
 .card-post__description {
   height: 100%;
   color: var(--blue-500);
+  line-height: 150%;
 }
 
 .card-post__action-inline {

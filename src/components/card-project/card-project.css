@@ -30,6 +30,7 @@
 
 .card-project__description {
   color: var(--blue-500);
+  line-height: 150%;
   margin-block: 1rem;
 }
 
