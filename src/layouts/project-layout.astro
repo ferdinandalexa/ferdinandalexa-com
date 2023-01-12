@@ -1,0 +1,25 @@
+---
+import ProjectHeader from "../components/project-header/project-header.astro";
+import BaseLayout from "./base-layout.astro";
+
+const {
+  url,
+  content: { title, type, description, tools },
+} = Astro.props;
+---
+
+<BaseLayout
+  title={`${title} | ferdinandalexa`}
+  description={description}
+  slug={url}
+>
+  <main>
+    <ProjectHeader
+      type={type}
+      title={title}
+      description={description}
+      tools={tools}
+    />
+    <slot />
+  </main>
+</BaseLayout>

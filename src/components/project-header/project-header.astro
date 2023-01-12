@@ -1,0 +1,31 @@
+---
+import "./project-header.css";
+
+const { type, title, description, tools = [] } = Astro.props;
+---
+
+<header class="project-header">
+  <strong class="project-header__type">{type}</strong>
+  <h3 class="project-header__title">{title}</h3>
+  <p class="project-header__description">{description}</p>
+  <div class="project-header__bottom">
+    <div class="project-header__tools">
+      <span>Tools:</span>
+      <ul>
+        {
+          tools.map((tool) => (
+            <li class="tool">
+              <strong>{tool}</strong>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <a href="#" rel="noopener nofollow" class="project-header__demo">
+      <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
+        <use xlink:href="/images/icons.svg#external-link"></use>
+      </svg>
+      Go to demo
+    </a>
+  </div>
+</header>
