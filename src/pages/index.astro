@@ -50,6 +50,7 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
                   type={project.frontmatter.type}
                   title={project.frontmatter.title}
                   description={project.frontmatter.description}
+                  url={project.url}
                 />
               );
             })

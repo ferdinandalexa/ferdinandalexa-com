@@ -1,5 +1,5 @@
 ---
-const { title, type, description } = Astro.props;
+const { title, type, description, url } = Astro.props;
 
 import "./card-project.css";
 ---
@@ -16,6 +16,6 @@ import "./card-project.css";
       <a href="#">{title}</a>
     </h3>
     <p class="card-project__description">{description}</p>
-    <a href="#" class="button ghost">Más sobre el proyecto</a>
+    <a href={url} class="button ghost">Más sobre el proyecto</a>
   </div>
 </article>
