@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "../../../layouts/base-layout.astro";
-import CardPost from "../../../components/card-post.astro";
+import CardPost from "../../../components/card-post/card-post.astro";
 
 let allPosts = await Astro.glob("./*.md");
 ---
 
 <style>
   h2 {
-    font: var(--heading-medium);
     margin-bottom: 0.75rem;
+    font: var(--heading-medium);
   }
 
   div {
