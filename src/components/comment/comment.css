@@ -1,0 +1,27 @@
+.comment {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+
+.comment__container{
+  width: 100%;
+  max-width: 65ch;
+  margin-top: 0.5rem;
+}
+
+.comment svg{
+  color: var(--blue-100);
+}
+
+.comment p{
+  margin-bottom: 1rem;
+  color: var(--blue-500);
+  font-size: var(--fs-xlarge);
+  line-height: 125%;
+}
+
+body.dark :is(svg, p){
+  color: var(--blue-50);
+}
