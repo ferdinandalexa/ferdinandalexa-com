@@ -1,7 +1,50 @@
 ---
 import BaseLayout from "../../../layouts/base-layout.astro";
+import CardProject from "../../../components/card-project/card-project.astro";
+
+let allProjects = await Astro.glob("./*.mdx");
 ---
 
-<BaseLayout>
-  <main></main>
+<style>
+  main {
+    margin-top: 3rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    color: var(--blue-300);
+    font-size: var(--fs-3xlarge);
+    font-weight: var(--fw-bold);
+  }
+
+  :global(body.dark) h2 {
+    color: var(--blue-100);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>
+
+<BaseLayout title="Proyectos | ferdinandalexa">
+  <main>
+    <h2>Proyectos destacados</h2>
+    <div>
+      {
+        allProjects
+          .slice(0, 3)
+          .filter((project) => !project.frontmatter.draft)
+          .map((project) => (
+            <CardProject
+              type={project.frontmatter.type}
+              title={project.frontmatter.title}
+              description={project.frontmatter.description}
+              url={project.url}
+            />
+          ))
+      }
+    </div>
+  </main>
 </BaseLayout>
