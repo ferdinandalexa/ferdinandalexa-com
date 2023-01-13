@@ -8,6 +8,26 @@ const {
 } = Astro.props;
 ---
 
+<style>
+  div,
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+  }
+
+  main {
+    margin-top: 6rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    color: var(--blue-300);
+    font-size: var(--fs-3xlarge);
+    font-weight: var(--fw-bold);
+  }
+</style>
+
 <BaseLayout
   title={`${title} | ferdinandalexa`}
   description={description}
@@ -20,6 +40,11 @@ const {
       description={description}
       tools={tools}
     />
-    <slot />
+    <section aria-labelledby="process">
+      <h2 id="process">Proceso</h2>
+      <div>
+        <slot />
+      </div>
+    </section>
   </main>
 </BaseLayout>
