@@ -10,7 +10,7 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
 
 <style>
   h2 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 2rem;
     color: var(--blue-300);
     font-size: var(--fs-3xlarge);
     font-weight: var(--fw-bold);
@@ -38,7 +38,7 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
     <section>
       <h2>Proyectos destacados</h2>
       <div
-        style="display: flex; flex-direction: column; padding-bottom: 9rem; gap: 4.5rem"
+        style="display: flex; flex-direction: column; padding-bottom: 9rem; gap: 2rem"
       >
         {
           highlightedProjects
@@ -57,21 +57,23 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
         }
       </div>
     </section>
-    <h2>Artículos recientes</h2>
-    <div>
-      {
-        allPosts
-          .slice(0, 3)
-          .filter((post) => !post.frontmatter.draft)
-          .map((post) => (
-            <CardPost
-              title={post.frontmatter.title}
-              description={post.frontmatter.description}
-              date={post.frontmatter.date}
-              url={post.url}
-            />
-          ))
-      }
-    </div>
+    <section>
+      <h2>Artículos recientes</h2>
+      <div>
+        {
+          allPosts
+            .slice(0, 3)
+            .filter((post) => !post.frontmatter.draft)
+            .map((post) => (
+              <CardPost
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                date={post.frontmatter.date}
+                url={post.url}
+              />
+            ))
+        }
+      </div>
+    </section>
   </main>
 </BaseLayout>
