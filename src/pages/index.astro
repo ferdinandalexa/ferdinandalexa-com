@@ -4,7 +4,7 @@ import CardPost from "../components/card-post/card-post.astro";
 import CardProject from "../components/card-project/card-project.astro";
 import Hero from "../components/hero/hero.astro";
 
-let allPosts = await Astro.glob("./blog/*.md");
+let allPosts = await Astro.glob("./es/blog/*.md");
 let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
 ---
 
