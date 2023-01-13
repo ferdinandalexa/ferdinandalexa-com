@@ -42,6 +42,10 @@
   vertical-align: bottom;
 }
 
+.navbar__pages li:first-child a {
+  padding-left: 0;
+}
+
 .navbar__pages :is(a:hover, a:focus) {
   color: var(--blue-300);
 }
