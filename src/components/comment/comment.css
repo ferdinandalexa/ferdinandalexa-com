@@ -22,6 +22,6 @@
   line-height: 125%;
 }
 
-body.dark :is(svg, p){
+body.dark .comment :is(svg, p){
   color: var(--blue-50);
 }
