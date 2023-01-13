@@ -9,3 +9,7 @@
   font-size: var(--fs-medium);
   font-weight: var(--fw-regular);
 }
+
+body.dark .space-problem :is(h3, p){
+  color: var(--blue-50);
+}
