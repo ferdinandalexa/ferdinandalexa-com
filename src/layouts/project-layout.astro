@@ -46,7 +46,7 @@ const {
       url={url}
     />
     <section aria-labelledby="process">
-      <h2 id="process">Proceso</h2>
+      {type.includes("UX/UI") && <h2 id="process">Proceso</h2>}
       <div>
         <slot />
       </div>
