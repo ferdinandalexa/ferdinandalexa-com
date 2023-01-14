@@ -4,7 +4,7 @@ import BaseLayout from "./base-layout.astro";
 
 const {
   url,
-  content: { title, type, description, tools },
+  content: { slug, title, type, description, tools },
 } = Astro.props;
 ---
 
@@ -43,6 +43,7 @@ const {
       title={title}
       description={description}
       tools={tools}
+      url={url}
     />
     <section aria-labelledby="process">
       <h2 id="process">Proceso</h2>

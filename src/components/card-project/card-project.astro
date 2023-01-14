@@ -2,11 +2,13 @@
 const { title, type, description, url } = Astro.props;
 
 import "./card-project.css";
+
+const slug = url.split("/").at(-1);
 ---
 
 <article class="card-project">
   <img
-    src="/images/og/configurar-gitmoji-commitlint.png"
+    src={`/images/projects/${slug}/${slug}-cover.webp`}
     alt=""
     class="card-project__cover"
   />

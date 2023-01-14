@@ -1,7 +1,9 @@
 ---
 import "./project-header.css";
 
-const { type, title, description, tools = [] } = Astro.props;
+const { url, type, title, description, tools = [] } = Astro.props;
+
+const slug = url.split("/").at(-1);
 ---
 
 <header class="project-header">
@@ -28,4 +30,9 @@ const { type, title, description, tools = [] } = Astro.props;
       Go to demo
     </a>
   </div>
+  <img
+    src={`/images/projects/${slug}/${slug}-cover.webp`}
+    alt=""
+    style="margin-top: 2rem;"
+  />
 </header>
