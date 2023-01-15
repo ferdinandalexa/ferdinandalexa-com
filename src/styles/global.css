@@ -1,99 +1,109 @@
 *,
 *::after,
-*::before{
+*::before {
   box-sizing: border-box;
 }
 
-html,
-body{
-  height: 100%;
-  margin: 0 auto;
-  max-width: 768px;
-}
-
-body{
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  background-color: var(--c-background);
-}
-
-main{
-  margin-top: 2rem;
-  padding: 0 1rem;
-}
-
-h1, h2, h3, h4, h5, h6{
-  margin: 0;
-  color: var(--c-titles);
-}
-
-a{
-  color: var(--c-anchor);
-  text-decoration: none;
-  transition: var(--opacity-transition), var(--transform-transition);
-}
-
-a:hover{
-  opacity: .5;
-  transform: scale(.95);
-}
-
-ul, ol{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-picture, 
-img{
-  display: block;
-  margin: 0 auto;
-  max-height: 420px;
-  max-width: 640px;
-  object-fit: contain;
+body {
   width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-inline: 2rem;
 }
 
-body{
-  --c-titles: var(--blue-300);
-  --c-text: var(--gray-700);
-  --c-link: var(--blue-300);
-  --c-anchor: var(--blue-300);
-  --fl-logo: var(--blue-300);
-  --c-inline-code: #f53d3d;
-  --c-inline-code-bg: var(--gray-100);
-
-  --bg-card: var(--gray-50);
-  --bg-card-hover: var(--blue-50);
-  --c-card: var(--gray-600);
-  --c-card-hover: var(--blue-300);
-  --c-card-time: var(--gray-600);
-  --c-card-hover-time: var(--blue-300);
-  
-  --bg-switch: var(--gray-200);
-  --bd-switch: var(--gray-200);
-
-  --c-background: var(--white);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-body.dark{
-  --c-titles: var(--gray-100);
-  --c-text: var(--gray-200);
-  --c-anchor: var(--gray-100);
-  --c-link: var(--blue-100);
-  --fl-logo: var(--gray-100);
-  --c-inline-code: #ff675c;
-  --c-inline-code-bg: #0d1117;
+a {
+  text-decoration: none;
+}
 
-  --bg-card: var(--blue-600);
-  --bg-card-hover: var(--blue-500);
-  --c-card: var(--gray-100);
-  --c-card-hover: var(--white);
-  --c-card-time: var(--gray-200);
-  --c-card-hover-time: var(--gray-200);
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-  --bg-switch: var(--blue-500);
-  --bd-switch: var(--blue-500);
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  gap: 10px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
 
-  --c-background: var(--blue-700);
+.button.fulfilled{
+  border: 3px solid transparent;
+  background-color: var(--blue-300);
+  color: var(--white);
+  transition: var(--color-transition);
+}
+
+.button.fulfilled:hover,
+.button.fulfilled:focus{
+  background-color: var(--blue-100);
+  color: var(--white);
+}
+
+.button.ghost{
+  border: 3px solid var(--blue-300);
+  background-color: transparent;
+  color: var(--blue-300);
+}
+
+.button.ghost:hover,
+.button.ghost:focus{
+  border: 3px solid var(--blue-100);
+  color: var(--blue-100);
+}
+
+.contact-icon{
+  display: inline-flex;
+  color: var(--blue-300);
+  transition: var(--color-transition);
+}
+
+.contact-icon:hover,
+.contact-icon:focus{
+  color: var(--blue-100);
+}
+
+body.dark .button.fulfilled{
+  background-color: var(--blue-100);
+  color: var(--blue-700);
+}
+
+body.dark :is(.button.fulfilled:hover,
+.button.fulfilled:focus){
+  background-color: var(--blue-200);
+}
+
+body.dark .button.ghost{
+  border-color: var(--blue-100);
+  color: var(--blue-100);
+}
+
+body.dark :is(.button.ghost:hover, .button.ghost:focus){
+  border-color: var(--blue-200);
+  color: var(--blue-200);
+}
+
+body.dark .contact-icon{
+  color: var(--blue-100);
+}
+
+body.dark :is(.contact-icon:hover, .contact-icon:focus){
+  color: var(--blue-200);
 }

@@ -1,39 +1,63 @@
 ---
-import HeadFavicon from '../components/head-favicon.astro';
-import HeadOg from '../components/head-og.astro';
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
+import HeadFavicon from "../components/head-favicon.astro";
+import HeadOg from "../components/head-og.astro";
+import Header from "../components/header/header.astro";
+import Footer from "../components/footer/footer.astro";
 
-import '../styles/fonts.css'
-import '../styles/transitions.css'
-import '../styles/colors.css'
-import '../styles/global.css'
+import "../styles/fonts.css";
+import "../styles/transitions.css";
+import "../styles/colors.css";
+import "../styles/global.css";
 
-const { title, description, slug } =  Astro.props;
-const { href } = Astro.canonicalURL;
+const { title, description, slug } = Astro.props;
+const { href } = Astro.url;
 ---
 
-<!DOCTYPE html>
+<style>
+  body {
+    background-color: var(--white);
+  }
+
+  :global(body.dark) {
+    background-color: var(--blue-700);
+  }
+</style>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-  <title>{ title }</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script defer src="/js/changeTheme.js" />
+    <title>{title}</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script defer src="/js/changeTheme.js"></script>
 
-  <HeadFavicon />
-  <HeadOg { title } { description } { slug } permalink={ href } />
-</head>
-<body class="">
-  <Header />
-    <slot></slot>
-  <Footer />
-</body>
+    <style>
+      @font-face {
+        font-display: swap;
+        font-family: "AtkinsonHyperlegible";
+        font-style: normal;
+        font-weight: normal;
+        src: local(Atkinson-Hyperlegible), local(Atkinson-Hyperlegible-Regular),
+          url(/fonts/Atkinson-Hyperlegible-Regular.woff2) format("woff2");
+      }
+
+      @font-face {
+        font-display: swap;
+        font-family: "AtkinsonHyperlegible";
+        font-style: normal;
+        font-weight: bold;
+        src: local(Atkinson-Hyperlegible), local(Atkinson-Hyperlegible-Bold),
+          url(/fonts/Atkinson-Hyperlegible-Bold.woff2) format("woff2");
+      }
+    </style>
+
+    <HeadFavicon />
+    <HeadOg {title} {description} {slug} permalink={href} />
+  </head>
+  <body class="">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>

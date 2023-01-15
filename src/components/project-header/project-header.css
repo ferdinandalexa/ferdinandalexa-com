@@ -1,0 +1,84 @@
+.project-header{
+  max-width: 65ch;
+}
+
+.project-header__type{
+  color: var(--blue-300);
+  font-size: var(--fs-2xlarge);
+}
+
+.project-header__title{
+  color: var(--blue-300);
+  font-size: var(--fs-4xlarge);
+}
+
+.project-header__description{
+  color: var(--blue-500);
+  font-size: var(--fs-medium);
+  line-height: 150%;
+  margin-block: 0.5rem;
+}
+
+.project-header__tools span, .project-header__demo{
+  color: var(--blue-500);
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-bold);
+}
+
+.project-header__bottom{
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem  1.5rem;
+}
+
+.project-header__tools{
+  gap: 0.5rem ;
+}
+
+/* .project-header__tools{
+} */
+
+.project-header__tools,
+.project-header__tools :is(ul, li){
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tool strong{
+  width: max-content;
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-regular);
+  vertical-align: bottom;
+}
+
+.tool:nth-child(-n+2)::after{
+  margin-right: 0.4rem;
+  content: ",";
+  font-size: var(--fs-medium);
+  line-height: 150%;
+}
+
+.project-header__demo{
+  vertical-align: revert;
+}
+
+.project-header__demo:is(:hover, :focus){
+  color: var(--blue-300);
+}
+
+.project-header__demo svg{
+  vertical-align: bottom;
+}
+
+body.dark :is(.project-header__type, .project-header__title){
+  color: var(--blue-100);
+}
+
+body.dark :is(.project-header__description, .project-header__tools :is(span, .tool), .project-header__demo){
+  color: var(--blue-50);
+}
+
+body.dark .project-header__demo:is(:hover, :focus){
+  color: var(--blue-200);
+}

@@ -1,0 +1,69 @@
+.navbar,
+.navbar__pages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header {
+  --header-height: 64px;
+  display: flex;
+  width: 100%;
+  min-height: var(--header-height);
+  justify-content: space-between;
+  margin: 1rem auto 0;
+}
+
+.logo {
+  fill: var(--blue-300);
+  transition: var(--color-transition);
+}
+
+.logo:hover, .logo:focus {
+  color: var(--blue-50);
+  fill: var(--blue-50);
+}
+
+.navbar{
+  gap: 0.5rem;
+}
+
+.navbar__pages {
+  height: 100%;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+}
+
+.navbar__pages a {
+  display: inline-block;
+  padding: 0.75rem;
+  color: var(--blue-500);
+  transition: var(--color-transition);
+  vertical-align: bottom;
+}
+
+.navbar__pages li:first-child a {
+  padding-left: 0;
+}
+
+.navbar__pages :is(a:hover, a:focus) {
+  color: var(--blue-300);
+}
+
+body.dark header .logo {
+  color: var(--blue-50);
+  fill: var(--blue-50);
+}
+
+body.dark header :is(.logo:hover, .logo:focus) {
+  color: var(--blue-50);
+  fill: var(--blue-200);
+}
+
+body.dark nav a {
+  color: var(--blue-50);
+}
+
+body.dark nav a:is(a:hover, a:focus) {
+  color: var(--blue-200);
+}

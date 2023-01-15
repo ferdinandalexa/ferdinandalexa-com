@@ -1,0 +1,56 @@
+---
+import ProjectHeader from "../components/project-header/project-header.astro";
+import BaseLayout from "./base-layout.astro";
+
+const {
+  url,
+  content: { title, type, description, tools, demo },
+} = Astro.props;
+---
+
+<style>
+  div,
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+  }
+
+  main {
+    margin-top: 6rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    color: var(--blue-300);
+    font-size: var(--fs-3xlarge);
+    font-weight: var(--fw-bold);
+  }
+
+  :global(body.dark) h2 {
+    color: var(--blue-100);
+  }
+</style>
+
+<BaseLayout
+  title={`${title} | ferdinandalexa`}
+  description={description}
+  slug={url}
+>
+  <main>
+    <ProjectHeader
+      type={type}
+      title={title}
+      description={description}
+      tools={tools}
+      url={url}
+      demo={demo}
+    />
+    <section aria-labelledby="process">
+      {type.includes("UX/UI") && <h2 id="process">Proceso</h2>}
+      <div>
+        <slot />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

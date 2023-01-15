@@ -1,103 +1,164 @@
 ---
-import readingTime from 'reading-time';
-import BaseLayout from '../layouts/base-layout.astro';
+import getReadingTime from "reading-time";
+import BaseLayout from "../layouts/base-layout.astro";
 
-const { content: { title, slug, date, description, astro: { source } }} = Astro.props;
+const {
+  content: { title, slug, date, description },
+} = Astro.props;
 
-const minutes = Math.round(readingTime(source).minutes);
+const rawContent = Astro.props.rawContent();
 
-const datePublish = new Date(date)
-  .toLocaleDateString('es', { 
-    "year": "numeric", 
-    "month": "long", 
-    "day": "numeric",
-  });
+const minutes = Math.round(getReadingTime(rawContent).minutes);
+
+const datePublish = new Date(date).toLocaleDateString("es", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <style is:inline>
-  main h1{
-    font: var(--heading-large);
+  h1,
+  h2,
+  h3 {
+    color: var(--blue-300);
+  }
+
+  body.dark h1,
+  body.dark h2,
+  body.dark h3 {
+    color: var(--blue-100);
+  }
+
+  main {
+    max-width: 768px;
+    margin-top: 6rem;
+  }
+
+  main h1 {
     margin-top: 1.25rem;
+    font-size: var(--fs-3xlarge);
   }
-  
-  main h2{
-    font: var(--heading-medium);
+
+  main h2 {
     margin-top: 1.5rem;
+    font-size: var(--fs-xlarge);
   }
 
-  main h3{
-    font: var(--heading-base);
+  main h3 {
     margin-top: 1.75rem;
+    font-size: var(--fs-large);
   }
 
-  main p{
-    color: var(--c-text);
+  main p {
+    margin: 0.75rem 0;
+    color: var(--blue-500);
     font: var(--body-medium);
     line-height: 1.5;
-    margin: .75rem 0;
   }
 
-  main a{
-    color: var(--c-anchor);
+  body.dark main p {
+    color: var(--blue-50);
   }
 
-  main ul, 
-  main ol, 
-  main li{
-    color: var(--c-text);
-    font: var(--body-medium);
-    list-style: unset;
+  main a {
+    color: var(--blue-300);
+  }
+
+  main a:hover {
+    color: var(--blue-50);
+  }
+
+  body.dark main a {
+    color: var(--blue-200);
+  }
+
+  body.dark main a:hover {
+    color: var(--blue-50);
+  }
+
+  main ul,
+  main ol,
+  main li {
     margin-left: 1rem;
+    color: var(--blue-300);
+    font-size: var(--fs-base);
+    list-style: unset;
   }
 
-  main pre{
-    padding: 1rem 1.25rem;
+  body.dark main ul,
+  body.dark main ol,
+  body.dark main li {
+    color: var(--blue-50);
+  }
+
+  main pre {
     width: 100%;
     max-width: 90vw;
-    margin-left: -.1rem;
-    border-radius: .5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    margin-left: -0.1rem;
   }
 
-  main pre code{
-    font: var(--action-base);
-    letter-spacing: .05ch;
+  main pre code {
     margin: 0;
+    font-family: var(--ff-mono);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.05ch;
     overflow-x: auto;
   }
 
-  main p code{
-    color: var(--c-inline-code);
-    background-color: var(--c-inline-code-bg);
-    font: var(--action-small);
-    border-radius: .25rem;
-    padding: .75ch;
+  main p code {
+    padding: 0.75ch;
+    border-radius: 0.25rem;
+    background-color: var(--blue-50);
+    color: var(--blue-500);
+    font-family: var(--ff-mono);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+  }
+
+  body.dark p code {
+    background-color: var(--blue-500);
+    color: var(--blue-50);
   }
 </style>
 
 <style>
-  h1{
-    margin-bottom: .5rem;
+  h1 {
+    margin-bottom: 0.5rem;
   }
 
   time,
-  span{
-    color: var(--c-text);
-    font: var(--caption);
+  span {
+    color: var(--blue-500);
+    font-size: var(--fs-small);
   }
 
-  time::after{
-    content: '\00B7';
-    margin: 0 .45rem;
-    opacity: .5;
+  :global(body.dark) time,
+  :global(body.dark) span {
+    color: var(--blue-50);
+  }
+
+  time::after {
+    margin: 0 0.45rem;
+    content: "\00B7";
+    opacity: 0.5;
   }
 </style>
 
-<BaseLayout title={ `${title} | ferdinandalexa` } description={ description } slug={ slug }>
+<BaseLayout
+  title={`${title} | ferdinandalexa`}
+  description={description}
+  slug={slug}
+>
   <main>
     <header>
       <h1>{title}</h1>
-      <time datetime={ date }>{ datePublish }</time><span>{ minutes } min de lectura</span>
+      <time datetime={date}>{datePublish}</time>
+      <span>{minutes} min de lectura</span>
     </header>
-    <slot/>
+    <slot />
   </main>
 </BaseLayout>
