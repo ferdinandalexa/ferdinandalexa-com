@@ -1,7 +1,7 @@
 ---
 import "./project-header.css";
 
-const { url, type, title, description, tools = [] } = Astro.props;
+const { url, type, title, description, tools = [], demo } = Astro.props;
 
 const slug = url.split("/").at(-1);
 ---
@@ -23,7 +23,12 @@ const slug = url.split("/").at(-1);
         }
       </ul>
     </div>
-    <a href="#" rel="noopener nofollow" class="project-header__demo">
+    <a
+      href={demo}
+      target="_blank"
+      rel="noopener nofollow"
+      class="project-header__demo"
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
         <use xlink:href="/images/icons.svg#external-link"></use>
       </svg>
