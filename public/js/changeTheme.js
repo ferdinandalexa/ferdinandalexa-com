@@ -1,8 +1,14 @@
 let scheme = localStorage.getItem('scheme');
+const togglescheme = document.getElementById('toggle-scheme');
+
+
+function setSchemeMode(mode) {
+  document.querySelector('html').setAttribute('scheme-mode', mode)
+}
 
 const SCHEMES = {
-  dark: () => { document.querySelector('html').setAttribute('scheme-mode', 'dark') },
-  light: () => { document.querySelector('html').setAttribute('scheme-mode', 'light') },
+  dark: () => { setSchemeMode('dark') },
+  light: () => { setSchemeMode('light') },
 }
 
 const psc = window.matchMedia('(prefers-color-scheme: dark)');
@@ -14,8 +20,6 @@ if (scheme == null) {
 }
 
 SCHEMES[scheme]();
-
-const togglescheme = document.getElementById('toggle-scheme');
 
 togglescheme.addEventListener('click', () => {
   if (scheme == 'dark') scheme = 'light'
