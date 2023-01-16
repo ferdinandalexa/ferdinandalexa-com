@@ -18,7 +18,7 @@ const { href } = Astro.url;
     background-color: var(--white);
   }
 
-  :global(body.dark) {
+  :global(html[scheme-mode="dark"] body) {
     background-color: var(--blue-700);
   }
 </style>

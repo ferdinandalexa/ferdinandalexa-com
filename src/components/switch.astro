@@ -32,12 +32,12 @@ import Moon from "./icons/moon.astro";
     content: "";
   }
 
-  :global(body.dark) button#toggle-scheme {
+  :global(html[scheme-mode="dark"]) button#toggle-scheme {
     border-color: var(--blue-200);
     background-color: var(--blue-200);
   }
 
-  :global(body.dark) button#toggle-scheme::after {
+  :global(html[scheme-mode="dark"]) button#toggle-scheme::after {
     border-color: var(--blue-200);
     transform: translateX(1rem);
   }

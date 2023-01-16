@@ -1,34 +1,42 @@
 ---
-const { as, href, css = {} } = Astro.props
+const { as, href, css = {} } = Astro.props;
 ---
 
 <style>
   a,
-  button{
+  button {
     --bg-button: var(--blue-300);
-
-    background-color: var(--bg-button); 
-    border-radius: .25rem;
-    color: var(--white);
     min-width: max-content;
-    padding: .65rem 1rem;
+    padding: 0.65rem 1rem;
+    border-radius: 0.25rem;
+
+    background-color: var(--bg-button);
+    color: var(--white);
     text-align: center;
     transition: var(--transform-transition), var(--opacity-transition);
   }
 
   a:hover,
-  button:hover{
-    transform: scale(.97);
+  button:hover {
+    transform: scale(0.97);
   }
 
-  :global(body.dark) a, 
-  :global(body.dark) button{
+  :global(html[scheme-mode="dark"]) a,
+  :global(html[scheme-mode="dark"]) button {
     --bg-button: var(--blue-200);
   }
 </style>
 
 {
-  as === 'button' 
-    ? <button { href } style={ css }> <slot /> </button>
-    : <a { href } style={ css }> <slot /> </a>
+  as === "button" ? (
+    <button { href } style={css}>
+      {" "}
+      <slot />{" "}
+    </button>
+  ) : (
+    <a { href } style={css}>
+      {" "}
+      <slot />{" "}
+    </a>
+  )
 }

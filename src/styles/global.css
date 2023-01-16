@@ -90,30 +90,30 @@ ol {
   color: var(--blue-100);
 }
 
-body.dark .button.fulfilled{
+html[scheme-mode="dark"] .button.fulfilled{
   background-color: var(--blue-100);
   color: var(--blue-700);
 }
 
-body.dark :is(.button.fulfilled:hover,
+html[scheme-mode="dark"] :is(.button.fulfilled:hover,
 .button.fulfilled:focus){
   background-color: var(--blue-200);
 }
 
-body.dark .button.ghost{
+html[scheme-mode="dark"] .button.ghost{
   border-color: var(--blue-100);
   color: var(--blue-100);
 }
 
-body.dark :is(.button.ghost:hover, .button.ghost:focus){
+html[scheme-mode="dark"] :is(.button.ghost:hover, .button.ghost:focus){
   border-color: var(--blue-200);
   color: var(--blue-200);
 }
 
-body.dark .contact-icon{
+html[scheme-mode="dark"] .contact-icon{
   color: var(--blue-100);
 }
 
-body.dark :is(.contact-icon:hover, .contact-icon:focus){
+html[scheme-mode="dark"] :is(.contact-icon:hover, .contact-icon:focus){
   color: var(--blue-200);
 }

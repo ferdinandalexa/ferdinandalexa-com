@@ -61,10 +61,10 @@
   color: var(--blue-300);
 }
 
-body.dark .footer :is(.footer__section, .contact-icon, .navbar a){
+html[scheme-mode="dark"] .footer :is(.footer__section, .contact-icon, .navbar a){
   color: var(--blue-50);
 }
 
-body.dark .footer :is(.contact-icon:hover, .contact-icon:focus, .navbar :is(a:hover, a:focus)){
+html[scheme-mode="dark"] .footer :is(.contact-icon:hover, .contact-icon:focus, .navbar :is(a:hover, a:focus)){
   color: var(--blue-200);
 }

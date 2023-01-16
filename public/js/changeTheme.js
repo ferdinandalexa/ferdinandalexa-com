@@ -1,14 +1,8 @@
 let scheme = localStorage.getItem('scheme');
 
 const SCHEMES = {
-  dark: () => {
-    document.body.classList.add('dark')
-    document.body.classList.remove('light')
-  },
-  light: () => {
-    document.body.classList.add('light')
-    document.body.classList.remove('dark')
-  },
+  dark: () => { document.querySelector('html').setAttribute('scheme-mode', 'dark') },
+  light: () => { document.querySelector('html').setAttribute('scheme-mode', 'light') },
 }
 
 const psc = window.matchMedia('(prefers-color-scheme: dark)');

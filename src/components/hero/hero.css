@@ -65,9 +65,9 @@
   /* aspect-ratio: 1/1; */
 }
 
-body.dark :is(.hero__title, .hero__description) {
+html[scheme-mode="dark"] :is(.hero__title, .hero__description) {
   color: var(--blue-50);
 }
-body.dark .hero__subtitle{
+html[scheme-mode="dark"] .hero__subtitle{
   color: var(--blue-100);
 }

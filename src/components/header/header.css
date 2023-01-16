@@ -50,20 +50,20 @@
   color: var(--blue-300);
 }
 
-body.dark header .logo {
+html[scheme-mode="dark"] header .logo {
   color: var(--blue-50);
   fill: var(--blue-50);
 }
 
-body.dark header :is(.logo:hover, .logo:focus) {
+html[scheme-mode="dark"] header :is(.logo:hover, .logo:focus) {
   color: var(--blue-50);
   fill: var(--blue-200);
 }
 
-body.dark nav a {
+html[scheme-mode="dark"] nav a {
   color: var(--blue-50);
 }
 
-body.dark nav a:is(a:hover, a:focus) {
+html[scheme-mode="dark"] nav a:is(a:hover, a:focus) {
   color: var(--blue-200);
 }

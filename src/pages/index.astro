@@ -16,7 +16,7 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
     font-weight: var(--fw-bold);
   }
 
-  :global(body.dark) h2 {
+  :global(html[scheme-mode="dark"]) h2 {
     color: var(--blue-100);
   }
 

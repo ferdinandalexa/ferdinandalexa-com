@@ -24,9 +24,9 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     color: var(--blue-300);
   }
 
-  body.dark h1,
-  body.dark h2,
-  body.dark h3 {
+  html[scheme-mode="dark"] h1,
+  html[scheme-mode="dark"] h2,
+  html[scheme-mode="dark"] h3 {
     color: var(--blue-100);
   }
 
@@ -57,7 +57,7 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     line-height: 1.5;
   }
 
-  body.dark main p {
+  html[scheme-mode="dark"] main p {
     color: var(--blue-50);
   }
 
@@ -69,11 +69,11 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     color: var(--blue-50);
   }
 
-  body.dark main a {
+  html[scheme-mode="dark"] main a {
     color: var(--blue-200);
   }
 
-  body.dark main a:hover {
+  html[scheme-mode="dark"] main a:hover {
     color: var(--blue-50);
   }
 
@@ -86,9 +86,9 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     list-style: unset;
   }
 
-  body.dark main ul,
-  body.dark main ol,
-  body.dark main li {
+  html[scheme-mode="dark"] main ul,
+  html[scheme-mode="dark"] main ol,
+  html[scheme-mode="dark"] main li {
     color: var(--blue-50);
   }
 
@@ -119,7 +119,7 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     font-weight: var(--fw-bold);
   }
 
-  body.dark p code {
+  html[scheme-mode="dark"] p code {
     background-color: var(--blue-500);
     color: var(--blue-50);
   }
@@ -136,8 +136,8 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     font-size: var(--fs-small);
   }
 
-  :global(body.dark) time,
-  :global(body.dark) span {
+  :global(html[scheme-mode="dark"]) time,
+  :global(html[scheme-mode="dark"]) span {
     color: var(--blue-50);
   }
 

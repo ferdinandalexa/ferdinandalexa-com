@@ -71,14 +71,14 @@
   vertical-align: bottom;
 }
 
-body.dark :is(.project-header__type, .project-header__title){
+html[scheme-mode="dark"] :is(.project-header__type, .project-header__title){
   color: var(--blue-100);
 }
 
-body.dark :is(.project-header__description, .project-header__tools :is(span, .tool), .project-header__demo){
+html[scheme-mode="dark"] :is(.project-header__description, .project-header__tools :is(span, .tool), .project-header__demo){
   color: var(--blue-50);
 }
 
-body.dark .project-header__demo:is(:hover, :focus){
+html[scheme-mode="dark"] .project-header__demo:is(:hover, :focus){
   color: var(--blue-200);
 }
