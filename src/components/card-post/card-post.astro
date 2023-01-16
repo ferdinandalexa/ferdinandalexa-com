@@ -1,20 +1,8 @@
 ---
 const { title, description, date, url } = Astro.props;
 
-import "./card-post.css"
+import "./card-post.css";
 ---
-
-<script>
-  import getTimeAgo from "../../utils/getTimeAgo.js";
-
-  const cards = document.querySelectorAll("[data-time]");
-  for (const cardPost of cards) {
-    const date = cardPost.dataset.time;
-    const timeago = getTimeAgo(new Date(date));
-    console.log(timeago);
-    cardPost.innerHTML = timeago;
-  }
-</script>
 
 <article class="card-post">
   <h3 class="card-post__title">
@@ -22,7 +10,58 @@ import "./card-post.css"
       {title}
     </a>
   </h3>
-  <time datetime={date} data-time={date} class="card-post__time-ago">{}</time>
+  <time-ago date={date}
+    ><time datetime={date} class="card-post__time-ago"></time>
+  </time-ago>
   <p class="card-post__description">{description}</p>
   <a href={url} class="card-post__action-inline">Leer artículo completo</a>
 </article>
+
+<script>
+  class TimeAgo extends HTMLElement {
+    #date;
+    #dateTime;
+    #timeHTMLElement;
+    DATE_UNITS = {
+      year: 31_104_000,
+      month: 2_419_200,
+      week: 604_800,
+      day: 86_400,
+      hour: 3600,
+      minute: 60,
+      second: 1,
+    };
+
+    constructor() {
+      super();
+      this.#date = this.getAttribute("date");
+      this.#dateTime = new Date(this.#date);
+      this.#timeHTMLElement = this.querySelector("time");
+    }
+
+    getSecondsDiff = () => (Date.now() - this.#dateTime) / 1000;
+
+    getUnitAndValueDate(seconsElapsed) {
+      for (const [unit, secondsUnit] of Object.entries(this.DATE_UNITS)) {
+        if (seconsElapsed >= secondsUnit || unit === "second") {
+          const value = Math.floor(seconsElapsed / secondsUnit) * -1;
+          return { value, unit };
+        }
+      }
+    }
+
+    getTimeAgo(locale = "es") {
+      const rtf = new Intl.RelativeTimeFormat(locale);
+      const seconsElapsed = this.getSecondsDiff();
+      const { value, unit } = this.getUnitAndValueDate(seconsElapsed);
+      return rtf.format(value, unit);
+    }
+
+    connectedCallback() {
+      const timeagoString = this.getTimeAgo();
+      this.#timeHTMLElement.innerHTML = timeagoString;
+    }
+  }
+
+  customElements.define("time-ago", TimeAgo);
+</script>
