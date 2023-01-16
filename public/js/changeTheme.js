@@ -1,24 +1,33 @@
-const toggleTheme = document.getElementById('toggle-theme');
-let darkMode = localStorage.getItem('darkMode');
+let scheme = localStorage.getItem('scheme');
+
+const SCHEMES = {
+  dark: () => {
+    document.body.classList.add('dark')
+    document.body.classList.remove('light')
+  },
+  light: () => {
+    document.body.classList.add('light')
+    document.body.classList.remove('dark')
+  },
+}
 
 const psc = window.matchMedia('(prefers-color-scheme: dark)');
-if(!darkMode) { darkMode = psc.matches ? 'enabled' : 'disabled' };
 
-if(darkMode === 'enabled') {
-  document.body.classList.add('dark');
-  toggleTheme.checked = true;
-} else toggleTheme.checked = false;
+if (scheme == null) {
+  if (psc.matches) {
+    scheme = 'dark'
+  } else scheme = 'light';
+}
 
+SCHEMES[scheme]();
 
-toggleTheme.addEventListener('change', ({target})=>{
-  if(target.checked){
-    darkMode = 'enabled'
-    document.body.classList.toggle('dark')
-  }
-  else{
-    darkMode = 'disabled'
-    document.body.classList.remove('dark')
-  }
-    
-  localStorage.setItem('darkMode', darkMode);
+const togglescheme = document.getElementById('toggle-scheme');
+
+togglescheme.addEventListener('click', () => {
+  if (scheme == 'dark') scheme = 'light'
+  else scheme = 'dark'
+
+  SCHEMES[scheme]();
+
+  localStorage.setItem('scheme', scheme);
 })

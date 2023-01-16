@@ -32,6 +32,16 @@ ol {
   list-style: none;
 }
 
+.sr-only{
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  width: 1px;
+  height: auto;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .button {
   display: inline-block;
   box-sizing: border-box;

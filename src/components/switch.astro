@@ -5,52 +5,48 @@ import Moon from "./icons/moon.astro";
 
 <style>
   div {
-    align-items: center;
     display: flex;
-    flex-direction: row;
-    gap: 0.65rem;
+    align-items: center;
+    gap: 0.5rem;
   }
-</style>
-
-<style>
-  label[for="toggle-theme"] {
-    display: block;
-    background-color: var(--blue-500);
-    border-radius: 100px;
-    height: 1.15rem;
-    width: 2.2rem;
+  button#toggle-scheme {
     position: relative;
+    display: flex;
+    width: 2.2rem;
+    height: 1.15rem;
+    align-items: center;
+    padding: 0;
+    border: 2px solid var(--gray-300);
+    border-radius: 100px;
+    background-color: var(--gray-300);
     transform: scale(1.2);
   }
 
-  label[for="toggle-theme"]::after {
-    content: "";
-    background-color: var(--white);
-    border-radius: 100px;
-    border: 2px var(--blue-500) solid;
+  button#toggle-scheme::after {
     display: inline-block;
-    height: 1.1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: unset;
-    width: 1.1rem;
+    width: 1rem;
+    height: 1rem;
+    border: 2px var(--gray-300) solid;
+    border-radius: 100px;
+    background-color: var(--white);
+    content: "";
   }
 
-  :global(body.dark) label[for="toggle-theme"]::after {
-    left: unset;
-    right: 0;
+  :global(body.dark) button#toggle-scheme {
+    border-color: var(--blue-200);
+    background-color: var(--blue-200);
+  }
+
+  :global(body.dark) button#toggle-scheme::after {
+    border-color: var(--blue-200);
+    transform: translateX(1rem);
   }
 </style>
 
 <div>
-  <input
-    style="display: none"
-    type="checkbox"
-    name="toggle-theme"
-    id="toggle-theme"
-  />
-  <Sun id="theme-sun" />
-  <label for="toggle-theme"> </label>
-  <Moon id="theme-moon" />
+  <Sun />
+  <button id="toggle-scheme">
+    <span class="sr-only">Cambiar modo</span>
+  </button>
+  <Moon />
 </div>
