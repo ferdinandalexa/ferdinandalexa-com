@@ -1,14 +1,23 @@
 let scheme = localStorage.getItem('scheme');
 const togglescheme = document.getElementById('toggle-scheme');
 
-
 function setSchemeMode(mode) {
   document.querySelector('html').setAttribute('scheme-mode', mode)
 }
 
+function setSchemeSwitchValue(value) {
+  togglescheme.setAttribute('aria-checked', value);
+}
+
 const SCHEMES = {
-  dark: () => { setSchemeMode('dark') },
-  light: () => { setSchemeMode('light') },
+  dark: () => {
+    setSchemeMode('dark');
+    setSchemeSwitchValue(true)
+  },
+  light: () => {
+    setSchemeMode('light');
+    setSchemeSwitchValue(false)
+  },
 }
 
 const psc = window.matchMedia('(prefers-color-scheme: dark)');
