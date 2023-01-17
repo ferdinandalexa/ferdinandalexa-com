@@ -22,18 +22,11 @@ const {
 </style>
 
 <style is:global>
-  h2 {
-    margin-bottom: 2rem;
-    color: var(--blue-300);
-    font-size: var(--fs-3xlarge);
-    font-weight: var(--fw-bold);
-  }
-
   h3 {
     color: var(--blue-300);
   }
 
-  html[scheme-mode="dark"] :is(h2, h3) {
+  html[scheme-mode="dark"] :is(h3) {
     color: var(--blue-100);
   }
 </style>
@@ -52,8 +45,14 @@ const {
       url={url}
       demo={demo}
     />
-    <section aria-labelledby="process">
-      {type.includes("UX/UI") && <h2 id="process">Proceso</h2>}
+    <section aria-labelledby="process" class="section">
+      {
+        type.includes("UX/UI") && (
+          <h2 id="process" class="section__title">
+            Proceso
+          </h2>
+        )
+      }
       <div>
         <slot />
       </div>
