@@ -2,7 +2,14 @@
 import { Cloudinary } from "@cloudinary/url-gen";
 import { fit } from "@cloudinary/url-gen/actions/resize";
 
-const { src, alt = "", width, height, className } = Astro.props;
+const {
+  src,
+  alt = "",
+  loading = "lazy",
+  width,
+  height,
+  className,
+} = Astro.props;
 
 const cld = new Cloudinary({
   cloud: {
@@ -22,6 +29,6 @@ const cldImage = cld
   alt={alt}
   width={width}
   height={height}
-  loading="lazy"
+  loading={loading}
   class={className}
 />
