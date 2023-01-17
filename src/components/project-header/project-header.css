@@ -1,5 +1,5 @@
 .project-header{
-  max-width: 65ch;
+  
 }
 
 .project-header__type{
@@ -13,6 +13,7 @@
 }
 
 .project-header__description{
+  max-width: 65ch;
   color: var(--blue-500);
   font-size: var(--fs-medium);
   line-height: 150%;
@@ -34,9 +35,6 @@
 .project-header__tools{
   gap: 0.5rem ;
 }
-
-/* .project-header__tools{
-} */
 
 .project-header__tools,
 .project-header__tools :is(ul, li){
@@ -69,6 +67,11 @@
 
 .project-header__demo svg{
   vertical-align: bottom;
+}
+
+.project-header__cover {
+  width: 100%;
+  margin-top: 2rem;
 }
 
 html[scheme-mode="dark"] :is(.project-header__type, .project-header__title){
