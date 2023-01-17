@@ -1,16 +1,17 @@
 ---
-const { title, type, description, url } = Astro.props;
-
+import Image from "../../components/image.astro";
 import "./card-project.css";
 
+const { title, type, description, url } = Astro.props;
 const slug = url.split("/").at(-1);
 ---
 
 <article class="card-project">
-  <img
-    src={`/images/projects/${slug}/${slug}-cover.webp`}
+  <Image
+    src={`projects/${slug}/${slug}-cover`}
     alt=""
-    class="card-project__cover"
+    className="card-project__cover"
+    width="500"
   />
   <div class="card-project__info">
     <strong class="card-project__type">{type}</strong>
