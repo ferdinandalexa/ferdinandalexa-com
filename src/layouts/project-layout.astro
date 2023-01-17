@@ -19,7 +19,9 @@ const {
   main {
     margin-top: 6rem;
   }
+</style>
 
+<style is:global>
   h2 {
     margin-bottom: 2rem;
     color: var(--blue-300);
@@ -27,7 +29,11 @@ const {
     font-weight: var(--fw-bold);
   }
 
-  :global(html[scheme-mode="dark"]) h2 {
+  h3 {
+    color: var(--blue-300);
+  }
+
+  html[scheme-mode="dark"] :is(h2, h3) {
     color: var(--blue-100);
   }
 </style>

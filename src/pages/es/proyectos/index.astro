@@ -36,7 +36,6 @@ console.log(allProjects[1]);
     <div>
       {
         allProjects
-          .slice(0, 3)
           .filter((project) => !project.frontmatter.draft)
           .map((project) => (
             <CardProject
