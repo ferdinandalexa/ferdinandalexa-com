@@ -90,6 +90,33 @@ ol {
   color: var(--blue-100);
 }
 
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list-container.two-columns {
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.section{
+  margin-bottom: 8rem;
+}
+
+.section__title {
+  margin-bottom: 2rem;
+  color: var(--blue-300);
+  font-size: var(--fs-3xlarge);
+  font-weight: var(--fw-bold);
+}
+
+html[scheme-mode="dark"] .section__title {
+  color: var(--blue-100);
+}
+
 html[scheme-mode="dark"] .button.fulfilled{
   background-color: var(--blue-100);
   color: var(--blue-700);
