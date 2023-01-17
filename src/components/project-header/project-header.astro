@@ -1,4 +1,5 @@
 ---
+import Image from "../image.astro";
 import "./project-header.css";
 
 const { url, type, title, description, tools = [], demo } = Astro.props;
@@ -35,9 +36,10 @@ const slug = url.split("/").at(-1);
       Go to demo
     </a>
   </div>
-  <img
-    src={`/images/projects/${slug}/${slug}-cover.webp`}
+  <Image
+    src={`projects/${slug}/${slug}-cover`}
     alt=""
-    class="project-header__cover"
+    width="1000"
+    className="project-header__cover"
   />
 </header>
