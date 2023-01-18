@@ -1,0 +1,34 @@
+---
+import { Cloudinary } from "@cloudinary/url-gen";
+import { fit } from "@cloudinary/url-gen/actions/resize";
+
+const {
+  src,
+  alt = "",
+  loading = "lazy",
+  width,
+  height,
+  className,
+} = Astro.props;
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: "ferdinandalexa",
+  },
+});
+
+const cldImage = cld
+  .image(src)
+  .format("auto")
+  .delivery("q_auto")
+  .resize(fit().width(width));
+---
+
+<img
+  src={cldImage.toURL()}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  class={className}
+/>
