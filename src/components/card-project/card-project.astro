@@ -15,7 +15,7 @@ const slug = url.split("/").at(-1);
   <div class="card-project__info">
     <strong class="card-project__type">{type}</strong>
     <h3 class="card-project__title">
-      <a href="#">{title}</a>
+      <a href={url}>{title}</a>
     </h3>
     <p class="card-project__description">{description}</p>
     <a href={url} class="button ghost">Más sobre el proyecto</a>
