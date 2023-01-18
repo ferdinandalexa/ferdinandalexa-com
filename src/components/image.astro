@@ -11,6 +11,8 @@ const {
   className,
 } = Astro.props;
 
+const respSizes = [300, 450, 600, 750, 900];
+
 const cld = new Cloudinary({
   cloud: {
     cloudName: "ferdinandalexa",
@@ -21,11 +23,25 @@ const cldImage = cld
   .image(src)
   .format("auto")
   .delivery("q_auto")
-  .resize(fit().width(width));
+  .resize(fit().width(width))
+  .setVersion("2");
+
+const srcSet = respSizes.map(
+  (size) =>
+    `${cld
+      .image(src)
+      .format("auto")
+      .delivery("q_auto")
+      .resize(fit().width(size))
+      .setVersion("2")
+      .toURL()} ${size}w`
+);
 ---
 
 <img
   src={cldImage.toURL()}
+  srcset={srcSet.join(", ")}
+  sizes="(max-width: 770px) 50vw, 100vw, (max-width: 540px) 45vw, 50vw"
   alt={alt}
   width={width}
   height={height}
