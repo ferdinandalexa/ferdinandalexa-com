@@ -113,6 +113,10 @@ ol {
   font-weight: var(--fw-bold);
 }
 
+.full-width {
+  width: 100%;
+}
+
 
 html[scheme-mode="dark"] body {
   background-color: var(--blue-700);
