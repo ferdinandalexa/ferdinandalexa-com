@@ -22,11 +22,12 @@ const {
 </style>
 
 <style is:global>
+  h2,
   h3 {
     color: var(--blue-300);
   }
 
-  html[scheme-mode="dark"] :is(h3) {
+  html[scheme-mode="dark"] :is(h2, h3) {
     color: var(--blue-100);
   }
 </style>
