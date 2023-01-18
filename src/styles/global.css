@@ -113,8 +113,9 @@ ol {
   font-weight: var(--fw-bold);
 }
 
-html[scheme-mode="dark"] .section__title {
-  color: var(--blue-100);
+
+html[scheme-mode="dark"] body {
+  background-color: var(--blue-700);
 }
 
 html[scheme-mode="dark"] .button.fulfilled{
@@ -143,4 +144,8 @@ html[scheme-mode="dark"] .contact-icon{
 
 html[scheme-mode="dark"] :is(.contact-icon:hover, .contact-icon:focus){
   color: var(--blue-200);
+}
+
+html[scheme-mode="dark"] .section__title {
+  color: var(--blue-100);
 }
