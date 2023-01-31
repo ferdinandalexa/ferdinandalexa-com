@@ -79,6 +79,17 @@ ol {
   color: var(--blue-100);
 }
 
+.button.inline{
+  padding:  0 0 0 0.5rem;
+  color: var(--blue-300);
+}
+
+.button.inline:hover,
+.button.inline:focus-within{
+  color: var(--blue-100);
+}
+
+
 .contact-icon{
   display: inline-flex;
   color: var(--blue-300);
@@ -93,7 +104,7 @@ ol {
 .list-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.25rem;
 }
 
 .list-container.two-columns {
@@ -139,6 +150,15 @@ html[scheme-mode="dark"] .button.ghost{
 
 html[scheme-mode="dark"] :is(.button.ghost:hover, .button.ghost:focus-within){
   border-color: var(--blue-200);
+  color: var(--blue-200);
+}
+
+html[scheme-mode="dark"] .button.inline{
+  border-color: var(--blue-100);
+  color: var(--blue-100);
+}
+
+html[scheme-mode="dark"] :is(.button.inline:hover, .button.inline:focus-within){
   color: var(--blue-200);
 }
 
