@@ -18,7 +18,7 @@
   transition: var(--color-transition);
 }
 
-.card-project__title :is(a:hover, a:focus){
+.card-project__title :is(a:hover, a:focus-within){
   color: var(--blue-300);
 }
 
@@ -49,6 +49,6 @@ html[scheme-mode="dark"] :is(.card-project__title a, .card-project__description,
 
 }
 
-html[scheme-mode="dark"] .card-project :is(a:hover, a:focus){
+html[scheme-mode="dark"] .card-project :is(a:hover, a:focus-within){
   color: var(--blue-200);
 }

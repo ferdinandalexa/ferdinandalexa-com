@@ -18,7 +18,7 @@
 }
 
 .card-post__title:hover a,
-.card-post__title a:focus{
+.card-post__title a:focus-within{
   color: var(--blue-300);
 }
 
@@ -44,7 +44,7 @@
 }
 
 .card-post__action-inline:hover,
-.card-post__action-inline:focus {
+.card-post__action-inline:focus-within {
   color: var(--blue-100);
 }
 
@@ -59,8 +59,8 @@ html[scheme-mode="dark"] .card-post__action-inline {
 }
 
 html[scheme-mode="dark"] :is(.card-post__title:hover a,
-.card-post__title a:focus,
+.card-post__title a:focus-within,
 .card-post__action-inline:hover,
-.card-post__action-inline:focus) {
+.card-post__action-inline:focus-within) {
   color: var(--blue-200);
 }
