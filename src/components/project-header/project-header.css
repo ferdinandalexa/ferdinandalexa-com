@@ -57,7 +57,7 @@
   vertical-align: revert;
 }
 
-.project-header__demo:is(:hover, :focus){
+.project-header__demo:is(:hover, :focus-within){
   color: var(--blue-300);
 }
 
@@ -78,6 +78,6 @@ html[scheme-mode="dark"] :is(.project-header__description, .project-header__tool
   color: var(--blue-50);
 }
 
-html[scheme-mode="dark"] .project-header__demo:is(:hover, :focus){
+html[scheme-mode="dark"] .project-header__demo:is(:hover, :focus-within){
   color: var(--blue-200);
 }
