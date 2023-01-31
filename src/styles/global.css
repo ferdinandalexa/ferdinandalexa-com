@@ -62,7 +62,7 @@ ol {
 }
 
 .button.fulfilled:hover,
-.button.fulfilled:focus-within{
+.button.fulfilled:focus-visible{
   background-color: var(--blue-100);
   color: var(--white);
 }
@@ -74,7 +74,7 @@ ol {
 }
 
 .button.ghost:hover,
-.button.ghost:focus-within{
+.button.ghost:focus-visible{
   border: 3px solid var(--blue-100);
   color: var(--blue-100);
 }
@@ -85,7 +85,7 @@ ol {
 }
 
 .button.inline:hover,
-.button.inline:focus-within{
+.button.inline:focus-visible{
   color: var(--blue-100);
 }
 
@@ -97,7 +97,7 @@ ol {
 }
 
 .contact-icon:hover,
-.contact-icon:focus-within{
+.contact-icon:focus-visible{
   color: var(--blue-100);
 }
 
@@ -139,7 +139,7 @@ html[scheme-mode="dark"] .button.fulfilled{
 }
 
 html[scheme-mode="dark"] :is(.button.fulfilled:hover,
-.button.fulfilled:focus-within){
+.button.fulfilled:focus-visible){
   background-color: var(--blue-200);
 }
 
@@ -148,7 +148,7 @@ html[scheme-mode="dark"] .button.ghost{
   color: var(--blue-100);
 }
 
-html[scheme-mode="dark"] :is(.button.ghost:hover, .button.ghost:focus-within){
+html[scheme-mode="dark"] :is(.button.ghost:hover, .button.ghost:focus-visible){
   border-color: var(--blue-200);
   color: var(--blue-200);
 }
@@ -158,7 +158,7 @@ html[scheme-mode="dark"] .button.inline{
   color: var(--blue-100);
 }
 
-html[scheme-mode="dark"] :is(.button.inline:hover, .button.inline:focus-within){
+html[scheme-mode="dark"] :is(.button.inline:hover, .button.inline:focus-visible){
   color: var(--blue-200);
 }
 
@@ -166,7 +166,7 @@ html[scheme-mode="dark"] .contact-icon{
   color: var(--blue-100);
 }
 
-html[scheme-mode="dark"] :is(.contact-icon:hover, .contact-icon:focus-within){
+html[scheme-mode="dark"] :is(.contact-icon:hover, .contact-icon:focus-visible){
   color: var(--blue-200);
 }
 

@@ -13,7 +13,7 @@
   gap: 0.375rem;
 }
 
-.footer :is(.contact-icon:hover, .contact-icon:focus-within){
+.footer :is(.contact-icon:hover, .contact-icon:focus-visible){
   color: var(--blue-300);
 }
 
@@ -57,7 +57,7 @@
   transition: var(--color-transition);
 }
 
-.footer .navbar :is(a:hover, a:focus-within){
+.footer .navbar :is(a:hover, a:focus-visible){
   color: var(--blue-300);
 }
 
@@ -65,6 +65,6 @@ html[scheme-mode="dark"] .footer :is(.footer__section, .contact-icon, .navbar a)
   color: var(--blue-50);
 }
 
-html[scheme-mode="dark"] .footer :is(.contact-icon:hover, .contact-icon:focus-within, .navbar :is(a:hover, a:focus-within)){
+html[scheme-mode="dark"] .footer :is(.contact-icon:hover, .contact-icon:focus-visible, .navbar :is(a:hover, a:focus-visible)){
   color: var(--blue-200);
 }
