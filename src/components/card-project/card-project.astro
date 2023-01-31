@@ -7,14 +7,16 @@ const slug = url.split("/").at(-1);
 ---
 
 <article class="card-project">
-  <Image
-    src={`projects/${slug}/${slug}-cover`}
-    alt=""
-    className="card-project__cover"
-    width="500"
-    loading="eager"
-    maxWidth={536}
-  />
+  <a href={url}>
+    <Image
+      src={`projects/${slug}/${slug}-cover`}
+      alt={`Imagen de portada: ir al proyecto ${title}`}
+      className="card-project__cover"
+      width="500"
+      loading="eager"
+      maxWidth={536}
+    />
+  </a>
   <div class="card-project__info">
     <strong class="card-project__type">{type}</strong>
     <h3 class="card-project__title">
