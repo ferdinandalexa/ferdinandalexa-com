@@ -28,6 +28,11 @@
   gap: 0.5rem;
 }
 
+.navbar button {
+  position: relative;
+  z-index: 2;
+}
+
 .navbar__pages {
   height: 100%;
   font-size: var(--fs-base);
@@ -45,6 +50,18 @@
 .navbar__pages li:first-child a {
   padding-left: 0;
 }
+
+.navbar button[role="menu"]{
+  display: none;
+  border: unset;
+  background-color: transparent;
+  color: var(--blue-50)
+}  
+
+.navbar button[role="menu"]:is(:active, :focus-visible){
+  border-radius: 4px;
+  background-color: var(--blue-500);
+}  
 
 .navbar__pages :is(a:hover, a:focus-visible) {
   color: var(--blue-300);
@@ -66,4 +83,50 @@ html[scheme-mode="dark"] nav a {
 
 html[scheme-mode="dark"] nav a:is(a:hover, a:focus-visible) {
   color: var(--blue-200);
+}
+
+@media screen and (max-width: 35rem){
+
+  .navbar button[role="menu"]{
+    display: initial;
+  }
+  
+  .navbar button[aria-expanded="false"] + .navbar__pages{
+    display: none;
+  }
+
+  .navbar__pages{
+    position: absolute;
+    z-index: 1;
+    /* inset: 0; */
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5rem;
+    background-color: var(--blue-500);
+    font-size: var(--fs-large);
+    gap: 1rem;
+  }  
+
+  .navbar__pages li {
+    width: 100%;
+    padding-inline: 2rem;
+  }
+  
+  .navbar__pages a {
+    width: inherit;
+  }
+
+  .navbar__pages li:first-child a {
+    padding-left: 0.75rem;
+  }
+}
+
+@supports (inset: 0){
+  .navbar__pages{
+    inset: 0;
+  }
 }

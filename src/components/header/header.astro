@@ -4,11 +4,26 @@ import Switch from "../switch.astro";
 import "./header.css";
 ---
 
+<script>
+  const $Menu = document.querySelector('.navbar button[role="menu"]');
+
+  $Menu.addEventListener("click", () => {
+    const currentAriaExpandedValue = $Menu.getAttribute("aria-expanded");
+    const newAriaExpandedValue =
+      currentAriaExpandedValue === "false" ? "true" : "false";
+    $Menu.setAttribute("aria-expanded", newAriaExpandedValue);
+  });
+</script>
+
 <header class="header">
   <nav class="navbar">
+    <button aria-expanded="false" role="menu">
+      <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
+        <use xlink:href="/images/icons.svg#menu"></use>
+      </svg>
+    </button>
     <ul class="navbar__pages">
       <li><a href="/">Inicio</a></li>
-      <!-- <li><a href="/">Curriculum</a></li> -->
       <li><a href="/es/proyectos">Proyectos</a></li>
       <li>
         <a
