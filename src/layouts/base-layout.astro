@@ -46,7 +46,7 @@ const { href } = Astro.url;
     <HeadOg {title} {description} {slug} permalink={href} />
   </head>
   <body class="">
-    <Header />
+    <Header client:media="(max-width: 35rem)" />
     <slot />
     <Footer />
   </body>
