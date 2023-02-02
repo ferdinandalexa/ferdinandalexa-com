@@ -53,14 +53,23 @@
 
 .navbar button#open-nav{
   display: none;
+  padding: 0.25rem;
   border: unset;
+  border-radius: 4px;
   background-color: transparent;
-  color: var(--blue-50)
+  color: var(--blue-500);
 }  
 
-.navbar button#open-nav:is(:active, :focus-visible){
-  border-radius: 4px;
-  background-color: var(--blue-500);
+.navbar button#open-nav svg{
+  display: block;
+}
+
+.navbar button#open-nav:is(:hover, :focus-visible){
+  background-color: var(--blue-50);
+}  
+
+.navbar button#open-nav:active{
+  color: var(--blue-100);
 }  
 
 .navbar__pages :is(a:hover, a:focus-visible) {
@@ -85,6 +94,18 @@ html[scheme-mode="dark"] nav a:is(a:hover, a:focus-visible) {
   color: var(--blue-200);
 }
 
+html[scheme-mode="dark"] .navbar button#open-nav {
+  color: var(--blue-50);
+}
+
+html[scheme-mode="dark"] .navbar button#open-nav:is(:hover, :focus-visible) {
+  background-color: var(--blue-500);
+}
+
+html[scheme-mode="dark"] .navbar button#open-nav:active {
+  color: var(--blue-200);
+}
+
 @media screen and (max-width: 35rem){
 
   .navbar button#open-nav{
@@ -106,10 +127,14 @@ html[scheme-mode="dark"] nav a:is(a:hover, a:focus-visible) {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 5rem;
-    background-color: var(--blue-500);
+    background-color: var(--blue-50);
     font-size: var(--fs-large);
     gap: 1rem;
-  }  
+  }
+  
+  html[scheme-mode="dark"] .navbar__pages {
+    background-color: var(--blue-500);
+  }
 
   .navbar__pages li {
     width: 100%;
