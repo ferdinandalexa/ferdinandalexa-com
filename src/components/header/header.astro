@@ -5,7 +5,7 @@ import "./header.css";
 ---
 
 <script>
-  const $Menu = document.querySelector('.navbar button[role="menu"]');
+  const $Menu = document.querySelector(".navbar button#open-nav");
 
   $Menu.addEventListener("click", () => {
     const currentAriaExpandedValue = $Menu.getAttribute("aria-expanded");
@@ -17,7 +17,7 @@ import "./header.css";
 
 <header class="header">
   <nav class="navbar">
-    <button aria-expanded="false" role="menu">
+    <button id="open-nav" aria-expanded="false">
       <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
         <use xlink:href="/images/icons.svg#menu"></use>
       </svg>

@@ -51,14 +51,14 @@
   padding-left: 0;
 }
 
-.navbar button[role="menu"]{
+.navbar button#open-nav{
   display: none;
   border: unset;
   background-color: transparent;
   color: var(--blue-50)
 }  
 
-.navbar button[role="menu"]:is(:active, :focus-visible){
+.navbar button#open-nav:is(:active, :focus-visible){
   border-radius: 4px;
   background-color: var(--blue-500);
 }  
@@ -87,7 +87,7 @@ html[scheme-mode="dark"] nav a:is(a:hover, a:focus-visible) {
 
 @media screen and (max-width: 35rem){
 
-  .navbar button[role="menu"]{
+  .navbar button#open-nav{
     display: initial;
   }
   
