@@ -14,6 +14,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     type: z.string(),
     description: z.string(),
+    cloudinary: z.string(),
     tools: z.string().array(),
     demo: z.string(),
     highlighted: z.boolean().default(false),
