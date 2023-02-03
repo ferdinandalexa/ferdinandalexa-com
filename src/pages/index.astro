@@ -30,7 +30,7 @@ let highlightedProjects = await getCollection(
                   type={project.data.type}
                   title={project.data.title}
                   description={project.data.description}
-                  url={project.slug}
+                  url={`/${project.data.locale}${project.slug}`}
                   cover={project.data.image}
                 />
               );
