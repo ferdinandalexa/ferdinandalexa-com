@@ -51,6 +51,7 @@ ol {
   font-weight: var(--fw-bold);
   gap: 10px;
   letter-spacing: 0.1rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -89,7 +90,6 @@ ol {
   color: var(--blue-100);
 }
 
-
 .contact-icon{
   display: inline-flex;
   color: var(--blue-300);
@@ -127,7 +127,6 @@ ol {
 .full-width {
   width: 100%;
 }
-
 
 html[scheme-mode="dark"] body {
   background-color: var(--blue-700);
