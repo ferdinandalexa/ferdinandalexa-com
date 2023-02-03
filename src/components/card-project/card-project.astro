@@ -2,13 +2,13 @@
 import Image from "../image.astro";
 import "./card-project.css";
 
-const { title, type, description, url, cover } = Astro.props;
+const { title, type, description, url, cover: cloudinary } = Astro.props;
 ---
 
 <article class="card-project">
   <a href={url}>
     <Image
-      src={`projects/${cover}/${cover}-cover`}
+      src={`projects/${cloudinary}/${cloudinary}-cover`}
       alt={`Imagen de portada: ir al proyecto ${title}`}
       className="card-project__cover"
       width="500"

@@ -2,9 +2,15 @@
 import Image from "../image.astro";
 import "./project-header.css";
 
-const { url, type, title, description, tools = [], demo } = Astro.props;
-
-const slug = url.split("/").at(-1);
+const {
+  url,
+  type,
+  title,
+  description,
+  cover: cloudinary,
+  tools = [],
+  demo,
+} = Astro.props;
 ---
 
 <header class="project-header">
@@ -37,7 +43,7 @@ const slug = url.split("/").at(-1);
     </a>
   </div>
   <Image
-    src={`projects/${slug}/${slug}-cover`}
+    src={`projects/${cloudinary}/${cloudinary}-cover`}
     alt=""
     width="1000"
     className="project-header__cover"
