@@ -1,0 +1,56 @@
+.switch-theme {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.switch-theme .moon,
+html[scheme-mode="light"] .switch-theme .moon{
+  color: var(--gray-300)
+}
+
+.switch-theme .sun,
+html[scheme-mode="light"] .switch-theme .sun{
+  color: var(--orange-300)
+}
+
+.switch-theme button#toggle-scheme {
+  position: relative;
+  display: flex;
+  width: 2.2rem;
+  height: 1.15rem;
+  align-items: center;
+  padding: 0;
+  border: 2px solid var(--gray-300);
+  border-radius: 100px;
+  background-color: var(--gray-300);
+  transform: scale(1.2);
+}
+
+.switch-theme button#toggle-scheme::after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px var(--gray-300) solid;
+  border-radius: 100px;
+  background-color: var(--white);
+  content: "";
+}
+
+html[scheme-mode="dark"] .switch-theme .moon{
+  color: var(--blue-200)
+}
+
+html[scheme-mode="dark"] .switch-theme .sun{
+  color: var(--gray-300)
+}
+
+html[scheme-mode="dark"] .switch-theme button#toggle-scheme {
+  border-color: var(--blue-200);
+  background-color: var(--blue-200);
+}
+
+html[scheme-mode="dark"] .switch-theme button#toggle-scheme::after {
+  border-color: var(--blue-200);
+  transform: translateX(1rem);
+}
