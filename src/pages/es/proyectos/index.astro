@@ -27,7 +27,7 @@ let allProjects = await getCollection("projects");
               title={project.data.title}
               description={project.data.description}
               cover={project.data.image}
-              url={`/${project.data.locale}${project.slug}`}
+              url={`/${project.data.locale}/${project.slug}`}
             />
           ))
         }
