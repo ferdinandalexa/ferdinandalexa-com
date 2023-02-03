@@ -1,6 +1,7 @@
 ---
 title: Gestion del tiempo
-slug: es/blog/gestion-tiempo
+locale: es
+slug: blog/gestion-tiempo
 date: 2020-09-05
 cover: ferdinandalexa/blog/gestion-del-tiempo
 description: Si estas empezando en el desarrollo web o en cualquier otra área, aprender a gestionar tu tiempo hará la diferencia en todo lo que hagas. Hoy daremos el primer paso para obtener dicha habilidad.
