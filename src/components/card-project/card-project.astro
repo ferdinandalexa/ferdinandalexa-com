@@ -2,14 +2,13 @@
 import Image from "../image.astro";
 import "./card-project.css";
 
-const { title, type, description, url } = Astro.props;
-const slug = url.split("/").at(-1);
+const { title, type, description, url, cover: image } = Astro.props;
 ---
 
 <article class="card-project">
   <a href={url}>
     <Image
-      src={`projects/${slug}/${slug}-cover`}
+      src={`projects/${image}/${image}-cover`}
       alt={`Imagen de portada: ir al proyecto ${title}`}
       className="card-project__cover"
       width="500"

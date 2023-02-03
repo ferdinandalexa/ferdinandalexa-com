@@ -1,11 +1,16 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/base-layout.astro";
 import CardPost from "../components/card-post/card-post.astro";
 import CardProject from "../components/card-project/card-project.astro";
 import Hero from "../components/hero/hero.astro";
 
-let allPosts = await Astro.glob("./es/blog/*.md");
-let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
+let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
+let highlightedProjects = await getCollection(
+  "projects",
+  ({ data: { highlighted } }) => highlighted
+);
 ---
 
 <BaseLayout title="Inicio | ferdinandalexa">
@@ -18,16 +23,15 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
       <div class="list-container">
         {
           highlightedProjects
-            .filter((project) => project.frontmatter.highlighted)
-            .sort((a, b) => a.frontmatter.top - b.frontmatter.top)
+            .sort((a, b) => a.data.top - b.data.top)
             .map((project) => {
               return (
                 <CardProject
-                  type={project.frontmatter.type}
-                  title={project.frontmatter.title}
-                  description={project.frontmatter.description}
-                  url={project.url}
-                  slug={project.frontmatter.slug}
+                  type={project.data.type}
+                  title={project.data.title}
+                  description={project.data.description}
+                  url={`/${project.data.locale}/${project.slug}`}
+                  cover={project.data.image}
                 />
               );
             })
@@ -41,13 +45,12 @@ let highlightedProjects = await Astro.glob("./es/proyectos/*.mdx");
         {
           allPosts
             .slice(0, 3)
-            .filter((post) => !post.frontmatter.draft)
             .map((post) => (
               <CardPost
-                title={post.frontmatter.title}
-                description={post.frontmatter.description}
-                date={post.frontmatter.date}
-                url={post.url}
+                title={post.data.title}
+                description={post.data.description}
+                date={post.data.date}
+                url={`/${post.data.locale}/${post.slug}`}
               />
             ))
         }

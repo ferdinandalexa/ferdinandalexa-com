@@ -2,11 +2,9 @@
 import getReadingTime from "reading-time";
 import BaseLayout from "../layouts/base-layout.astro";
 
-const {
-  content: { title, slug, date, description },
-} = Astro.props;
+const { title, slug, date, description, rawContent } = Astro.props;
 
-const rawContent = Astro.props.rawContent();
+// console.log(Astro.props);
 
 const minutes = Math.round(getReadingTime(rawContent).minutes);
 

@@ -1,8 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardProject from "../../../components/card-project/card-project.astro";
 
-let allProjects = await Astro.glob("./*.mdx");
+let allProjects = await getCollection("projects");
 ---
 
 <style>
@@ -19,16 +21,15 @@ let allProjects = await Astro.glob("./*.mdx");
       </h2>
       <div class="list-container">
         {
-          allProjects
-            .filter((project) => !project.frontmatter.draft)
-            .map((project) => (
-              <CardProject
-                type={project.frontmatter.type}
-                title={project.frontmatter.title}
-                description={project.frontmatter.description}
-                url={project.url}
-              />
-            ))
+          allProjects.map((project) => (
+            <CardProject
+              type={project.data.type}
+              title={project.data.title}
+              description={project.data.description}
+              cover={project.data.image}
+              url={`/${project.data.locale}/${project.slug}`}
+            />
+          ))
         }
       </div>
     </section>
