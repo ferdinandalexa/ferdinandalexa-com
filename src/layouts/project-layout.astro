@@ -4,7 +4,7 @@ import BaseLayout from "./base-layout.astro";
 
 const {
   slug,
-  data: { title, type, description, cloudinary, tools, demo },
+  data: { title, type, description, image, tools, demo },
 } = Astro.props;
 ---
 
@@ -43,7 +43,7 @@ const {
       title={title}
       description={description}
       tools={tools}
-      cover={cloudinary}
+      cover={image}
       demo={demo}
     />
     <section aria-labelledby="process" class="section">

@@ -6,7 +6,7 @@ const {
   type,
   title,
   description,
-  cover: cloudinary,
+  cover: image,
   tools = [],
   demo,
 } = Astro.props;
@@ -42,7 +42,7 @@ const {
     </a>
   </div>
   <Image
-    src={`projects/${cloudinary}/${cloudinary}-cover`}
+    src={`projects/${image}/${image}-cover`}
     alt=""
     width="1000"
     className="project-header__cover"
