@@ -3,8 +3,8 @@ import ProjectHeader from "../components/project-header/project-header.astro";
 import BaseLayout from "./base-layout.astro";
 
 const {
-  url,
-  content: { title, type, description, cloudinary, tools, demo },
+  slug,
+  data: { title, type, description, cloudinary, tools, demo },
 } = Astro.props;
 ---
 
@@ -35,7 +35,7 @@ const {
 <BaseLayout
   title={`${title} | ferdinandalexa`}
   description={description}
-  slug={url}
+  slug={slug}
 >
   <main>
     <ProjectHeader
@@ -43,7 +43,6 @@ const {
       title={title}
       description={description}
       tools={tools}
-      url={url}
       cover={cloudinary}
       demo={demo}
     />
