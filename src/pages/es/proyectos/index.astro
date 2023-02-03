@@ -1,8 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardProject from "../../../components/card-project/card-project.astro";
 
-let allProjects = await Astro.glob("./*.mdx");
+let allProjects = await getCollection("project");
 ---
 
 <style>
@@ -18,7 +20,7 @@ let allProjects = await Astro.glob("./*.mdx");
         Proyectos destacados
       </h2>
       <div class="list-container">
-        {
+        <!-- {
           allProjects
             .filter((project) => !project.frontmatter.draft)
             .map((project) => (
@@ -29,7 +31,7 @@ let allProjects = await Astro.glob("./*.mdx");
                 url={project.url}
               />
             ))
-        }
+        } -->
       </div>
     </section>
   </main>

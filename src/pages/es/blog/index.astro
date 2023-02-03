@@ -1,8 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardPost from "../../../components/card-post/card-post.astro";
 
-let allPosts = await Astro.glob("./*.md");
+let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
 ---
 
 <style>
@@ -24,16 +26,14 @@ let allPosts = await Astro.glob("./*.md");
       <h2 id="blog-section" class="section__title">Blog</h2>
       <div>
         {
-          allPosts
-            .slice(0, 3)
-            .filter((post) => !post.frontmatter.draft)
-            .map((post) => (
-              <CardPost
-                title={post.frontmatter.title}
-                date={post.frontmatter.date}
-                url={post.url}
-              />
-            ))
+          allPosts.map((post) => (
+            <CardPost
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              url={}
+            />
+          ))
         }
       </div>
     </section>
