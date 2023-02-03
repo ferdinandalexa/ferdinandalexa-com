@@ -7,12 +7,6 @@ import CardProject from "../../../components/card-project/card-project.astro";
 let allProjects = await getCollection("projects");
 ---
 
-<style>
-  main {
-    margin-top: 3rem;
-  }
-</style>
-
 <BaseLayout title="Proyectos | ferdinandalexa">
   <main>
     <section class="section" aria-labelledby="highlighted-projects-section">
@@ -35,3 +29,9 @@ let allProjects = await getCollection("projects");
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  main {
+    margin-top: 3rem;
+  }
+</style>

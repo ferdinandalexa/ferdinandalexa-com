@@ -8,30 +8,6 @@ const {
 } = Astro.props;
 ---
 
-<style>
-  div,
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 4.5rem;
-  }
-
-  main {
-    margin-top: 6rem;
-  }
-</style>
-
-<style is:global>
-  h2,
-  h3 {
-    color: var(--blue-300);
-  }
-
-  html[scheme-mode="dark"] :is(h2, h3) {
-    color: var(--blue-100);
-  }
-</style>
-
 <BaseLayout
   title={`${title} | ferdinandalexa`}
   description={description}
@@ -60,3 +36,27 @@ const {
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  div,
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+  }
+
+  main {
+    margin-top: 6rem;
+  }
+</style>
+
+<style is:global>
+  h2,
+  h3 {
+    color: var(--blue-300);
+  }
+
+  html[scheme-mode="dark"] :is(h2, h3) {
+    color: var(--blue-100);
+  }
+</style>

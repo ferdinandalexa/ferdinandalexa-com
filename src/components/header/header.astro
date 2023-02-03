@@ -4,17 +4,6 @@ import Switch from "../switch.astro";
 import "./header.css";
 ---
 
-<script>
-  const $Menu = document.querySelector(".navbar button#open-nav");
-
-  $Menu.addEventListener("click", () => {
-    const currentAriaExpandedValue = $Menu.getAttribute("aria-expanded");
-    const newAriaExpandedValue =
-      currentAriaExpandedValue === "false" ? "true" : "false";
-    $Menu.setAttribute("aria-expanded", newAriaExpandedValue);
-  });
-</script>
-
 <header class="header">
   <nav class="navbar">
     <button id="open-nav" aria-expanded="false">
@@ -39,3 +28,14 @@ import "./header.css";
 
   <Switch />
 </header>
+
+<script>
+  const $Menu = document.querySelector(".navbar button#open-nav");
+
+  $Menu.addEventListener("click", () => {
+    const currentAriaExpandedValue = $Menu.getAttribute("aria-expanded");
+    const newAriaExpandedValue =
+      currentAriaExpandedValue === "false" ? "true" : "false";
+    $Menu.setAttribute("aria-expanded", newAriaExpandedValue);
+  });
+</script>

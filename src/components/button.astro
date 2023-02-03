@@ -2,6 +2,20 @@
 const { as, href, css = {} } = Astro.props;
 ---
 
+{
+  as === "button" ? (
+    <button { href } style={css}>
+      {" "}
+      <slot />{" "}
+    </button>
+  ) : (
+    <a { href } style={css}>
+      {" "}
+      <slot />{" "}
+    </a>
+  )
+}
+
 <style>
   a,
   button {
@@ -26,17 +40,3 @@ const { as, href, css = {} } = Astro.props;
     --bg-button: var(--blue-200);
   }
 </style>
-
-{
-  as === "button" ? (
-    <button { href } style={css}>
-      {" "}
-      <slot />{" "}
-    </button>
-  ) : (
-    <a { href } style={css}>
-      {" "}
-      <slot />{" "}
-    </a>
-  )
-}

@@ -3,6 +3,14 @@ import Sun from "./icons/sun.astro";
 import Moon from "./icons/moon.astro";
 ---
 
+<div>
+  <Sun />
+  <button id="toggle-scheme" role="switch" aria-checked="false">
+    <span class="sr-only">Habiltiar modo oscuro</span>
+  </button>
+  <Moon />
+</div>
+
 <style>
   div {
     display: flex;
@@ -42,11 +50,3 @@ import Moon from "./icons/moon.astro";
     transform: translateX(1rem);
   }
 </style>
-
-<div>
-  <Sun />
-  <button id="toggle-scheme" role="switch" aria-checked="false">
-    <span class="sr-only">Habiltiar modo oscuro</span>
-  </button>
-  <Moon />
-</div>

@@ -3,16 +3,6 @@ let width = Astro.props.size || "24px";
 let height = Astro.props.size || "24px";
 ---
 
-<style>
-  svg {
-    stroke: var(--orange-300);
-  }
-
-  :global(html[scheme-mode="dark"]) svg {
-    stroke: var(--gray-300);
-  }
-</style>
-
 <svg
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
@@ -29,3 +19,13 @@ let height = Astro.props.size || "24px";
     <circle cx="12" cy="12" r="4"></circle>
   </g>
 </svg>
+
+<style>
+  svg {
+    stroke: var(--orange-300);
+  }
+
+  :global(html[scheme-mode="dark"]) svg {
+    stroke: var(--gray-300);
+  }
+</style>

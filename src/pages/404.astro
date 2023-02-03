@@ -6,17 +6,27 @@ import Button from "../components/button.astro";
 const buttonCSS = `
   max-width: 42ch;
   width: 100%;
-`
+`;
 ---
 
+<BaseLayout>
+  <main>
+    <h2>404</h2>
+    <p>
+      No encontramos lo que buscas, pero puedes revisar el resto del contenido
+    </p>
+    <Button as="a" href="/blog" css={buttonCSS}>Revisar contenido</Button>
+  </main>
+</BaseLayout>
+
 <style>
-  h2{
+  h2 {
     font: var(--heading-xlarge);
     margin: auto;
     width: max-content;
   }
 
-  p{
+  p {
     text-align: center;
     font: var(--body-medium);
     color: var(--c-text);
@@ -24,18 +34,10 @@ const buttonCSS = `
     max-width: 42ch;
   }
 
-  main{
+  main {
     display: grid;
     place-content: center;
     place-items: center;
     padding-bottom: 4rem;
   }
 </style>
-
-<BaseLayout>
-  <main>
-    <h2>404</h2>
-    <p>No encontramos lo que buscas, pero puedes revisar el resto del contenido</p>
-    <Button as="a" href="/blog" css={ buttonCSS } >Revisar contenido</Button>
-  </main>
-</BaseLayout>

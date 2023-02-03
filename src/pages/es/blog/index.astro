@@ -7,19 +7,6 @@ import CardPost from "../../../components/card-post/card-post.astro";
 let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
 ---
 
-<style>
-  h2 {
-    margin-bottom: 0.75rem;
-    font: var(--heading-medium);
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style>
-
 <BaseLayout title="Blog | ferdinandalexa">
   <main>
     <section aria-labelledby="blog-section" class="section">
@@ -39,3 +26,16 @@ let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  h2 {
+    margin-bottom: 0.75rem;
+    font: var(--heading-medium);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

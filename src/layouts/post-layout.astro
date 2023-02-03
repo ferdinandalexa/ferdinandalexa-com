@@ -15,6 +15,21 @@ const datePublish = new Date(date).toLocaleDateString("es", {
 });
 ---
 
+<BaseLayout
+  title={`${title} | ferdinandalexa`}
+  description={description}
+  slug={slug}
+>
+  <main>
+    <header>
+      <h1>{title}</h1>
+      <time datetime={date}>{datePublish}</time>
+      <span>{minutes} min de lectura</span>
+    </header>
+    <slot />
+  </main>
+</BaseLayout>
+
 <style is:inline>
   h1,
   h2,
@@ -145,18 +160,3 @@ const datePublish = new Date(date).toLocaleDateString("es", {
     opacity: 0.5;
   }
 </style>
-
-<BaseLayout
-  title={`${title} | ferdinandalexa`}
-  description={description}
-  slug={slug}
->
-  <main>
-    <header>
-      <h1>{title}</h1>
-      <time datetime={date}>{datePublish}</time>
-      <span>{minutes} min de lectura</span>
-    </header>
-    <slot />
-  </main>
-</BaseLayout>
