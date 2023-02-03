@@ -49,7 +49,7 @@ let highlightedProjects = await getCollection(
                 title={post.data.title}
                 description={post.data.description}
                 date={post.data.date}
-                url={post.slug}
+                url={`/${post.data.locale}/${post.slug}`}
               />
             ))
         }
