@@ -23,15 +23,14 @@
   line-height: 125%;
 }
 
-.hero__subtitle{
+.hero__title span{
   color: var(--blue-300);
-  font-size: var(--fs-3xlarge);
-  line-height: 125%;
+  font-size: var(--fs-4xlarge);
 }
 
 .hero__description {
   color: var(--blue-500);
-  font-size: var(--fs-medium);
+  font-size: var(--fs-large);
   line-height: 150%;
 }
 
@@ -68,6 +67,6 @@
 html[scheme-mode="dark"] :is(.hero__title, .hero__description) {
   color: var(--blue-50);
 }
-html[scheme-mode="dark"] .hero__subtitle{
+html[scheme-mode="dark"] .hero__title span{
   color: var(--blue-100);
 }
