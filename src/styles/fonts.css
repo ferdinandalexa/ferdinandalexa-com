@@ -9,14 +9,14 @@
 
   /* Text-size styles */
   /* Base size: base (16px) */
-  --fs-4xlarge: 2.62rem;  /* 42px */ 
+  --fs-4xlarge: 2.625rem; /* 42px */ 
   --fs-3xlarge: 2.25rem;  /* 36px */
-  --fs-2xlarge: 1.88rem;  /* 30px */
+  --fs-2xlarge: 1.875rem; /* 30px */
   --fs-xlarge: 1.5rem;    /* 24px */
   --fs-large: 1.25rem;    /* 20px */
-  --fs-medium: 1.12rem;   /* 18px */
+  --fs-medium: 1.125rem;  /* 18px */
   --fs-base: 1rem;        /* 16px */
-  --fs-small: 0.88rem;    /* 14px */
+  --fs-small: 0.875rem;   /* 14px */
   --fs-xsmall: 0.75rem;   /* 12px */
 
   font-family: var(--ff-sans);
