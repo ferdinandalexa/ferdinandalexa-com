@@ -1,0 +1,64 @@
+{
+  "t": {
+    "es": {
+      "components": {
+        "hero": {
+          "title": "Hola, soy Fernando Yerena, <span>UI/UX Developer</span> mexicano",
+          "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web.",
+          "cta": "Ver Currículum"
+        },
+        "navigation": [
+          {
+            "name": "Inicio",
+            "href": "/",
+            "external": false
+          },
+          {
+            "name": "Proyectos",
+            "href": "/es/proyectos",
+            "external": false
+          },
+          {
+            "name": "Currículum",
+            "href": "https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing",
+            "external": true
+          }
+        ]
+      },
+      "sections": {
+        "highlightedProjects": "Proyectos destacados",
+        "latestPosts": "Artículos recientes"
+      }
+    },
+    "en": {
+      "components": {
+        "hero": {
+          "title": "I’m Fernando Yerena, mexican <span>UI/UX Developer</span>",
+          "description": "Engaged with the development of the accessible user experience and web performance.",
+          "cta": "See Resume"
+        },
+        "navigation": [
+          {
+            "name": "Home",
+            "href": "/en",
+            "external": false
+          },
+          {
+            "name": "Projects",
+            "href": "/en/projects",
+            "external": false
+          },
+          {
+            "name": "Resume",
+            "href": "https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing",
+            "external": true
+          }
+        ]
+      },
+      "sections": {
+        "highlightedProjects": "Highlighted projects",
+        "latestPosts": "Latest Posts"
+      }
+    }
+  }
+}
