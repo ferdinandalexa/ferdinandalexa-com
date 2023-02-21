@@ -11,7 +11,7 @@ const locale = pathname.match(regex)?.groups?.locale || "es";
 <footer class="footer">
   <div class="footer__top">
     <div class="rrss">
-      <h3 class="footer__section">Sígueme en:</h3>
+      <h3 class="footer__section">{t[locale].sections.followMe}:</h3>
       <ul>
         <li>
           <a
@@ -56,7 +56,7 @@ const locale = pathname.match(regex)?.groups?.locale || "es";
     </div>
 
     <div>
-      <h3 class="footer__section">O envíame un mensaje a:</h3>
+      <h3 class="footer__section">{t[locale].sections.sendMeMessage}:</h3>
       <a href="mailto:me@ferdinandalexa.com" class="contact-icon email">
         <svg viewBox="0 0 24 24" width="36" height="36" role="presentation">
           <use xlink:href="/images/contact-icons.svg#email"></use>

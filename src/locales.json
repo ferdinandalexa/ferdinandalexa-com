@@ -27,7 +27,9 @@
       },
       "sections": {
         "highlightedProjects": "Proyectos destacados",
-        "latestPosts": "Artículos recientes"
+        "latestPosts": "Artículos recientes",
+        "followMe": "Sigueme en",
+        "sendMeMessage": "O envíame un mensaje"
       }
     },
     "en": {
@@ -57,7 +59,9 @@
       },
       "sections": {
         "highlightedProjects": "Highlighted projects",
-        "latestPosts": "Latest Posts"
+        "latestPosts": "Latest Posts",
+        "followMe": "Follow me on",
+        "sendMeMessage": "Or send me a message"
       }
     }
   }
