@@ -1,8 +1,12 @@
 ---
 import "./footer.css";
----
 
-<style></style>
+import { t } from "../../locales.json";
+
+const { pathname } = Astro.url;
+const regex = /\/(?<locale>en|es)$\/?/;
+const locale = pathname.match(regex)?.groups?.locale || "es";
+---
 
 <footer class="footer">
   <div class="footer__top">
@@ -64,15 +68,21 @@ import "./footer.css";
 
   <nav class="navbar">
     <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/es/proyectos">Proyectos</a></li>
-      <li>
-        <a
-          href="https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing"
-          target="_blank"
-          rel="noopener nofollow">Currículum</a
-        >
-      </li>
+      {
+        t[locale].components.navigation.map(({ href, name, external }) => {
+          return (
+            <li>
+              <a
+                href={href}
+                target={external ? "_blank" : null}
+                rel={external ? "noopener nofollow" : null}
+              >
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
 </footer>
