@@ -1,7 +1,11 @@
 ---
+import "./header.css";
+
 import SwitchTheme from "../switch-theme/switch-theme.astro";
 
-import "./header.css";
+import { t } from "../../locales.json";
+const { pathname } = Astro.url;
+const locale = pathname === "/" ? "es" : pathname.split("/")[1];
 ---
 
 <header class="header">
@@ -13,16 +17,21 @@ import "./header.css";
       <span class="sr-only">Menú</span>
     </button>
     <ul class="navbar__pages">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/es/proyectos">Proyectos</a></li>
-      <li>
-        <a
-          href="
-        https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing"
-          target="_blank"
-          rel="noopener nofollow">Currículum</a
-        >
-      </li>
+      {
+        t[locale].components.navigation.map(({ href, name, external }) => {
+          return (
+            <li>
+              <a
+                href={href}
+                target={external ? "_blank" : ""}
+                rel={external ? "noopener nofollow" : ""}
+              >
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
 
