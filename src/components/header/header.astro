@@ -4,8 +4,11 @@ import "./header.css";
 import SwitchTheme from "../switch-theme/switch-theme.astro";
 
 import { t } from "../../locales.json";
+
+console.log(Astro);
 const { pathname } = Astro.url;
-const locale = pathname === "/" ? "es" : pathname.split("/")[1];
+const regex = /\/(?<locale>en|es)$\/?/;
+const locale = pathname.match(regex)?.groups?.locale || "es";
 ---
 
 <header class="header">
