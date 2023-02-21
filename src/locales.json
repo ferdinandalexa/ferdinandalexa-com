@@ -7,6 +7,10 @@
           "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web.",
           "cta": "Ver Currículum"
         },
+        "cardProject": {
+          "altImage": "Imagen de portada: ir al proyecto",
+          "cta": "Más sobre el proyecto"
+        },
         "navigation": [
           {
             "name": "Inicio",
@@ -42,6 +46,10 @@
           "title": "I’m Fernando Yerena, mexican <span>UI/UX Developer</span>",
           "description": "Engaged with the development of the accessible user experience and web performance.",
           "cta": "See Resume"
+        },
+        "cardProject": {
+          "altImage": "Cover image: go to project",
+          "cta": "About the project"
         },
         "navigation": [
           {
