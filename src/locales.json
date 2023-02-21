@@ -29,7 +29,11 @@
         "highlightedProjects": "Proyectos destacados",
         "latestPosts": "Artículos recientes",
         "followMe": "Sigueme en",
-        "sendMeMessage": "O envíame un mensaje"
+        "sendMeMessage": "O envíame un mensaje",
+        "moreProjects": {
+          "cta": "Ver más proyectos",
+          "href": "/es/proyectos"
+        }
       }
     },
     "en": {
@@ -61,7 +65,11 @@
         "highlightedProjects": "Highlighted projects",
         "latestPosts": "Latest Posts",
         "followMe": "Follow me on",
-        "sendMeMessage": "Or send me a message"
+        "sendMeMessage": "Or send me a message",
+        "moreProjects": {
+          "cta": "See more projects",
+          "href": "/en/projects"
+        }
       }
     }
   }

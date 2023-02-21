@@ -38,7 +38,9 @@ let highlightedProjects = await getCollection(
               );
             })
         }
-        <a href="/es/proyectos" class="button ghost">Ver más proyectos</a>
+        <a href={t.en.sections.moreProjects.href} class="button ghost"
+          >{t.en.sections.moreProjects.cta}</a
+        >
       </div>
     </section>
     <!-- <section aria-labelledby="latest-posts" class="section">
