@@ -16,7 +16,7 @@ const locale = pathname.match(regex)?.groups?.locale || "es";
       <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
         <use xlink:href="/images/icons.svg#menu"></use>
       </svg>
-      <span class="sr-only">Menú</span>
+      <span class="sr-only">{t[locale].sections.navButtonMenu}</span>
     </button>
     <ul class="navbar__pages">
       {

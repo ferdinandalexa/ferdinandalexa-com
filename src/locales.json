@@ -30,6 +30,7 @@
         ]
       },
       "sections": {
+        "navButtonMenu": "Menú",
         "highlightedProjects": "Proyectos destacados",
         "latestPosts": "Artículos recientes",
         "followMe": "Sigueme en",
@@ -70,6 +71,7 @@
         ]
       },
       "sections": {
+        "navButtonMenu": "Menu",
         "highlightedProjects": "Highlighted projects",
         "latestPosts": "Latest Posts",
         "followMe": "Follow me on",
