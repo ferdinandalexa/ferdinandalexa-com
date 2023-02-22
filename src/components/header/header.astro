@@ -2,6 +2,7 @@
 import "./header.css";
 
 import SwitchTheme from "../switch-theme/switch-theme.astro";
+import LanguageMenu from "../language-menu/language-menu.astro";
 
 import { t } from "../../locales.json";
 
@@ -37,6 +38,7 @@ const locale = pathname.match(regex)?.groups?.locale || "es";
     </ul>
   </nav>
 
+  <LanguageMenu />
   <SwitchTheme />
 </header>
 

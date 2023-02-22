@@ -1,0 +1,31 @@
+<button id="language-menu">Inglés/Español</button>
+
+<script>
+  const $LanguageMenu = document.querySelector("#language-menu");
+
+  const languageResolver = {
+    en: "/es",
+    es: "/en",
+  };
+
+  const collectionResolver = {
+    proyectos: "/projects",
+    projects: "/proyectos",
+    blog: "/blog",
+  };
+
+  const regex =
+    /\/(?<locale>en|es)\/?(?<collection>projects|proyectos|blog)?\/?(?<slug>.*)?\/?/i;
+
+  const locale = location.pathname.match(regex)?.groups?.locale || "es";
+  const collection = location.pathname.match(regex)?.groups?.collection;
+  const slug = location.pathname.match(regex)?.groups?.slug;
+
+  $LanguageMenu.addEventListener("click", () => {
+    const newPath = `${languageResolver[locale]}${
+      collectionResolver[collection] || ""
+    }${slug ? `/${slug}` : ""}`;
+
+    location.href = newPath === "/es" ? "/" : newPath;
+  });
+</script>
