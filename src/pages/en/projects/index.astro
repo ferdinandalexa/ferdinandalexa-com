@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../../layouts/base-layout.astro";
+import CardProject from "../../../components/card-project/card-project.astro";
+
+import { t } from "../../../locales.json";
+
+let allProjects = await getCollection("projects", ({ id }) =>
+  id.startsWith("en/")
+);
+---
+
+<BaseLayout title="Proyectos | ferdinandalexa">
+  <main>
+    <section class="section" aria-labelledby="highlighted-projects-section">
+      <h2 id="highlighted-projects-section" class="section__title">
+        {t.en.sections.highlightedProjects}
+      </h2>
+      <div class="list-container">
+        {
+          allProjects.map((project) => (
+            <CardProject
+              type={project.data.type}
+              title={project.data.title}
+              description={project.data.description}
+              cover={project.data.image}
+              url={`/${project.data.locale}/${project.slug}`}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    margin-top: 3rem;
+  }
+</style>

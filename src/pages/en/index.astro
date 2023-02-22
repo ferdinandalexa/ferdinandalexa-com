@@ -11,7 +11,9 @@ import { t } from "../../locales.json";
 // let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
 let highlightedProjects = await getCollection(
   "projects",
-  ({ data: { highlighted } }) => highlighted
+  ({ data: { highlighted }, id }) => {
+    return id.startsWith("en/") && highlighted;
+  }
 );
 ---
 
