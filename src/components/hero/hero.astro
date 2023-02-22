@@ -1,11 +1,12 @@
 ---
 import "./hero.css";
 
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
 import { t } from "../../locales.json";
 
 const { pathname } = Astro.url;
-const regex = /\/(?<locale>en|es)$\/?/;
-const locale = pathname.match(regex)?.groups?.locale || "es";
+const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
 <section class="hero">

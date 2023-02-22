@@ -3,12 +3,12 @@ import "./header.css";
 
 import SwitchTheme from "../switch-theme/switch-theme.astro";
 import LanguageMenu from "../language-menu/language-menu.astro";
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
 
 import { t } from "../../locales.json";
 
 const { pathname } = Astro.url;
-const regex = /\/(?<locale>en|es)$\/?/;
-const locale = pathname.match(regex)?.groups?.locale || "es";
+const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
 <header class="header">
