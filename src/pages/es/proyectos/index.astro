@@ -4,7 +4,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardProject from "../../../components/card-project/card-project.astro";
 
-let allProjects = await getCollection("projects");
+let allProjects = await getCollection("projects", ({ id }) =>
+  id.startsWith("es/")
+);
 ---
 
 <BaseLayout title="Proyectos | ferdinandalexa">

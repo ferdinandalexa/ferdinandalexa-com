@@ -4,7 +4,9 @@ import { getCollection } from "astro:content";
 import ProjectLayout from "../../../layouts/project-layout.astro";
 
 export async function getStaticPaths() {
-  const projectEntries = await getCollection("projects");
+  const projectEntries = await getCollection("projects", ({ id }) =>
+    id.startsWith("es/")
+  );
 
   return projectEntries.map((entry) => {
     return {
