@@ -1,31 +1,17 @@
 <button id="language-menu">Inglés/Español</button>
 
 <script>
+  import { localeURL } from "../../utils/localeURL.js";
+  import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
   const $LanguageMenu = document.querySelector("#language-menu");
 
-  const languageResolver = {
-    en: "/es",
-    es: "/en",
-  };
-
-  const collectionResolver = {
-    proyectos: "/projects",
-    projects: "/proyectos",
-    blog: "/blog",
-  };
-
-  const regex =
-    /\/(?<locale>en|es)\/?(?<collection>projects|proyectos|blog)?\/?(?<slug>.*)?\/?/i;
-
-  const locale = location.pathname.match(regex)?.groups?.locale || "es";
-  const collection = location.pathname.match(regex)?.groups?.collection;
-  const slug = location.pathname.match(regex)?.groups?.slug;
-
   $LanguageMenu.addEventListener("click", () => {
-    const newPath = `${languageResolver[locale]}${
-      collectionResolver[collection] || ""
-    }${slug ? `/${slug}` : ""}`;
+    const pathname = document.location;
+    const { locale, collection, slug } = getPatternFromPathname(pathname);
 
-    location.href = newPath === "/es" ? "/" : newPath;
+    const newPath = localeURL({ locale, collection, slug });
+
+    location.href = newPath;
   });
 </script>
