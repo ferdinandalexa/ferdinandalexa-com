@@ -18,16 +18,6 @@
   padding-block: 0.5rem;
 }
 
-.language.left{
-  padding-right: 0.7rem;
-  padding-left: 1rem;
-}
-
-.language.right{
-  padding-right: 1rem;
-  padding-left: 0.7rem;
-}
-
 .language::after{
   position: absolute;
   z-index: -1;
@@ -38,12 +28,34 @@
   opacity: 0.25;
 }
 
+.language.left{
+  padding-right: 0.7rem;
+  padding-left: 1rem;
+}
+
+.language.right{
+  padding-right: 1rem;
+  padding-left: 0.7rem;
+}
+
+.language.right::after{
+  border-radius: 0 2rem 2rem 0;
+}
+
+.language.left::after{
+  border-radius: 2rem 0 0 2rem;
+}
+
 .language[data-selected="true"]::after{
   opacity: 0.8;
 }
 
-.language[data-selected="false"]:hover::after{
+.language[data-selected="false"]:is(:hover, :focus-visible)::after{
   opacity: 1;
+}
+
+.language[data-selected="false"]:is(:focus-visible)::after{
+  border: 2px solid white;
 }
 
 .language svg{
