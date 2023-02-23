@@ -38,8 +38,10 @@ const { locale = "es" } = getPatternFromPathname({ pathname });
     </ul>
   </nav>
 
-  <LanguageSwitch />
-  <SwitchTheme />
+  <div class="menu">
+    <SwitchTheme />
+    <LanguageSwitch />
+  </div>
 </header>
 
 <script>
