@@ -1,56 +1,63 @@
 .switch-theme {
+  all: unset;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 0.075rem solid var(--blue-100);
+  border-radius: 0.2rem;
 }
 
-.switch-theme .moon,
+.switch-theme::after{
+  position: absolute;
+  z-index: -1;
+  background-color: var(--blue-100);
+  content: "";
+  inset: 0;
+  opacity: 0.25;
+}
+
+.switch-theme:is(:hover, :focus-visible)::after{
+  opacity: 1;
+}
+
+html[scheme-mode="light"] .switch-theme:focus-visible{
+  border-color: var(--blue-200);
+}
+
 html[scheme-mode="light"] .switch-theme .moon{
-  color: var(--gray-300)
+  display: none;
 }
 
 .switch-theme .sun,
 html[scheme-mode="light"] .switch-theme .sun{
+  display: initial;
   color: var(--orange-300)
 }
 
-.switch-theme button#toggle-scheme {
-  position: relative;
-  display: flex;
-  width: 2.2rem;
-  height: 1.15rem;
-  align-items: center;
-  padding: 0;
-  border: 2px solid var(--gray-300);
-  border-radius: 100px;
-  background-color: var(--gray-300);
-  transform: scale(1.2);
-}
-
-.switch-theme button#toggle-scheme::after {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border: 2px var(--gray-300) solid;
-  border-radius: 100px;
-  background-color: var(--white);
-  content: "";
-}
-
-html[scheme-mode="dark"] .switch-theme .moon{
-  color: var(--blue-200)
-}
-
-html[scheme-mode="dark"] .switch-theme .sun{
-  color: var(--gray-300)
-}
-
-html[scheme-mode="dark"] .switch-theme button#toggle-scheme {
+html[scheme-mode="dark"] .switch-theme {
   border-color: var(--blue-200);
+}
+
+html[scheme-mode="dark"] .switch-theme:focus-visible {
+  border-color: white;
+}
+
+html[scheme-mode="dark"] .switch-theme::after {
   background-color: var(--blue-200);
 }
 
-html[scheme-mode="dark"] .switch-theme button#toggle-scheme::after {
-  border-color: var(--blue-200);
-  transform: translateX(1rem);
+html[scheme-mode="dark"] .switch-theme .moon{
+  display: initial;
+  color: var(--blue-200)
+}
+
+html[scheme-mode="dark"] .switch-theme:is(:hover, :focus-visible) .moon{
+  display: initial;
+  color: var(--blue-100)
+}
+
+html[scheme-mode="dark"] .switch-theme .sun{
+  display: none;
 }

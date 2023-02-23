@@ -9,26 +9,29 @@ const { pathname } = Astro.url;
 const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
-<div class="switch-theme">
+<button
+  id="toggle-scheme"
+  role="switch"
+  aria-checked="false"
+  class="switch-theme"
+>
+  <span class="sr-only">{t[locale].components.switchTheme.sr}</span>
   <svg
     viewBox="0 0 24 24"
-    width="22"
-    height="22"
+    width="20"
+    height="20"
     role="presentation"
     class="sun"
   >
     <use xlink:href="/images/icons.svg#sun"></use>
   </svg>
-  <button id="toggle-scheme" role="switch" aria-checked="false">
-    <span class="sr-only">{t[locale].components.switchTheme.sr}</span>
-  </button>
   <svg
     viewBox="0 0 24 24"
-    width="22"
-    height="22"
+    width="20"
+    height="20"
     role="presentation"
     class="moon"
   >
     <use xlink:href="/images/icons.svg#moon"></use>
   </svg>
-</div>
+</button>
