@@ -1,6 +1,8 @@
 ---
-import Image from "../image.astro";
 import "./project-header.css";
+
+import Image from "../image.astro";
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
 
 const {
   type,
@@ -10,6 +12,11 @@ const {
   tools = [],
   demo,
 } = Astro.props;
+
+import { t } from "../../locales.json";
+
+const { pathname } = Astro.url;
+const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
 <header class="project-header">
@@ -18,7 +25,7 @@ const {
   <p class="project-header__description">{description}</p>
   <div class="project-header__bottom">
     <div class="project-header__tools">
-      <span>Tools:</span>
+      <span>{t[locale].components.projectHeader.tools}:</span>
       <ul>
         {
           tools.map((tool) => (
@@ -38,7 +45,7 @@ const {
       <svg viewBox="0 0 24 24" width="24" height="24" role="presentation">
         <use xlink:href="/images/icons.svg#external-link"></use>
       </svg>
-      Go to demo
+      {t[locale].components.projectHeader.cta}
     </a>
   </div>
   <Image

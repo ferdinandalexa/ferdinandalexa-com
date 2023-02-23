@@ -33,6 +33,10 @@
         },
         "languageOption": {
           "sr": "Leer página en inglés"
+        },
+        "projectHeader": {
+          "tools": "Herramientas",
+          "cta": "Ir a la Demo"
         }
       },
       "sections": {
@@ -84,6 +88,10 @@
         },
         "languageOption": {
           "sr": "Read page in Spanish"
+        },
+        "projectHeader": {
+          "tools": "Tools",
+          "cta": "Go to Demo"
         }
       },
       "sections": {
