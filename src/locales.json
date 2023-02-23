@@ -28,6 +28,9 @@
             "external": true
           }
         ],
+        "switchTheme": {
+          "sr": "Habiltiar modo oscuro"
+        },
         "languageOption": {
           "sr": "Leer página en inglés"
         }
@@ -72,6 +75,9 @@
             "external": true
           }
         ],
+        "switchTheme": {
+          "sr": "Enable dark mode"
+        },
         "languageOption": {
           "sr": "Read page in Spanish"
         }
