@@ -44,6 +44,10 @@
         "moreProjects": {
           "cta": "Ver más proyectos",
           "href": "/es/proyectos"
+        },
+        "notFound": {
+          "text": "No encontramos lo que buscas, pero puedes revisar el resto del contenido",
+          "cta": "Revisar contenido"
         }
       }
     },
@@ -91,6 +95,10 @@
         "moreProjects": {
           "cta": "See more projects",
           "href": "/en/projects"
+        },
+        "notFound": {
+          "text": "We have not found what you are looking for, but you can see the rest of our content",
+          "cta": "See the content"
         }
       }
     }

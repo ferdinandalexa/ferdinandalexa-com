@@ -1,13 +1,20 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro";
+
+import { getPatternFromPathname } from "../utils/getPatternFromPathname.js";
+
+import { t } from "../locales.json";
+
+const { pathname } = Astro.url;
+const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
 <BaseLayout>
   <main>
     <p>
-      No encontramos lo que buscas, pero puedes revisar el resto del contenido
+      {t[locale].sections.notFound.text}
     </p>
-    <a href="/" class="button fulfilled">Revisar contenido</a>
+    <a href="/" class="button fulfilled">{t[locale].sections.notFound.cta}</a>
   </main>
 </BaseLayout>
 
