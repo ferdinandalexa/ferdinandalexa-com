@@ -24,6 +24,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<ProjectLayout {...entry}>
+<ProjectLayout {...entry} locale="en">
   <Content />
 </ProjectLayout>
