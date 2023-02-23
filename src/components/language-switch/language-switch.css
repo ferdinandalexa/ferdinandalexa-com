@@ -9,7 +9,7 @@
   border: none;
   border-radius: 2rem;
   background-color: transparent;
-  outline: 0.075rem solid var(--blue-200);
+  outline: 0.075rem solid var(--blue-100);
 }
 
 .language{
@@ -22,7 +22,7 @@
   position: absolute;
   z-index: -1;
   display: inline-block;
-  background-color: var(--blue-300);
+  background-color: var(--blue-100);
   content: '';
   inset: 0;
   opacity: 0.25;
@@ -60,6 +60,10 @@
 
 .language svg{
   vertical-align: middle;
+}
+
+html[scheme-mode="dark"] .language-switch{
+  outline-color: var(--blue-200);
 }
 
 html[scheme-mode="dark"] .language::after{
