@@ -27,7 +27,10 @@
             "href": "https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing",
             "external": true
           }
-        ]
+        ],
+        "languageOption": {
+          "sr": "Leer página en inglés"
+        }
       },
       "sections": {
         "navButtonMenu": "Menú",
@@ -68,7 +71,10 @@
             "href": "https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing",
             "external": true
           }
-        ]
+        ],
+        "languageOption": {
+          "sr": "Read page in Spanish"
+        }
       },
       "sections": {
         "navButtonMenu": "Menu",

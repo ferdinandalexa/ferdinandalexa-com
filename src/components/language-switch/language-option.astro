@@ -1,0 +1,28 @@
+---
+const { href, className, currentLocale, toLocale } = Astro.props;
+
+import { t } from "../../locales.json";
+
+import { localeURL } from "../../utils/localeURL.js";
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
+const isSelected = toLocale === currentLocale;
+
+const { collection, slug } = getPatternFromPathname({ pathname: href });
+const localizedURL = localeURL({ locale: currentLocale, collection, slug });
+---
+
+{
+  !isSelected ? (
+    <a href={localizedURL} class={className} data-selected={`${isSelected}`}>
+      <slot />
+      <span class="sr-only">
+        {t[currentLocale].components.languageOption.sr}
+      </span>
+    </a>
+  ) : (
+    <span class={className} data-selected={`${isSelected}`}>
+      <slot />
+    </span>
+  )
+}

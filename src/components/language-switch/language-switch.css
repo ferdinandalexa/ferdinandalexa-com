@@ -1,0 +1,52 @@
+.language-switch{
+  display: flex;
+  overflow: hidden;
+  height: max-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 2rem;
+  background-color: transparent;
+  outline: 0.075rem solid var(--blue-200);
+}
+
+.language{
+  position: relative;
+  width: 100%;
+  padding-block: 0.5rem;
+}
+
+.language.left{
+  padding-right: 0.7rem;
+  padding-left: 1rem;
+}
+
+.language.right{
+  padding-right: 1rem;
+  padding-left: 0.7rem;
+}
+
+.language::after{
+  position: absolute;
+  z-index: -1;
+  display: inline-block;
+  background-color: var(--blue-200);
+  content: '';
+  inset: 0;
+  opacity: 0.25;
+}
+
+.language[data-selected="true"]::after{
+  opacity: 0.65;
+}
+
+.language:hover::after{
+  background-color: var(--blue-200);
+  opacity: 1;
+}
+
+.language svg{
+  vertical-align: middle;
+}

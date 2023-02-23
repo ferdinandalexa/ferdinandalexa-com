@@ -2,7 +2,7 @@
 import "./header.css";
 
 import SwitchTheme from "../switch-theme/switch-theme.astro";
-import LanguageMenu from "../language-menu/language-menu.astro";
+import LanguageSwitch from "../language-switch/language-switch.astro";
 import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
 
 import { t } from "../../locales.json";
@@ -38,7 +38,7 @@ const { locale = "es" } = getPatternFromPathname({ pathname });
     </ul>
   </nav>
 
-  <LanguageMenu />
+  <LanguageSwitch />
   <SwitchTheme />
 </header>
 
