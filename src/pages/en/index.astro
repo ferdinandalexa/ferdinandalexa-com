@@ -17,7 +17,11 @@ let highlightedProjects = await getCollection(
 );
 ---
 
-<BaseLayout title="Inicio | ferdinandalexa">
+<BaseLayout
+  title={t.en.pages.home.meta.title}
+  description={t.en.pages.home.meta.description}
+  locale="en"
+>
   <main>
     <Hero />
     <section aria-labelledby="highlighted-projects-section" class="section">

@@ -37,6 +37,9 @@
         "projectHeader": {
           "tools": "Herramientas",
           "cta": "Ir a la Demo"
+        },
+        "headOG": {
+          "description": "Fernando Yerena, UI/UX Developer mexicano. Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web."
         }
       },
       "sections": {
@@ -52,6 +55,20 @@
         "notFound": {
           "text": "No encontramos lo que buscas, pero puedes revisar el resto del contenido",
           "cta": "Revisar contenido"
+        }
+      },
+      "pages": {
+        "home": {
+          "meta": {
+            "title": "Fernando Yerena | 👨‍💻 UX/UI Developer mexicano",
+            "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web."
+          }
+        },
+        "blog": {
+          "meta": {
+            "title": "Fernando Yerena | 👨‍💻 UX/UI Developer mexicano",
+            "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web."
+          }
         }
       }
     },
@@ -92,6 +109,9 @@
         "projectHeader": {
           "tools": "Tools",
           "cta": "Go to Demo"
+        },
+        "headOG": {
+          "description": "Fernando Yerena, mexican UI/UX Developer. Engaged with the development of the accessible user experience and web performance."
         }
       },
       "sections": {
@@ -107,6 +127,20 @@
         "notFound": {
           "text": "We have not found what you are looking for, but you can see the rest of our content",
           "cta": "See the content"
+        }
+      },
+      "pages": {
+        "home": {
+          "meta": {
+            "title": "Fernando Yerena | mexican 👨‍💻 UX/UI Developer ",
+            "description": "Engaged with the development of the accessible user experience and web performance."
+          }
+        },
+        "blog": {
+          "meta": {
+            "title": "Fernando Yerena | mexican 👨‍💻 UX/UI Developer ",
+            "description": "Engaged with the development of the accessible user experience and web performance."
+          }
         }
       }
     }

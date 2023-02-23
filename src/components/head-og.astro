@@ -1,7 +1,14 @@
 ---
+import { getPatternFromPathname } from "../utils/getPatternFromPathname.js";
+
+import { t } from "../locales.json";
+
+const { pathname } = Astro.url;
+const { locale = "es" } = getPatternFromPathname({ pathname });
+
 const {
-  title,
-  description = "Fernando Yerena, UX/UI Developer. Comprometido con el desarrollo de experiencias de usuario accesibles. Siempre estoy buscando oportunidades para mejorar mis habilidades.",
+  title = "Fernando Yerena | UI/UX Developer",
+  description = t[locale].components.headOG.description,
   permalink,
   slug,
 } = Astro.props;
@@ -19,6 +26,7 @@ const imageURL = `https://ferdinandalexa.com/images/og/${slug}.png`;
 {slug && <meta name="og:image:url" content={imageURL} />}
 <meta property="og:url" content={permalink} />
 <meta property="og:locale" content="es_MX" />
+<meta property="og:locale:alternate" content="en_US" />
 
 <!-- Twitter -->
 {slug && <meta name="twitter:card" content="summary_large_image" />}
