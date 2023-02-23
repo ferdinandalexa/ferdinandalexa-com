@@ -32,21 +32,24 @@
   position: absolute;
   z-index: -1;
   display: inline-block;
-  background-color: var(--blue-200);
+  background-color: var(--blue-300);
   content: '';
   inset: 0;
   opacity: 0.25;
 }
 
 .language[data-selected="true"]::after{
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
-.language:hover::after{
-  background-color: var(--blue-200);
+.language[data-selected="false"]:hover::after{
   opacity: 1;
 }
 
 .language svg{
   vertical-align: middle;
+}
+
+html[scheme-mode="dark"] .language::after{
+  background-color: var(--blue-200);
 }
