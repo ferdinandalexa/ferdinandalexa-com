@@ -9,7 +9,7 @@ const { pathname } = Astro.url;
 const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
-<BaseLayout>
+<BaseLayout locale={locale}>
   <main>
     <p>
       {t[locale].sections.notFound.text}
