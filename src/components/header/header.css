@@ -76,6 +76,13 @@
   color: var(--blue-300);
 }
 
+.menu{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 html[scheme-mode="dark"] header .logo {
   color: var(--blue-50);
   fill: var(--blue-50);

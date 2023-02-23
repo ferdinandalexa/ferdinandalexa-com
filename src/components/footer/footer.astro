@@ -1,13 +1,18 @@
 ---
 import "./footer.css";
----
 
-<style></style>
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
+import { t } from "../../locales.json";
+
+const { pathname } = Astro.url;
+const { locale = "es" } = getPatternFromPathname({ pathname });
+---
 
 <footer class="footer">
   <div class="footer__top">
     <div class="rrss">
-      <h3 class="footer__section">Sígueme en:</h3>
+      <h3 class="footer__section">{t[locale].sections.followMe}:</h3>
       <ul>
         <li>
           <a
@@ -52,7 +57,7 @@ import "./footer.css";
     </div>
 
     <div>
-      <h3 class="footer__section">O envíame un mensaje a:</h3>
+      <h3 class="footer__section">{t[locale].sections.sendMeMessage}:</h3>
       <a href="mailto:me@ferdinandalexa.com" class="contact-icon email">
         <svg viewBox="0 0 24 24" width="36" height="36" role="presentation">
           <use xlink:href="/images/contact-icons.svg#email"></use>
@@ -64,15 +69,21 @@ import "./footer.css";
 
   <nav class="navbar">
     <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/es/proyectos">Proyectos</a></li>
-      <li>
-        <a
-          href="https://drive.google.com/file/d/1DIUGZ29UxDXn1bOgleWHiwdxL_N5-C9T/view?usp=sharing"
-          target="_blank"
-          rel="noopener nofollow">Currículum</a
-        >
-      </li>
+      {
+        t[locale].components.navigation.map(({ href, name, external }) => {
+          return (
+            <li>
+              <a
+                href={href}
+                target={external ? "_blank" : null}
+                rel={external ? "noopener nofollow" : null}
+              >
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
 </footer>

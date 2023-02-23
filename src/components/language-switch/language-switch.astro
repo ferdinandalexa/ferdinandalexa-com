@@ -1,0 +1,33 @@
+---
+import "./language-switch.css";
+
+import LanguageOption from "./language-option.astro";
+
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
+const { pathname } = Astro.url;
+const { locale: currentLocale = "es" } = getPatternFromPathname({ pathname });
+---
+
+<div id="language-menu" class="language-switch">
+  <LanguageOption
+    currentLocale={currentLocale}
+    toLocale="es"
+    className="language left"
+    href={pathname}
+  >
+    <svg viewBox="0 0 72 72" width="24" height="24" role="presentation">
+      <use xlink:href="/images/flag-icons.svg#mexico"></use>
+    </svg>
+  </LanguageOption>
+  <LanguageOption
+    currentLocale={currentLocale}
+    toLocale="en"
+    className="language right"
+    href={pathname}
+  >
+    <svg viewBox="0 0 72 72" width="24" height="24" role="presentation">
+      <use xlink:href="/images/flag-icons.svg#usa"></use>
+    </svg>
+  </LanguageOption>
+</div>

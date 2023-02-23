@@ -9,11 +9,11 @@ import "../styles/transitions.css";
 import "../styles/colors.css";
 import "../styles/global.css";
 
-const { title, description, slug } = Astro.props;
+const { title, description, slug, locale = "es" } = Astro.props;
 const { href } = Astro.url;
 ---
 
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

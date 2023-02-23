@@ -4,8 +4,6 @@ import BaseLayout from "../layouts/base-layout.astro";
 
 const { title, slug, date, description, rawContent } = Astro.props;
 
-// console.log(Astro.props);
-
 const minutes = Math.round(getReadingTime(rawContent).minutes);
 
 const datePublish = new Date(date).toLocaleDateString("es", {

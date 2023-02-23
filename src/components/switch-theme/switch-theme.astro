@@ -1,5 +1,12 @@
 ---
 import "./switch-theme.css";
+
+import { getPatternFromPathname } from "../../utils/getPatternFromPathname.js";
+
+import { t } from "../../locales.json";
+
+const { pathname } = Astro.url;
+const { locale = "es" } = getPatternFromPathname({ pathname });
 ---
 
 <div class="switch-theme">
@@ -13,7 +20,7 @@ import "./switch-theme.css";
     <use xlink:href="/images/icons.svg#sun"></use>
   </svg>
   <button id="toggle-scheme" role="switch" aria-checked="false">
-    <span class="sr-only">Habiltiar modo oscuro</span>
+    <span class="sr-only">{t[locale].components.switchTheme.sr}</span>
   </button>
   <svg
     viewBox="0 0 24 24"

@@ -4,10 +4,16 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardPost from "../../../components/card-post/card-post.astro";
 
+import { t } from "../../../locales.json";
+
 let allPosts = await getCollection("blog", ({ data: { draft } }) => !draft);
 ---
 
-<BaseLayout title="Blog | ferdinandalexa">
+<BaseLayout   
+  title={t.es.pages.blog.meta.title}
+  description={t.es.pages.blog.meta.description}
+  locale="es"
+>
   <main>
     <section aria-labelledby="blog-section" class="section">
       <h2 id="blog-section" class="section__title">Blog</h2>

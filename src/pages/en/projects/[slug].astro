@@ -5,7 +5,7 @@ import ProjectLayout from "../../../layouts/project-layout.astro";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ id }) =>
-    id.startsWith("es/")
+    id.startsWith("en/")
   );
 
   return projectEntries.map((entry) => {
@@ -24,6 +24,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<ProjectLayout {...entry} locale="es">
+<ProjectLayout {...entry} locale="en">
   <Content />
 </ProjectLayout>

@@ -7,19 +7,19 @@ import CardProject from "../../../components/card-project/card-project.astro";
 import { t } from "../../../locales.json";
 
 let allProjects = await getCollection("projects", ({ id }) =>
-  id.startsWith("es/")
+  id.startsWith("en/")
 );
 ---
 
 <BaseLayout
-  title={t.es.pages.projects.meta.title}
-  description={t.es.pages.projects.meta.title}
-  locale="es"
+  title={t.en.pages.projects.meta.title}
+  description={t.en.pages.projects.meta.title}
+  locale="en"
 >
   <main>
     <section class="section" aria-labelledby="highlighted-projects-section">
       <h2 id="highlighted-projects-section" class="section__title">
-        Proyectos destacados
+        {t.en.sections.highlightedProjects}
       </h2>
       <div class="list-container">
         {
