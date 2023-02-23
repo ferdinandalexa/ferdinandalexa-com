@@ -4,12 +4,18 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/base-layout.astro";
 import CardProject from "../../../components/card-project/card-project.astro";
 
+import { t } from "../../../locales.json";
+
 let allProjects = await getCollection("projects", ({ id }) =>
   id.startsWith("es/")
 );
 ---
 
-<BaseLayout title="Proyectos | ferdinandalexa">
+<BaseLayout
+  title={t.es.pages.projects.meta.title}
+  description={t.es.pages.projects.meta.title}
+  locale="es"
+>
   <main>
     <section class="section" aria-labelledby="highlighted-projects-section">
       <h2 id="highlighted-projects-section" class="section__title">

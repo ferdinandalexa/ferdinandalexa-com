@@ -11,7 +11,11 @@ let allProjects = await getCollection("projects", ({ id }) =>
 );
 ---
 
-<BaseLayout title="Proyectos | ferdinandalexa">
+<BaseLayout
+  title={t.en.pages.projects.meta.title}
+  description={t.en.pages.projects.meta.title}
+  locale="en"
+>
   <main>
     <section class="section" aria-labelledby="highlighted-projects-section">
       <h2 id="highlighted-projects-section" class="section__title">

@@ -69,6 +69,12 @@
             "title": "Fernando Yerena | 👨‍💻 UX/UI Developer mexicano",
             "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web."
           }
+        },
+        "projects": {
+          "meta": {
+            "title": "Proyectos | Fernando Yerena",
+            "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web."
+          }
         }
       }
     },
@@ -139,6 +145,12 @@
         "blog": {
           "meta": {
             "title": "Fernando Yerena | mexican 👨‍💻 UX/UI Developer ",
+            "description": "Engaged with the development of the accessible user experience and web performance."
+          }
+        },
+        "projects": {
+          "meta": {
+            "title": "Projectos | Fernando Yerena",
             "description": "Engaged with the development of the accessible user experience and web performance."
           }
         }
