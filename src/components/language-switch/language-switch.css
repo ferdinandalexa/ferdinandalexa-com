@@ -55,7 +55,7 @@
 }
 
 .language[data-selected="false"]:is(:focus-visible)::after{
-  border: 2px solid white;
+  border: 0.1rem solid var(--blue-200);
 }
 
 .language svg{
@@ -68,4 +68,8 @@ html[scheme-mode="dark"] .language-switch{
 
 html[scheme-mode="dark"] .language::after{
   background-color: var(--blue-200);
+}
+
+html[scheme-mode="dark"] .language[data-selected="false"]:is(:focus-visible)::after{
+  border: 0.1rem solid var(--white);
 }
