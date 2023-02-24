@@ -15,7 +15,6 @@
   color: var(--blue-500);
   font-size: var(--fs-2xlarge);
   font-weight: var(--fw-bold);
-  transition: var(--color-transition);
 }
 
 .card-project__title :is(a:hover, a:focus-visible){

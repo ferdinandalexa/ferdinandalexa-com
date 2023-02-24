@@ -54,7 +54,6 @@
 .footer .navbar a{
   color: var(--blue-500);
   font-size: var(--fs-medium);
-  transition: var(--color-transition);
 }
 
 .footer .navbar :is(a:hover, a:focus-visible){
