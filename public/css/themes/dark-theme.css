@@ -1,0 +1,7 @@
+:root{
+  --bg-body: var(--blue-700);
+}
+
+html[scheme-mode="light"] body {
+  --bg-body: var(--white);
+}

@@ -42,6 +42,17 @@ const { href } = Astro.url;
       }
     </style>
 
+    <link
+      rel="stylesheet"
+      href="/css/themes/light-theme.css"
+      media="screen and (prefers-color-scheme: light)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/themes/dark-theme.css"
+      media="screen and (prefers-color-scheme: dark)"
+    />
+
     <HeadFavicon />
     <HeadOg {title} {description} {slug} permalink={href} />
   </head>
