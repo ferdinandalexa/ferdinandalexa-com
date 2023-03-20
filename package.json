@@ -19,8 +19,9 @@
     "stylelint-config-idiomatic-order": "9.0.0"
   },
   "dependencies": {
-    "astro": "2.0.6",
     "@astrojs/mdx": "0.14.0",
-    "@cloudinary/url-gen": "1.8.7"
+    "@astrojs/vercel": "3.2.1",
+    "@cloudinary/url-gen": "1.8.7",
+    "astro": "2.1.3"
   }
 }
