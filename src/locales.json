@@ -3,7 +3,7 @@
     "es": {
       "components": {
         "hero": {
-          "title": "Hola, soy Fernando Yerena, <span>UI/UX Developer</span> mexicano",
+          "title": "Hola, soy Fernando Yerena, <span>UI/UX Developer</span> mexicano.",
           "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web.",
           "cta": "Ver Currículum"
         },
@@ -81,7 +81,7 @@
     "en": {
       "components": {
         "hero": {
-          "title": "I’m Fernando Yerena, mexican <span>UI/UX Developer</span>",
+          "title": "I’m Fernando Yerena, a mexican <span>UI/UX Developer</span>.",
           "description": "Engaged with the development of the accessible user experience and web performance.",
           "cta": "See Resume"
         },
