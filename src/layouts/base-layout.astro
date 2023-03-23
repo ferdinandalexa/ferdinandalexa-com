@@ -40,18 +40,27 @@ const { href } = Astro.url;
         src: local(Atkinson-Hyperlegible), local(Atkinson-Hyperlegible-Bold),
           url(/fonts/Atkinson-Hyperlegible-Bold.woff2) format("woff2");
       }
-    </style>
 
-    <link
-      rel="stylesheet"
-      href="/css/themes/light-theme.css"
-      media="screen and (prefers-color-scheme: light)"
-    />
-    <link
-      rel="stylesheet"
-      href="/css/themes/dark-theme.css"
-      media="screen and (prefers-color-scheme: dark)"
-    />
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-body: var(--blue-700);
+        }
+
+        html[scheme-mode="light"] body {
+          --bg-body: var(--white);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg-body: var(--white);
+        }
+
+        html[scheme-mode="dark"] body {
+          --bg-body: var(--blue-700);
+        }
+      }
+    </style>
 
     <HeadFavicon />
     <HeadOg {title} {description} {slug} permalink={href} />
