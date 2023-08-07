@@ -1,7 +1,4 @@
 {
-  "name": "@example/minimal",
-  "version": "3.0.0",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
