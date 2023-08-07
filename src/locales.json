@@ -5,7 +5,8 @@
         "hero": {
           "title": "Hola, soy Fernando Yerena, <span>UI/UX Developer</span> mexicano.",
           "description": "Comprometido con el desarrollo de experiencias de usuario accesibles y de alto rendimiento web.",
-          "cta": "Ver Currículum"
+          "cta": "Ver Currículum",
+          "href": "https://docs.google.com/document/d/1oE5mfTuCx31MaGrfRiKUNFZXuRv71MQ4q0KSYlu0xSo/edit?usp=sharing"
         },
         "cardProject": {
           "altImage": "Imagen de portada: ir al proyecto",
@@ -24,7 +25,7 @@
           },
           {
             "name": "Currículum",
-            "href": "https://drive.google.com/file/d/1KDuzWNFDcMq18AgMCeSz-e0QaAB9OSha/view?usp=sharing",
+            "href": "https://docs.google.com/document/d/1oE5mfTuCx31MaGrfRiKUNFZXuRv71MQ4q0KSYlu0xSo/edit?usp=sharing",
             "external": true
           }
         ],
@@ -83,7 +84,8 @@
         "hero": {
           "title": "I’m Fernando Yerena, a mexican <span>UI/UX Developer</span>.",
           "description": "Engaged with the development of the accessible user experience and web performance.",
-          "cta": "See Resume"
+          "cta": "See Resume",
+          "href": "https://docs.google.com/document/d/1oE5mfTuCx31MaGrfRiKUNFZXuRv71MQ4q0KSYlu0xSo/edit?usp=sharing"
         },
         "cardProject": {
           "altImage": "Cover image: go to project",
@@ -102,7 +104,7 @@
           },
           {
             "name": "Resume",
-            "href": "https://drive.google.com/file/d/1KDuzWNFDcMq18AgMCeSz-e0QaAB9OSha/view?usp=sharing",
+            "href": "https://docs.google.com/document/d/1oE5mfTuCx31MaGrfRiKUNFZXuRv71MQ4q0KSYlu0xSo/edit?usp=sharing",
             "external": true
           }
         ],

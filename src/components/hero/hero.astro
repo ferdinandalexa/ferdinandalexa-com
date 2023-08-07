@@ -21,7 +21,7 @@ const { locale = "es" } = getPatternFromPathname({ pathname });
     </div>
     <div class="hero__actions">
       <a
-        href="https://docs.google.com/document/d/1oE5mfTuCx31MaGrfRiKUNFZXuRv71MQ4q0KSYlu0xSo/edit?usp=sharing"
+        href={t[locale].components.hero.href}
         target="_blank"
         rel="noopener nofollow"
         class="button fulfilled">{t[locale].components.hero.cta}</a
