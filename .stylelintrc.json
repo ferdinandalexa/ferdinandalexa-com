@@ -1,6 +1,6 @@
 {
   "extends": [
-    "stylelint-config-idiomatic-order",
+    "stylelint-config-clean-order",
     "stylelint-config-html",
     "stylelint-config-astro"
   ]
