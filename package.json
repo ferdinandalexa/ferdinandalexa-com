@@ -13,9 +13,9 @@
     "stylelint-config-html": "1.1.0"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/vercel": "^8.1.5",
+    "@astrojs/mdx": "4.3.0",
+    "@astrojs/vercel": "8.2.0",
     "@cloudinary/url-gen": "1.8.7",
-    "astro": "^5.9.3"
+    "astro": "5.10.0"
   }
 }
