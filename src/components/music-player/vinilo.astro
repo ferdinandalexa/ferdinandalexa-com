@@ -1,0 +1,199 @@
+<section>
+  <div class="container">
+    <div class="vinilo">
+      <img src="/images/vinilo/plastic.webp" alt="" class="package front" />
+      <img
+        src="/images/vinilo/cover-incognito.png"
+        alt=""
+        class="cover front"
+      />
+      <img src="/images/vinilo/cover-incognito.png" alt="" class="cover back" />
+      <img src="/images/vinilo/plastic.webp" alt="" class="package back" />
+      <img src="/images/vinilo/lp.webp" alt="" class="lp back" />
+      <button id="reveal" aria-label="Revelar" class="menu-action"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  const $Vinilo = document.querySelector(".vinilo");
+  const $Reveal = document.querySelector("#reveal");
+  const duration = 1;
+
+  const revealVinilo = gsap.timeline({
+    paused: true,
+    defaults: {
+      duration: duration,
+    },
+  });
+
+  revealVinilo
+    .to($Vinilo, {
+      rotationY: 180 * 4,
+    })
+    .to(
+      ".vinilo .package.back",
+      {
+        opacity: 0,
+      },
+      "0",
+    )
+    .to(
+      ".vinilo .package.front",
+      {
+        opacity: 0,
+      },
+      "0",
+    )
+    .add(
+      () => {
+        const front = $Vinilo.querySelector(".cover.front") as HTMLImageElement;
+        front.src = "/images/vinilo/Funda-Front-base.webp";
+      },
+      `${duration / 2}`,
+    )
+    .add(
+      () => {
+        const back = $Vinilo.querySelector(".cover.back") as HTMLImageElement;
+        back.src = "/images/vinilo/Funda-Back-base.webp";
+      },
+      `${duration / 3.3}`,
+    )
+    .to(
+      ".vinilo .lp.back",
+      {
+        xPercent: 50,
+      },
+      "1.25",
+    )
+    .to(
+      ".vinilo",
+      {
+        xPercent: -22.5,
+      },
+      "1",
+    );
+
+  $Reveal.addEventListener("click", () => {
+    console.log($Vinilo);
+    revealVinilo.play();
+  });
+</script>
+
+<style>
+  section {
+    padding-block: 4rem;
+    padding-inline: 1rem;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 32rem;
+    margin-inline: auto;
+
+    perspective: 200vw;
+    perspective-origin: center;
+
+    @media screen and (min-width: 50rem) {
+      max-width: 64rem;
+    }
+  }
+
+  .main-title {
+    --fs: 3rem;
+
+    display: block;
+
+    max-width: max-content;
+    padding-block: 0.5lh 0.25lh;
+
+    font-family: "Sticky Pops";
+    font-size: var(--fs);
+    font-weight: normal;
+    line-height: 1;
+    color: black;
+  }
+
+  .main-title span {
+    display: block;
+    margin-block-start: -0.375em;
+    margin-inline-start: calc(var(--fs) * 0.5);
+    font-size: calc(var(--fs) * 1.25);
+  }
+
+  .menu-action {
+    position: absolute;
+    z-index: 12;
+    inset: 0;
+    opacity: 0;
+  }
+
+  .vinilo {
+    position: relative;
+    z-index: 10;
+    transform-style: preserve-3d;
+
+    display: block;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: min(65%, 24rem);
+    height: auto;
+    margin-inline: auto;
+
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+
+  .vinilo .cover {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+    object-fit: cover;
+  }
+
+  .lp {
+    position: relative;
+    z-index: -1;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 24rem;
+
+    object-fit: cover;
+  }
+
+  .cover.back,
+  .package.back {
+    transform: rotateY(180deg);
+  }
+
+  .container {
+    filter: drop-shadow(0 0 0.5rem hsla(0, 0%, 0%, 0.2))
+      drop-shadow(0 0 2rem hsla(0, 0%, 0%, 0.375)) brightness(0.8);
+  }
+
+  .vinilo .package {
+    pointer-events: none;
+    content: "";
+
+    position: absolute;
+    z-index: 11;
+    top: -3%;
+
+    width: 104%;
+    height: 105%;
+
+    backface-visibility: hidden;
+    object-fit: cover;
+    filter: brightness(2) contrast(0.25);
+  }
+</style>

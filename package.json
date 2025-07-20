@@ -14,8 +14,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.0",
-    "@astrojs/vercel": "8.2.0",
+    "@astrojs/vercel": "^8.0.4",
     "@cloudinary/url-gen": "1.8.7",
-    "astro": "5.10.0"
+    "astro": "5.10.0",
+    "gsap": "3.13.0"
   }
 }
