@@ -1,0 +1,155 @@
+---
+type Props = {
+  heading: string;
+};
+
+const { heading } = Astro.props;
+---
+
+<section class="song">
+  <slot name="image" />
+  <div class="description">
+    <div class="container">
+      <h2 class="title">{heading}</h2>
+      <slot />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const $Titles = document.querySelectorAll(".song .title");
+  const $Images = document.querySelectorAll(".song img");
+  const $Descriptions = document.querySelectorAll(".song .description");
+
+  $Titles.forEach((title) => {
+    gsap.from(title, {
+      x: -25,
+      opacity: 0,
+      scale: 0.98,
+      scrollTrigger: {
+        trigger: title,
+        start: "top 35%",
+        end: "bottom 30%",
+        scrub: true,
+      },
+    });
+  });
+
+  $Descriptions.forEach((description) => {
+    gsap.from(description, {
+      "--gradient-start": 100,
+      scrollTrigger: {
+        trigger: description,
+        start: "top 75%",
+        end: "bottom 75%",
+        scrub: true,
+      },
+    });
+  });
+
+  $Images.forEach((image) => {
+    gsap.from(image, {
+      "--mask-image-y": 0,
+      scrollTrigger: {
+        trigger: image,
+        start: "top 10%",
+        end: "bottom 10%",
+        scrub: true,
+      },
+    });
+  });
+</script>
+
+<style>
+  section {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 32rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    @media screen and (min-width: 50rem) {
+      max-width: 64rem;
+    }
+  }
+
+  .song :global(.wallpaper) {
+    --mask-image-y: 100%;
+
+    position: sticky;
+    z-index: -2;
+    top: 0;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: 40% center;
+
+    -webkit-mask-composite: destination-in, source-over;
+
+    mask-image: url(/images/clip.svg), url(/images/clip-2.svg);
+
+    mask-position:
+      0% calc(var(--mask-image-y) * 4),
+      0% calc(var(--mask-image-y) * 2);
+    mask-repeat: no-repeat, no-repeat;
+    mask-size: cover, cover;
+
+    @media screen and (min-width: 50rem) {
+      aspect-ratio: initial;
+    }
+  }
+
+  .description {
+    --gradient-start: 0%;
+
+    position: relative;
+    z-index: -2;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .description::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      #a6f538 var(--gradient-start)
+    );
+  }
+
+  .title {
+    --fs: clamp(2rem, 1.4286rem + 2.8571vw, 4rem);
+
+    display: block;
+
+    max-width: 24ch;
+    padding-block: calc(var(--fs) * 2.5) 0.25lh;
+
+    font-family: "Wasted Year";
+    font-size: var(--fs);
+    font-weight: normal;
+    line-height: 1.125;
+    color: black;
+    text-align: center;
+    text-wrap: balance;
+  }
+</style>

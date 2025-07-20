@@ -1,0 +1,169 @@
+---
+import MusicPlayer from "../layouts/music-player.astro";
+import Hero from "../components/music-player/hero.astro";
+import Song from "../components/music-player/song.astro";
+import Vinilo from "../components/music-player/vinilo.astro";
+---
+
+<MusicPlayer>
+  <Hero />
+  <Song heading="En los días nublados y lluviosos...">
+    <article class="track">
+      <img
+        src="/images/vinilo/beatles-help_me.webp"
+        alt=""
+        class="track-cover"
+      />
+      <div class="about">
+        <p class="single">Help me!</p>
+        <p class="author">The Beatles</p>
+      </div>
+    </article>
+  </Song>
+  <Song heading="Cuando me siento sola...">
+    <img
+      src="/images/vinilo/Concierto-md.webp"
+      alt=""
+      slot="image"
+      class="wallpaper"
+    />
+    <article class="track">
+      <img src="/images/vinilo/dualipa.webp" alt="" class="track-cover" />
+      <div class="about">
+        <p class="single">French Exit</p>
+        <p class="author">Dualipa</p>
+      </div>
+    </article>
+  </Song>
+  <Song heading="Cuando estoy cansada...">
+    <img
+      src="/images/vinilo/Memoria-md.webp"
+      alt=""
+      slot="image"
+      class="wallpaper"
+    />
+    <article class="track">
+      <img src="/images/vinilo/dualipa.webp" alt="" class="track-cover" />
+      <div class="about">
+        <p class="single">María</p>
+        <p class="author">Dualipa</p>
+      </div>
+    </article>
+  </Song>
+  <Song heading="Cuando estoy pensando en el chico que me interesa..." />
+  <Vinilo />
+  <div class="container">
+    <a
+      href="https://music.youtube.com/playlist?list=PL53HEdutr0G-yZCv9GGDBoy6Rwfyy8AC4&si=xAXuKu_5z4QEgQ33"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button">Escuchar Playlist</a
+    >
+    <a
+      href="https://drive.google.com/drive/folders/1LdB621w1peeUdmvEpbATGZ5RWaqE66QG?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button secondary">Descargar Wallpapers</a
+    >
+  </div>
+</MusicPlayer>
+
+<style>
+  .container {
+    max-width: 32rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+
+    @media screen and (min-width: 50rem) {
+      max-width: 64rem;
+    }
+  }
+
+  .track {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 32rem;
+    margin-block-start: 2rem;
+    margin-inline: auto;
+  }
+
+  .track-cover {
+    display: block;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 10rem;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.675rem;
+  }
+
+  .track .about {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+
+    font-family: sans-serif;
+    font-size: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+    line-height: 1.25;
+    color: black;
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 21rem) {
+    .track .about {
+      align-items: start;
+      margin-inline: 0;
+    }
+  }
+
+  .track .about p {
+    margin: 0;
+  }
+
+  .track .about .single {
+    font-family: "Wasted Year";
+    font-size: clamp(1.40625rem, 1.2366rem + 0.8482vw, 2rem);
+    font-weight: bold;
+    line-height: 1.125;
+  }
+
+  .button {
+    display: block;
+
+    max-width: 24rem;
+    margin-block-end: 0.875rem;
+    margin-inline: auto;
+    padding: 1lh 1rem;
+
+    font-family: "Wasted Year";
+    font-size: clamp(1rem, 0.8929rem + 0.5357vw, 1.25rem);
+    font-weight: normal;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: #212121;
+    border-radius: 999px;
+
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .button.secondary {
+    color: #000;
+    background-color: transparent;
+    border: 2px solid #000;
+  }
+</style>

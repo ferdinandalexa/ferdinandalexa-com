@@ -1,0 +1,104 @@
+<section class="mask hero">
+  <h1 class="dialog">Hasta ahora... <br /> la música ha sido mi salvación</h1>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/SplitText";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(SplitText);
+  gsap.registerPlugin(ScrollTrigger);
+
+  SplitText.create(".hero .dialog", {
+    type: "lines",
+    autoSplit: true,
+    linesClass: "line",
+    onSplit(self) {
+      self.lines.forEach((line) => {
+        gsap.from(line, {
+          y: 25,
+          opacity: 0,
+          scale: 0.99,
+          stagger: 1,
+          delay: 0.25,
+          scrollTrigger: {
+            trigger: line,
+            start: "top 40%",
+            end: "bottom 42.5%",
+            scrub: true,
+          },
+        });
+      });
+    },
+  });
+
+  gsap.from(".mask", {
+    backgroundColor: "black",
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "2% 0%",
+      end: "10% 0",
+      scrub: true,
+    },
+  });
+</script>
+
+<style>
+  .hero {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    min-height: 150vh;
+    min-height: 150dvh;
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+
+    @media screen and (min-width: 28rem) {
+      min-height: 50rem;
+    }
+  }
+
+  .hero .dialog {
+    margin-block-end: 5lh;
+  }
+
+  .dialog {
+    --fs: clamp(2.5rem, 1.7857rem + 3.5714vw, 5rem);
+
+    display: block;
+
+    max-width: 24ch;
+    margin-inline: auto;
+    padding-block: calc(var(--fs) * 5) calc(var(--fs) * 0);
+
+    font-family: "Wasted Year";
+    font-size: var(--fs);
+    font-weight: normal;
+    line-height: 1.125;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .mask {
+    background-color: transparent;
+  }
+
+  .mask::after {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    inset: 0;
+
+    background-color: black;
+
+    mask-image: url("/images/clip.svg");
+    mask-position: bottom;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+  }
+</style>

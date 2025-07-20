@@ -8,5 +8,8 @@ export default defineConfig({
   site: 'https://ferdinandalexa.com',
   integrations: [mdx()],
   output: "static",
-  adapter: vercel()
+  adapter: vercel(),
+  server: {
+    allowedHosts: true
+  }
 });
